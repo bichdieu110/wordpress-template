@@ -1,5 +1,4 @@
 hosts.yml
-.env
 .DS_Store
 *.dump
 *.gzip
