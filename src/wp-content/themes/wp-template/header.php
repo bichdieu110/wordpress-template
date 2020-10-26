@@ -21,13 +21,48 @@
                     <button class="c-open-menu dropdown-toggle" data-toggle="dropdown">Menu</button>
                     <div class="dropdown-menu">
                         <ul class='head-menu-items'>
-                            <?php
-                                wp_nav_menu(array(
-                                    'container' => '',
-                                    'items_wrap' => '%3$s',
-                                    'walker'        => new Fx_Walker_Nav_Menu()
-                                ));
-                            ?>
+                            <li class="menu-items">
+                                <a>
+                                　　News
+                                    <span>お知らせ</span>
+                                </a>
+                            </li>
+                            <li class="menu-items">
+                                <a>
+                                    Company
+                                    <span>私たちについて</span>
+                                </a>
+                            </li>
+                            <li class="menu-items">
+                                <a>
+                                    Service
+                                    <span>ソリューション/製品</span>
+                                </a>
+                            </li>
+                            <li class="menu-items">
+                                <a>
+                                　　Case
+                                    <span>事例紹介</span>
+                                </a>
+                            </li>
+                            <li class="menu-items">
+                                <a>
+                                    Column
+                                    <span>コラム</span>
+                                </a>
+                            </li>
+                            <li class="menu-items">
+                                <a>
+                                    Career
+                                    <span>採用情報</span>
+                                </a>
+                            </li>
+                            <li class="menu-items">
+                                <a>
+                                    Contact
+                                    <span>お問い合わせ</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
