@@ -1,0 +1,60 @@
+// --------------------
+// Global Variables
+// --------------------
+$global-font-size: 14px;
+$global-font-family: 'NotoSansJP-Regular', sans-serif;
+$font-family-notosansjplight: "NotoSansJP-Light", sans-serif;
+$font-family-notosansjpmedium: "NotoSansJP-Medium", sans-serif;
+$font-family-notosansjpbold: "NotoSansJP-Bold", sans-serif;
+$font-family-roboto: 'Roboto', sans-serif;
+$spacer: 16px;
+
+// --------------------
+// Global Colors
+// --------------------
+$color-font-base: #535050;
+$bg-dark: #252526;
+$color-light: #fff;
+$color-red: #F84646;
+$color-blue-dark: #1E2241;
+$color-gray-dark: #464646;
+$color-orange: #e88200;
+$bg-gray: #f3f3f6;
+$color-border-gray: #515154;
+$bg-white: #fff;
+
+// --------------------
+// Global Font Sizes
+// --------------------
+$font-size-mini: ($global-font-size * 0.714);
+$font-size-tiny: ($global-font-size * 0.785);
+$font-size-small: ($global-font-size * 0.857);
+$font-size-medium: $global-font-size;
+$font-size-large: ($global-font-size * 1.142);
+$font-size-big: ($global-font-size * 1.285);
+$font-size-huge: ($global-font-size * 1.428);
+$font-size-massive: ($global-font-size * 1.714);
+
+// --------------------
+// Component Variables
+// グローバルに使用するもののみ定義。ローカルなものは各コンポーネントに記載
+// --------------------
+// header
+$header-height: 56px;
+
+// sidebar
+$sidebar-width: 20%;
+$sidebar-min-width: 240px;
+$sidebar-max-width: 280px;
+
+// --------------------
+// Z-index master
+// --------------------
+$zindex-dropdown: 1000 !default;
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+
