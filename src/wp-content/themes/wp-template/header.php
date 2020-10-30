@@ -22,43 +22,43 @@
                     <div class="dropdown-menu">
                         <ul class='head-menu-items'>
                             <li class="menu-items">
-                                <a>
-                                　　News
+                                <a href="#">
+                                    News
                                     <span>お知らせ</span>
                                 </a>
                             </li>
                             <li class="menu-items">
-                                <a>
+                                <a href="#">
                                     Company
                                     <span>私たちについて</span>
                                 </a>
                             </li>
                             <li class="menu-items">
-                                <a>
+                                <a href="#">
                                     Service
                                     <span>ソリューション/製品</span>
                                 </a>
                             </li>
                             <li class="menu-items">
-                                <a>
-                                　　Case
+                                <a href="#">
+                                    Case
                                     <span>事例紹介</span>
                                 </a>
                             </li>
                             <li class="menu-items">
-                                <a>
+                                <a href="#">
                                     Column
                                     <span>コラム</span>
                                 </a>
                             </li>
                             <li class="menu-items">
-                                <a>
+                                <a href="#">
                                     Career
                                     <span>採用情報</span>
                                 </a>
                             </li>
                             <li class="menu-items">
-                                <a>
+                                <a href="#">
                                     Contact
                                     <span>お問い合わせ</span>
                                 </a>

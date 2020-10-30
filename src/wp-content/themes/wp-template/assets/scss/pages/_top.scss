@@ -1,3 +1,50 @@
 // --------------------
 // Top page
 // --------------------
+
+.page-top{
+    .banner-container{
+        height: 780px;
+        display: flex;
+        align-items: center;
+        background: url('../images/bg_banner.jpg');
+        position: relative;
+        .container{
+            .text-container{
+                h2{
+                    color: white;
+                    font-size: 74px;
+                }
+                p{
+                    color: white;
+                    font-size: 20px;
+                }
+            }
+        }
+        .text-bottom{
+            position: absolute;
+            bottom:0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background-color: white;
+            ul{
+                padding: 10px 36px;
+                li{
+                   b{
+                       font-size: 16px;
+                       font-weight: bold;
+                       padding-right: 35px;
+                   } 
+                   span{
+                       color: #e88200;
+                       padding-right: 15px;
+                   }
+                   a{
+                       font-size: 14px;
+                   }
+                }
+            }
+        }
+    }
+}

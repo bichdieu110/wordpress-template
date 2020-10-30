@@ -5,12 +5,36 @@
     .wrap-header{
         display: flex;
         justify-content: space-between;
-
+        padding: 0 55px;
         .header-logo{
-
+            width: 400px;
+            margin-top: 20px;
         }
-        nav.navMenu{
-
+        .navMenu{
+            width: calc(100% - 400px);
+            .dropdown-menu{
+                ul.head-menu-items{
+                    display: flex;
+                    justify-content: space-between;
+                    li.menu-items{
+                        a{
+                            display: block;
+                            text-align: center;
+                            font-size: 17px;
+                            font-weight: bold;
+                            padding: 20px 0;
+                            span{
+                                display: block;
+                                color: #898989;
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+            button{
+                display: none;
+            }
         }
     }
 }
