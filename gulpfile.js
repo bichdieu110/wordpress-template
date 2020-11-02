@@ -2,6 +2,7 @@ const gulp = require('gulp'),
 	env = require('node-env-file'),
 	plumber = require("gulp-plumber"),
 	sass = require('gulp-sass'),
+	wait = require('gulp-wait'),
 	cleancss = require('gulp-clean-css'),
 	autoprefixer = require('gulp-autoprefixer'),
 	notify = require('gulp-notify');
@@ -18,6 +19,7 @@ const paths = {
 gulp.task('sass', function () {
 	return gulp.src(paths.scss)
 		.pipe(plumber())
+		.pipe(wait(500))
 		.pipe(sass({ outputStyle: 'expanded' }))
 		.pipe(cleancss({ debug: true }, function (details) {
 			console.log(details.name + ': ' + details.stats.originalSize + ' > ' + + details.stats.minifiedSize);

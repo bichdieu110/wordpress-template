@@ -8,6 +8,7 @@
         display: flex;
         align-items: center;
         background: url('../images/bg_banner.jpg');
+        background-size: cover;
         position: relative;
         .container{
             .text-container{
@@ -21,15 +22,16 @@
                 }
             }
         }
-        .text-bottom{
+        .new-bottom{
             position: absolute;
             bottom:0;
             left: 0;
             right: 0;
             width: 100%;
             background-color: white;
+            box-shadow: 0 4px 20px 0 rgba(107,107,107,.2);
             ul{
-                padding: 10px 36px;
+                padding: 27px 37px;
                 li{
                    b{
                        font-size: 16px;
@@ -39,9 +41,10 @@
                    span{
                        color: #e88200;
                        padding-right: 15px;
+                       font-weight: bold;
                    }
                    a{
-                       font-size: 14px;
+                       font-size: 15px;
                    }
                 }
             }
