@@ -5,17 +5,11 @@
     .wrap-header {
         @include flexbox;
         @include justify-content(space-between);
-
-        @include bp(0, 1023px) {
-            padding: 7px 0 13px;
-        }
     }
 
     .navMenu {
         > .dropdown-menu {
-            @include bp(1024px) {
-                display: block !important;
-            }
+            display: block;
         }
         .head-menu-items {
             > .menu-item {
@@ -26,15 +20,12 @@
                 a {
                     position: relative;
                     @include fs(17,17);
-                    font-weight: 700;
                     display: block;
-                    letter-spacing: 2.5px;
 
                     span {
                         display: block;
                         @include fs(10,10);
                         margin-top: 7px;
-                        // color: #898989;
                     }
                 }
             }
@@ -42,23 +33,12 @@
     }
 
     &-logo {
-        @include bp(1024px) {
-            max-width: 241px;
-            margin-left: 53px;
-            padding: 17px 0 0;
-        }
-        
-        @include bp(0, 1023px) {
-            margin: 0 auto;
-        }
+        max-width: 241px;
+        margin-left: 53px;
+        padding: 17px 0 0;
+    
         img {
             max-width: 241px;
-            @include bp(0,1360px) {
-                max-width: 200px;
-            }
-            @include bp(0, 1023px) {
-                max-width: 145px;
-            }
         }
     }
 }
