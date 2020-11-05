@@ -18,7 +18,7 @@
                     </a>
                 </div><!-- .header-logo -->
                 <nav class="navMenu dropdown">
-                    <button class="c-open-menu dropdown-toggle" data-toggle="dropdown">Menu</button>
+                    <button class="c-open-menu dropdown-toggle only-tab" data-toggle="dropdown">Menu</button>
                     <div class="dropdown-menu">
                         <ul class='head-menu-items'>
                             <?php

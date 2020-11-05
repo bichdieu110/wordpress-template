@@ -1,7 +1,33 @@
-// --------------------
-// Footer
-// --------------------
-
 .footer {
-    
+    background-color: #252526;
+    text-align: center;
+
+    .container {
+        padding: 43px 0;
+        
+        &:before {
+            content: "";
+            width: 1px;
+            height: 41px;
+            background-color: #fbfbfc;
+            top: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    a {
+        color: #fff;
+        font-weight: 500;
+    }
+
+    p {
+        color: #aeaeb1;
+        font-weight: 500;
+        color: #aeaeb1;
+        font-size: 12px;
+        margin-top: 21px;
+        letter-spacing: 0.9px;
+    }
 }

@@ -69,3 +69,9 @@ h4 {
     margin: 0 auto;
     position: relative;
 }
+
+.only-tab {
+  @include bp(1024px) {
+      display: none !important;
+  }
+}
