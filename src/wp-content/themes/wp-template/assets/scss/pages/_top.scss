@@ -1,3 +1,143 @@
 // --------------------
 // Top page
 // --------------------
+.page-top{
+  background: $bg-main;
+  .top-banner-wrapper{
+    position: relative;
+    .banner-img{
+      width: 100%;
+    }
+    .box-new{
+      @include bp(tab){
+        @include flex-direction(column);
+        @include align-items(normal);
+        position: relative;
+        bottom: 0;
+      }
+      background: $bg-white;
+      @include flexbox();
+      @include align-items(center);
+      position: absolute;
+      padding: 27px 37px;
+      bottom: 8%;
+      left: 0;
+      right: 0;
+      .content{
+        @include fs(14);
+      }
+      .news{
+        font-weight: bold;
+        @include fs(16);
+      }
+      .date{
+        @include fs(14);
+        color: $color-orange-text;
+        margin: 0 16px 0 40px;
+        font-weight: bold;
+        @include bp(tab){
+          margin: 0;
+        }
+      }
+    }
+    .banner-text{
+      position: absolute;
+      top: 30%;
+      left: 120px;
+      color: $color-white;
+      @include bp(tab){
+        top: 20%;
+        left: 50px;
+      }
+      @include bp(sp){
+        top: 50px;
+        left: 30px;
+      }
+      .title{
+        @include fs(44);
+        line-height: 1.228;
+        letter-spacing: 9px;
+        @include bp(tab){
+          @include fs(24);
+        }
+        @include bp(sp){
+          @include fs(18);
+        }
+      }
+      .sub-title{
+        @include fs(18);
+        @include bp(tab){
+          @include fs(13);
+        }
+        @include bp(sp){
+          @include fs(9);
+        }
+        line-height: 1.556;
+        letter-spacing: 4px;
+      }
+    }
+  }
+
+  .box-heading{
+    @include fs(34);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 45px;
+    margin-top: 30px;
+    span{
+      color: $color-gray-light;
+      @include fs(15);
+    }
+  }
+
+  .list-featured{
+    @include flexbox();
+    @include bp(tab){
+      @include flex-direction(column);
+      justify-content: center;
+    }
+    .list-featured--item{
+      position: relative;
+      width: 50%;
+      @include bp(tab){
+        width: 100%;
+      }
+      .featured-img{
+        @include bp(tab){
+          width: 100%;
+        }
+      }
+      .featured-content{
+        position: absolute;
+        @include bp(tab){
+          position: relative;
+          width: 100%;
+          padding: 5px 27px;
+        }
+        background: $bg-main;
+        bottom: 0;
+        right: 0;
+        padding: 24px 60px 14px 29px;
+        width: 57%;
+        .title{
+          @include fs(14);
+        }
+        .date{
+          @include fs(14);
+          color: $color-orange-text;
+          font-weight: bold;
+        }
+      }
+    }
+
+  }
+  .featured-page{
+    @include flexbox();
+    @include justify-content(center);
+    margin-top: 40px;
+    .btn-featured{
+      margin: 0 20px;
+    }
+  }
+}

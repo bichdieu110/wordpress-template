@@ -2,5 +2,59 @@
 // Header
 // --------------------
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    z-index: 999;
+    background: $color-white;
+    .wrap-header{
+        @include flexbox();
+        @include justify-content(space-between);
+        @include align-items(center);
+        @include bp(tab){
+            padding: 10px;
+        }
+        .header-logo{
+            width: 240px;
+            margin-left: 50px;
+            @include bp(tab){
+                margin: 0;
+                width: 160px;
+            }
+        }
+        .nav-header-wrapper{
+            .nav-header{
+                @include flexbox();
+                .nav-header--item {
+                    padding: 20px 23px;
+                    text-align: center;
+                    a{
+                        font-weight: bold;
+                        @include fs(17);
+                    }
+                    span{
+                        font-weight: normal;
+                        @include fs(10);
+                    }
+                }
+                .nav-header--item__last{
+                    background: $color-orange;
+                    a{
+                        color: $bg-white;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn-menu{
+        background: none;
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
     
 }
