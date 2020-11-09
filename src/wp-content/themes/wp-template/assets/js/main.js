@@ -99,6 +99,24 @@
 		            $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp();
 		        });
       }
+
+      $('.list-featured').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        // autoplay: true,
+        autoplaySpeed: 2000,
+        infinite: false,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+            }
+          }
+        ]
+      });
       
       $(window).on('load resize', function() {
         _height = $(window).height() - 50;

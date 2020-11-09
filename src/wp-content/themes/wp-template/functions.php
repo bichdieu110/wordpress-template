@@ -18,6 +18,13 @@ if ( !function_exists( 'chld_thm_cfg_parent_css' ) ):
 endif;
 add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 40 );
 
+function add_para_js() {
+  if (is_front_page()) {
+    wp_enqueue_script( 'particles_js_min', trailingslashit( get_stylesheet_directory_uri() ) . 'assets/js/particles.min.js','','',true );
+    wp_enqueue_script( 'particles_js', trailingslashit( get_stylesheet_directory_uri() ) . 'assets/js/particlesJS.js','','',true );
+  }
+}
+add_action('wp_enqueue_scripts', 'add_para_js');
 
 // Register menu
 add_action( 'after_setup_theme', 'register_my_menu' );
