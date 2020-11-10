@@ -14,6 +14,7 @@
         @include align-items(normal);
         position: relative;
         bottom: 0;
+        padding: 20px;
       }
       background: $bg-white;
       @include flexbox();
@@ -136,8 +137,102 @@
     @include flexbox();
     @include justify-content(center);
     margin-top: 40px;
+    padding-bottom: 100px;
     .btn-featured{
       margin: 0 20px;
+      background: none;
+    }
+  }
+
+  .company-wrapper{
+    background: white;
+    padding-top: 2px;
+     .company-bg-color{
+       background-repeat: no-repeat;
+       background-position: left;
+       background-size: calc(100% - 15vw) 100%;
+       background-position-y: 384px;
+     }
+    .company-box{
+      padding: 50px 10px 50px 100px;
+      background-color: #252526;
+      color: $color-white;
+      margin-left: 15vw;
+      margin-top: -55px;
+      .heading{
+        @include fs(34);
+        span{
+          @include fs(15);
+          color: $color-gray-light;
+        }
+      }
+    }
+    .company-bg-img{
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: contain;
+      background-position-y: 139px;
+    }
+    .service-wrapper{
+      text-align: center;
+      padding: 123px 0;
+      .heading{
+        @include fs(34);
+        span{
+          @include fs(15);
+          color: $color-gray-light;
+        }
+      }
+    }
+  }
+  .read-more-wrapper{
+    @include flexbox();
+    @include align-items(center);
+    margin-top: 20px;
+    a{
+      color: $color-white;
+      margin-right: 10px;
+      @include fs(14);
+    }
+  }
+  .ar-mr-wrapper{
+    .ar-mr-bg{
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: calc(100% - 12vw);
+      padding-top: 20px;
+      padding-bottom: 100px;
+    }
+    .ar-mr-box{
+      background: white;
+      padding: 100px 75px 100px 75px;
+      width: 60%;
+      margin-left: 12vw;
+      margin-top: -62px;
+    }
+  }
+  .siba-wrapper{
+    .siba-bg{
+      height: 140px;
+      background: #eae9e9;
+      margin-right: 15vw;
+    }
+    .siba-bg-color{
+      background: #eae9e9;
+      padding-left: 12vw;
+    }
+    .siba-box{
+      background: white;
+      width: 60%;
+      padding: 100px 75px 100px 75px;
+      margin-left: calc(28% - 12vw);
+      margin-top: -50px;
+    }
+    .siba-bg-img{
+      width: 100%;
+      background-size: cover;
+      padding-top: 10px;
+      padding-bottom: 100px;
     }
   }
 }
