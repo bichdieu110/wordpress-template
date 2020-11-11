@@ -17,5 +17,32 @@ get_header();
         </div>
       </div>
     </section>
+    <section class="featured-section">
+      <div class="container">
+        <h2 class="heading-section">Featured<span>特集</span></h2>
+        <div class="slider featured-list">
+          <div class="featured-list_item">
+            <div class="slide-inner">
+              <a href="#"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-1.png)"></div></a>
+              <div class="featured-content">
+                <div class="featured-title"><a href="#">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
+                <div class="featured-date">2020 04.30
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-list_item">
+            <div class="slide-inner">
+              <a href="#"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-2.png)"></div></a>
+              <div class="featured-content">
+                <div class="featured-title"><a href="#">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
+                <div class="featured-date">2020 04.30
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 <?php get_footer(); ?>

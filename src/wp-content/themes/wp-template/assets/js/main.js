@@ -104,6 +104,22 @@
         _height = $(window).height() - 50;
         $('.navMenu > .dropdown-menu').css('max-height', _height + 'px');
       })
+
+      $('.featured-list').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: false,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+            }
+          }
+        ]
+      });
     },
 
     accordion: function() {
