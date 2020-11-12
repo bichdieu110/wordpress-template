@@ -12,10 +12,23 @@
             display: block;
         }
         .head-menu-items {
+            @include bp(tab) {
+                position: absolute;
+                top: 85px;
+                left: 0;
+                z-index: 10;
+                background-color: #f19616;
+            }
+
             > .menu-item {
                 display: inline-block;
                 text-align: center;
                 padding: 36px 34px;
+
+                @include bp(tab) {
+                    width: 100%;
+                    border-bottom: #f0af55 1px solid;
+                }
     
                 a {
                     position: relative;
@@ -36,6 +49,10 @@
         max-width: 241px;
         margin-left: 53px;
         padding: 17px 0 0;
+
+        @include bp(tab) {
+            padding: 17px 0;
+        }
     
         img {
             max-width: 241px;
