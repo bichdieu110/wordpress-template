@@ -26,7 +26,7 @@ get_header();
               <a href="#"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-1.png)"></div></a>
               <div class="featured-content">
                 <div class="featured-title"><a href="#">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
-                <div class="featured-date">2020 04.30
+                <div class="featured-date">2020 04.30<span class="view">101</span>
                 </div>
               </div>
             </div>
@@ -36,7 +36,27 @@ get_header();
               <a href="#"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-2.png)"></div></a>
               <div class="featured-content">
                 <div class="featured-title"><a href="#">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
-                <div class="featured-date">2020 04.30
+                <div class="featured-date">2020 04.30<span class="view">101</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-list_item">
+            <div class="slide-inner">
+              <a href="#"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-1.png)"></div></a>
+              <div class="featured-content">
+                <div class="featured-title"><a href="#">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
+                <div class="featured-date">2020 04.30<span class="view">101</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-list_item">
+            <div class="slide-inner">
+              <a href="#"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-2.png)"></div></a>
+              <div class="featured-content">
+                <div class="featured-title"><a href="#">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
+                <div class="featured-date">2020 04.30<span class="view">101</span>
                 </div>
               </div>
             </div>

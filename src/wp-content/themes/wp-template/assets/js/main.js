@@ -109,6 +109,7 @@
         slidesToShow: 2,
         slidesToScroll: 1,
         infinite: false,
+        arrows: true,
         responsive: [
           {
             breakpoint: 768,
