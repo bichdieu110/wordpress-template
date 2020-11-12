@@ -235,4 +235,94 @@
       padding-bottom: 100px;
     }
   }
+
+  .corona-bg-color{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    background-position-y: 310px;
+    width: 100%;
+    .corona-wrapper{
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: right;
+      background-position-y: 100px;
+      padding-bottom: 313px;
+      .corona-bg-img{
+
+        .corona-img{
+          width: calc(100% - 12vw);
+        }
+        .corona-box{
+          background: white;
+          width: 55%;
+          padding: 70px;
+          position: absolute;
+          top: -50px;
+          left: 12vw;
+          z-index: 3;
+          .title{
+            @include fs(26);
+            font-weight: bold;
+            margin: 10px 0;
+          }
+          .sub-title{
+            @include fs(18);
+            font-weight: bold;
+            margin: 10px 0;
+          }
+          .content{
+            @include fs(14);
+            margin: 10px 0;
+          }
+          .sub-content{
+            @include fs(16);
+            font-weight: bold;
+            margin: 10px 0;
+          }
+
+          .corona-list{
+            @include flexbox();
+            margin: 0 -10px;
+            margin-top: -50px;
+            .corona-item{
+              text-align: center;
+              width: 33.333%;
+              margin: 0 10px;
+              .corona-box-title{
+                @include flexbox();
+                @include align-items(center);
+                @include flex-direction(column);
+                position: relative;
+                .number{
+                  font-size: 100px;
+                  font-weight: bold;
+                  color: #ededf0;
+                }
+                .title{
+                  @include fs(16);
+                  font-weight: bold;
+                  position: absolute;
+                  top: 82px;
+                }
+                .sub-title{
+                  @include fs(13);
+                  color: white;
+                  background: black;
+                  width: 100%;
+                  position: absolute;
+                  bottom: 14px;
+                }
+              }
+              .content{
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
