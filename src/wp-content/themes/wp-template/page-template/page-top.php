@@ -6,47 +6,49 @@ get_header();
 
 ?>
   <main id="main-content" class="page-top main-wrapper">
-     <div class='top-banner-wrapper'>
-         <img class='banner-img' src="<?php echo URL_IMAGE?>/common/mv.png" alt="banner">
-         <div class='banner-text'>
-            <h2 class='title'>テクノロジーと感動を<br>「かたち」に</h2>
-            <p class='sub-title'>スピードと飛躍的技術がもたらすイノベーションを鍵に<br>お客様の次世代を開く一歩を支援する企業となる。</p>
+     <div class='top'>
+         <div class='top-banner-wrapper'>
+             <img class='banner-img' src="<?php echo URL_IMAGE?>/common/mv.png" alt="banner">
+             <div class='banner-text'>
+                <h2 class='title'>テクノロジーと感動を<br>「かたち」に</h2>
+                <p class='sub-title'>スピードと飛躍的技術がもたらすイノベーションを鍵に<br>お客様の次世代を開く一歩を支援する企業となる。</p>
+             </div>
+             <div class='box-new container'>
+                <p class='news'>News</p>
+                <p class='date'>2020 04.30</p>
+                <p class='content'>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+             </div>
          </div>
-         <div class='box-new container'>
-            <p class='news'>News</p>
-            <p class='date'>2020 04.30</p>
-            <p class='content'>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-         </div>
-     </div>
-     <div class='featured-wrapper'>
-        <h3 class='box-heading'>
-           Featured<br>
-           <span>特集</span>
-        </h3>
-        <div class='list-featured container'>
-            <div class='list-featured--item'>
-                <div class='featured-img-wrapper'>
-                   <img class='featured-img' src="<?php echo URL_IMAGE?>/featured/item-1.png" alt="featured-img">
+         <div class='featured-wrapper'>
+            <h3 class='box-heading'>
+               Featured<br>
+               <span>特集</span>
+            </h3>
+            <div class='list-featured container'>
+                <div class='list-featured--item'>
+                    <div class='featured-img-wrapper'>
+                       <img class='featured-img' src="<?php echo URL_IMAGE?>/featured/item-1.png" alt="featured-img">
+                    </div>
+                    <div class='featured-content'>
+                        <p class='title'>タイトルがはいりますタイトルがはいります。タイトルがはいります。</p>
+                        <p class='date'>2020 04.30</p>
+                    </div>
                 </div>
-                <div class='featured-content'>
-                    <p class='title'>タイトルがはいりますタイトルがはいります。タイトルがはいります。</p>
-                    <p class='date'>2020 04.30</p>
+                <div class='list-featured--item'>
+                    <div class='featured-img-wrapper'>
+                        <img class='featured-img' src="<?php echo URL_IMAGE?>/featured/item-2.png" alt="featured-img">
+                    </div>
+                    <div class='featured-content'>
+                        <p class='title'>タイトルがはいりますタイトルがはいります。タイトルがはいります。</p>
+                        <p class='date'>2020 04.30</p>
+                    </div>
                 </div>
             </div>
-            <div class='list-featured--item'>
-                <div class='featured-img-wrapper'>
-                    <img class='featured-img' src="<?php echo URL_IMAGE?>/featured/item-2.png" alt="featured-img">
-                </div>
-                <div class='featured-content'>
-                    <p class='title'>タイトルがはいりますタイトルがはいります。タイトルがはいります。</p>
-                    <p class='date'>2020 04.30</p>
-                </div>
+            <div class='featured-page'>
+               <button class='btn-featured'><img class='ic-back' src="<?php echo URL_IMAGE?>/icon/back.png" alt="back"></button>
+               <button class='btn-featured'><img class='ic-next' src="<?php echo URL_IMAGE?>/icon/next.png" alt="next"></button>
             </div>
-        </div>
-        <div class='featured-page'>
-           <button class='btn-featured'><img class='ic-back' src="<?php echo URL_IMAGE?>/icon/back.png" alt="back"></button>
-           <button class='btn-featured'><img class='ic-next' src="<?php echo URL_IMAGE?>/icon/next.png" alt="next"></button>
-        </div>
+         </div>
      </div>
      <div class='company-wrapper'>
         <div class='company-bg-color' style='background-image: url("<?php echo URL_IMAGE?>/common/bg.png")'>
@@ -75,7 +77,7 @@ get_header();
 
             </div>
         </div>
-     <div>
+     </div>
      <div class='ar-mr-wrapper'>
         <div class='ar-mr-bg' style='background-image: url("<?php echo URL_IMAGE?>/common/bg-mr-ar.png")'>
              <div class='ar-mr-box'>
@@ -150,13 +152,102 @@ get_header();
                             <p class='content'>・VRoidのようなアニメ風アバターとは 異なり、よりヒト風な「バーチャルヒュー マン]で人目を惹く魅力的な風貌をもつ<br>
                                                                                                                                            ・無理のない-不気味をさける一範囲で より人間風な動作、リアクションを表現</p>
                         </div>
-
-
                      </div>
                 </div>
             </div>
          </div>
      </div>
+
+     <div class='career-wrapper' style='background-image: url("<?php echo URL_IMAGE?>/common/bg-career.png")'>
+        <div class='box-career container'>
+            <h2 class='title'>Career</h2>
+            <p class='sub-title'>採用情報</p>
+            <p class='content'>
+                当社はマルチタレント性を重視しています。<br>
+                プロジェクト体制や仕事のアサイン状況によっては、複数のJOBロールの兼務が発生します。<br>
+                募集スキルは深さだけではなく幅広く持っている方大歓迎です。
+            </p>
+            <div class='read-more-wrapper'>
+                <a href='#'>Read More</a>
+                <img src="<?php echo URL_IMAGE?>/icon/btn-read-more.png"/>
+             </div>
+        </div>
+     </div>
+
+     <div class='news-wrapper'>
+        <h2 class='title'>News</h2>
+        <p class='sub-title'>お知らせ</p>
+        <div class='news-list container'>
+            <div class='news-item'>
+                <p class='date'>2020 04.30</p>
+                <p class='btn-news'>企業情報</p>
+                <p class='news-title'>コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</p>
+            </div>
+            <div class='news-item'>
+                <p class='date'>2020 04.30</p>
+                <p class='btn-news'>企業情報</p>
+                <p class='news-title'>コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</p>
+            </div>
+            <div class='news-item'>
+                <p class='date'>2020 04.30</p>
+                <p class='btn-news'>企業情報</p>
+                <p class='news-title'>コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</p>
+            </div>
+        </div>
+         <div class='read-more-wrapper'>
+            <a href='#'>Read More</a>
+            <img src="<?php echo URL_IMAGE?>/icon/btn-read-more.png"/>
+         </div>
+     </div>
+
+      <div class='background-column'>
+         <div class='column-wrapper' style='background-image: url("<?php echo URL_IMAGE?>/common/column-bg.png")'>
+            <h2 class='title'>Column</h2>
+            <p class='sub-title'>コラム</p>
+            <div class='column-list'>
+                <div class='column-item'>
+                    <div class='column-item--img-wrapper'>
+                        <img class='column-item--img' src="<?php echo URL_IMAGE?>/common/column-1.png"/>
+                    </div>
+                    <div class='box-content'>
+                        <p class='date'>2020 04.30</p>
+                        <p class='box-title'>タイトルがはいります</p>
+                        <p class='content'>本文入ります本文入ります。本文入ります本文入ります。</p>
+                        <p class='new'>NEW</p>
+                    </div>
+                    <p class='category'>カテゴリー</p>
+                </div>
+
+                <div class='column-item'>
+                    <div class='column-item--img-wrapper'>
+                        <img class='column-item--img' src="<?php echo URL_IMAGE?>/common/column-1.png"/>
+                    </div>
+                    <div class='box-content'>
+                        <p class='date'>2020 04.30</p>
+                        <p class='box-title'>タイトルがはいります</p>
+                        <p class='content'>本文入ります本文入ります。本文入ります本文入ります。</p>
+                        <p class='new'>NEW</p>
+                    </div>
+                    <p class='category'>カテゴリー</p>
+                </div>
+
+                <div class='column-item'>
+                    <div class='column-item--img-wrapper'>
+                        <img class='column-item--img' src="<?php echo URL_IMAGE?>/common/column-1.png"/>
+                    </div>
+                    <div class='box-content'>
+                        <p class='date'>2020 04.30</p>
+                        <p class='box-title'>タイトルがはいります</p>
+                        <p class='content'>本文入ります本文入ります。本文入ります本文入ります。</p>
+                        <p class='new'>NEW</p>
+                    </div>
+                    <p class='category'>カテゴリー</p>
+                </div>
+            </div>
+         </div>
+
+      </div>
+
 
   </main>
 <?php get_footer(); ?>
