@@ -196,5 +196,140 @@
     }
 }
 
+.company-section {
+    &_group-text {
+        margin-top: -60px;
+        margin-left: 15.27778vw;
+        background-color: #252526;
+        color: #fff;
+        padding: 115px 100px 167px 155px;
+
+        .heading-section {
+            text-align: left;
+        }
+    }
+}   
+
+.heading-content {
+    text-align: center;
+    margin-bottom: 45px;
+    @include bp(tab) {
+        padding: 0 15px;
+    }
+    p {
+        font-weight: 500;
+        @include fs(18,30);
+        letter-spacing: 3px;
+        @include bp(tab) {
+            @include fs(16,28);
+            letter-spacing: 2px;
+        }
+    }
+}
+
+.service-section{
+    padding: 96px 0 140px;
+    position: relative;
+    
+    &_title{
+        text-align: center;
+    }
+
+    &_list{
+        .service-item {
+            position: relative;
+            .paraBox3{
+                content: "";
+                background-repeat: no-repeat;
+                position: absolute;
+                background-size: cover;
+                top: 60px;
+                left: 6.5%;
+                right: 6.5%;
+                height: 500px;
+                overflow: hidden;
+                img{
+                    max-height: 500px;
+                }
+            }
+
+            .inner{
+                box-shadow: 0 4px 20px 0 rgba(107,107,107,.2);
+                background-color: rgba(255,255,255,.949);
+                display: flex;
+                flex-flow: column wrap;
+                align-content: center;
+                padding: 74px 72px 60px 75px;
+                max-width: 70%;
+                min-height: 490px;
+
+                h4 {
+                    font-weight: 700;
+                    margin-bottom: 40px;
+                    @include fs(26,32);
+                    letter-spacing: 2px;
+                    width: 100%;
+                    &.en-text {
+                        @include fs(28,32);
+                    }
+                }
+                h5 {
+                    font-weight: bold;
+                    margin-bottom: 14px;
+                    @include fs(18,24);
+                    letter-spacing: 2px;
+                    width: 100%;
+                }
+                p {
+                    margin-bottom: 24px;
+                    @include fs(14,26);
+                    letter-spacing: 1px;
+                    width: 100%;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    &::before{
+        content: "";
+        background-color: #ededf0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 15%;
+        bottom: 0;
+        z-index: -1;
+    }
+}
+
+.btn-rm {
+    @include fs(14,14);
+    color: #fff;
+    letter-spacing: 1.5px;
+    margin: 42px 4px 0;
+    display: inline-block;
+
+    @include bp(tab) {
+      margin: 30px 0 0;
+    }
+    
+    &:after {
+        content: "";
+        display: inline-block;
+        background-image: url('../images/common/icon-rm.png');
+        background-repeat: no-repeat;
+        width: 188px;
+        height: 7px;
+        margin-left: 16px;
+        top: -1px;
+        position: relative;
+        @include bp(tab) {
+          width: 150px;
+          background-size: contain;
+        }
+    }
+  }
 
 
