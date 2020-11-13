@@ -3,5 +3,16 @@
 // --------------------
 
 .footer {
-    
+  background: $color-dark-gray;
+  text-align: center;
+  padding: 50px 0;
+  a{
+    @include fs(14);
+    color: $color-white;
+  }
+  p{
+    @include fs(12);
+    color: $color-gray-light;
+    margin-top: 30px;
+  }
 }
