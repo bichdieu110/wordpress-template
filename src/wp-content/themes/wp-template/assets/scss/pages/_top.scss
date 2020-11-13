@@ -219,7 +219,7 @@
       padding-bottom: 100px;
       @include bp(tab){
         width: 100%;
-        padding-bottom: 0;
+        padding: 20px;
       }
     }
     .ar-mr-box{
@@ -270,7 +270,7 @@
       padding-top: 10px;
       padding-bottom: 100px;
       @include bp(tab){
-        padding-bottom: 0;
+        padding: 20px;
       }
     }
   }
@@ -296,7 +296,7 @@
         .corona-img{
           width: calc(100% - 12vw);
           @include bp(tab){
-            display: none;
+            width: 100%;
           }
 
         }
