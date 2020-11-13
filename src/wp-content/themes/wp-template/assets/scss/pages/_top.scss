@@ -225,6 +225,17 @@
 }
 
 .service-section{
+    .heading-content {
+        padding-top: 20px;
+    }
+
+    .paraBox1 {
+        position: relative;
+        top: -300px;
+        left: -280px;
+        z-index: -1;
+    }
+
     .list-service {
         .service-item {
             position: relative;
@@ -297,10 +308,12 @@
                 @include bp(pc) {
                     margin-bottom: 170px;
                 }
+
                 .paraBox3 {
                     right: 0;
                     left: 11%;
                 }
+
                 .service-item-inner {
                     float: right;
                 }

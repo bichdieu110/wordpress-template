@@ -73,9 +73,6 @@ get_header();
       </div>
     </section>
     <section class="service-section">
-        <div class="paraBox1">
-          <img class="paraImage1" src="<?php echo URL_IMAGE?>/top/services/bg1.png" alt="">
-        </div>
         <div class="heading-content">
           <h2 class="heading-section">Service<span>ソリューション / 製品</span></h2>
           <h3>想像を超える「驚き」と「感動」を</h3>
@@ -145,9 +142,6 @@ get_header();
               </div>
             </div>
           </div>
-        </div>
-        <div class="paraBox2">
-          <img class="paraImage2" src="<?php echo URL_IMAGE?>/top/services/bg2.png" alt="">
         </div>
     </section>
   </main>
