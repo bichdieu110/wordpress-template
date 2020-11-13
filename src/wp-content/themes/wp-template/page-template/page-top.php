@@ -81,7 +81,7 @@ get_header();
       <div class="service-section_list">
         <div class="service-item">
           <div class="paraBox3">
-            <div class="simpleParallax"><img class="paraImage3" src="/wp-content/themes/wp-template/assets/images/common/bg-service.jpg" alt="" ></div>
+            <div class="bg-service"><img class="paraImage3" src="<?php echo URL_IMAGE?>/common/bg-service.jpg" alt="" ></div>
           </div>
           <div class="container">
             <div class="inner">
