@@ -73,27 +73,82 @@ get_header();
       </div>
     </section>
     <section class="service-section">
-      <div class="service-section_title heading-content">
-        <h2 class="heading-section">Service<span>ソリューション / 製品</span></h2>
-        <h3>想像を超える「驚き」と「感動」を</h3>
-        <p>企業・ユーザーの皆様に価値のあるサービスをご提供いたします。</p>
-      </div>
-      <div class="service-section_list">
-        <div class="service-item">
-          <div class="paraBox3">
-            <div class="bg-service"><img class="paraImage3" src="<?php echo URL_IMAGE?>/common/bg-service.jpg" alt="" ></div>
+        <div class="paraBox1">
+          <img class="paraImage1" src="<?php echo URL_IMAGE?>/top/services/bg1.png" alt="">
+        </div>
+        <div class="heading-content">
+          <h2 class="heading-section">Service<span>ソリューション / 製品</span></h2>
+          <h3>想像を超える「驚き」と「感動」を</h3>
+          <p>企業・ユーザーの皆様に価値のあるサービスをご提供いたします。</p>
+        </div>
+        <div class="list-service">
+          <div class="service-item">
+            <div class="paraBox3">
+              <img class="paraImage3" src="<?php echo URL_IMAGE?>/top/services/bg1.jpg" alt="">
+            </div>
+            <div class="container">
+              <div class="service-item-inner">
+                <h4 class="en-text">AR / MR</h4>
+                <h5>ARアプリ開発 - ARをあなたの業務へ -</h5>
+                <p>AR、VRを業務で利用するためのビジネス向けサービス。概念検証から業務改善までお気軽にご相談下さい。</p>
+                <h5>スマートグラス アプリ開発</h5>
+                <p>スマートデバイスを利用した業務向けアプリ開発や研究開発支援、POCプロジェクトで実績を積んできました。豊富な経験、ノウハウに基づき効果的なソリューションをご提案します。</p>
+              </div>
+            </div>
           </div>
-          <div class="container">
-            <div class="inner">
-              <h4>AR / MR</h4>
-              <h5>ARアプリ開発 - ARをあなたの業務へ -</h5>
-              <p>AR、VRを業務で利用するためのビジネス向けサービス。概念検証から業務改善までお気軽にご相談下さい。</p>
-              <h5>スマートグラス アプリ開発</h5>
-              <p>スマートデバイスを利用した業務向けアプリ開発や研究開発支援、POCプロジェクトで実績を積んできました。豊富な経験、ノウハウに基づき効果的なソリューションをご提案します。</p>
+          <div class="service-item">
+            <div class="paraBox3">
+              <img class="paraImage3" src="<?php echo URL_IMAGE?>/top/services/bg2.jpg" alt="">
+            </div>
+            <div class="container">
+              <div class="service-item-inner">
+                <h4 class="jp-text">自然言語処理、検索拡張</h4>
+                <h5>Siba（サイト内検索サービス）</h5>
+                <p>大規模サイト向けにWebサーチ機能を提供するサービス「Siba」<br>単語ベースの全文検索から、検索文の係り受けを理解する高精度な意図検索、AIを使用した類似検索、音声検索など多様なニーズに対応します。</p>
+              </div>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="paraBox3">
+              <img class="paraImage3" src="<?php echo URL_IMAGE?>/top/services/bg3.jpg" alt="">
+            </div>
+            <div class="container">
+              <div class="service-item-inner">
+                <h4 class="jp-text">対話型<br>3Dアバタープロジェクト</h4>
+                <h5>With Corona, After Corona<br>営業、接客はどうかわる？</h5>
+                <p>世界は突然変わりました。全てのビジネス活動が安全を担保して⾮対⾯、⾮接触型を志向しはじめ・・・・営業、接客の現場はどう対応して⾏けばよいでしょう？</p>
+                <h5 class="text">対話型3Dアバター(バーチャルヒューマン)を活⽤しませんか</h5>
+                <a href="#">バーチャルヒューマンのよる接客</a>
+                <ul class="service-list">
+                  <li>
+                    <h5>人目を惹く魅力と驚き</h5>
+                    <p class="service">リアルアバター技術</p>
+                    <p>・VRoidのようなアニメ風アバターとは 異なり、よりヒト風な「バーチャルヒュー マン]で人目を惹く魅力的な風貌をもつ<br>
+                    ・無理のない-不気味をさける一範囲で より人間風な動作、リアクションを表現</p>
+                  </li>
+                  <li>
+                    <h5>対話知性</h5>
+                    <p class="service">対話エンジン</p>
+                    <p>・知らないことを教えてくれる(説明員) <br>
+                    ・特定範囲(ドメイン)の質問に対応でき る。応答が自然であること。ただし、自律発話はない<br>
+                    ・基礎的な会話ができる(必要な場合の み、不要なケースでは実装しない<br>
+                    ・相手(人)の話、感情を理解している風 な態度を示す</p>
+                  </li>
+                  <li>
+                    <h5>存在認知</h5>
+                    <p class="service">技術調和による固有な存在感</p>
+                    <p>・LipSync、表情、ポージングとのマッチ ングで、リアルアバターを生きているヒト風に。合成音声、表情、動きがアバター に個性と役割を与える<br>
+                    ・パーソナル動画を使用してお客様に合った個別<br>
+                    ・リッチなコンテンツを提示できる</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        <div class="paraBox2">
+          <img class="paraImage2" src="<?php echo URL_IMAGE?>/top/services/bg2.png" alt="">
+        </div>
     </section>
   </main>
 <?php get_footer(); ?>

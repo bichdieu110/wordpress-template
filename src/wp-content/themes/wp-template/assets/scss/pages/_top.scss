@@ -2,11 +2,6 @@
 // Top page
 // --------------------
 
-.page-top {
-    // background-color: red;
-    
-}
-
 .mv-section {
     &-inner {
         position: relative;
@@ -40,7 +35,7 @@
             padding: 0 10px;
 
             @include bp(tab) {
-                @include fs(22,36);
+                @include fs(22, 36);
             }
         }
 
@@ -51,7 +46,7 @@
             padding: 0 18px;
 
             @include bp(tab) {
-                @include fs(14,24);
+                @include fs(14, 24);
             }
         }
 
@@ -73,12 +68,14 @@
                 margin-right: 10px;
                 margin-right: 37px;
             }
+
             span {
                 font-weight: 500;
                 letter-spacing: 1px;
                 margin-right: 14px;
                 color: $color-orange;
             }
+
             a {
                 letter-spacing: 2.5px;
                 @include bp(tab) {
@@ -218,89 +215,185 @@
     }
     p {
         font-weight: 500;
-        @include fs(18,30);
+        @include fs(18, 30);
         letter-spacing: 3px;
         @include bp(tab) {
-            @include fs(16,28);
+            @include fs(16, 28);
             letter-spacing: 2px;
         }
     }
 }
 
 .service-section{
-    padding: 96px 0 140px;
-    position: relative;
-    
-    &_title{
-        text-align: center;
-    }
-
-    &_list{
+    .list-service {
         .service-item {
             position: relative;
-            .paraBox3{
-                content: "";
-                background-repeat: no-repeat;
-                position: absolute;
-                background-size: cover;
-                top: 60px;
-                left: 6.5%;
-                right: 6.5%;
-                height: 500px;
-                overflow: hidden;
-                img{
-                    max-height: 500px;
+
+            @include bp(pc) {
+                margin-bottom: 160px;
+            }
+
+            @include bp(tab) {
+                margin-bottom: 80px;
+            }
+
+            .container {
+                @include clearfix;
+                @include bp(pc) {
+                    padding: 0 55px;
+                }
+
+                @include bp(tab) {
+                    padding: 0 15px;
                 }
             }
 
-            .inner{
-                box-shadow: 0 4px 20px 0 rgba(107,107,107,.2);
-                background-color: rgba(255,255,255,.949);
-                display: flex;
-                flex-flow: column wrap;
-                align-content: center;
-                padding: 74px 72px 60px 75px;
-                max-width: 70%;
-                min-height: 490px;
+            .paraBox3 {
+                @include bp(pc) {
+                    content: "";
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    background-size: cover;
+                    top: 60px;
+                    left: 0;
+                    right: 10.8%;
+                    height: 500px;
+                    overflow: hidden;
+                }
 
-                h4 {
-                    font-weight: 700;
-                    margin-bottom: 40px;
-                    @include fs(26,32);
-                    letter-spacing: 2px;
+                img {
                     width: 100%;
-                    &.en-text {
-                        @include fs(28,32);
+                }
+            }
+
+            &-inner {
+                float: left;
+                box-shadow: 0px 4px 20px 0px rgba(107, 107, 107, 0.2);
+                background-color: rgba(255, 255, 255, 0.949);
+                @include flexbox;
+                @include flex-wrap(wrap);
+                @include align-content(center);
+
+                @include bp(pc) {
+                    padding: 74px 72px 60px 75px;
+                    max-width: 70%;
+                    min-height: 490px;
+                }
+
+                @include bp(tab) {
+                    padding: 30px 20px;
+                }
+            }
+
+            &:nth-child(odd) {
+                .service-item-inner {
+                    @include bp(pc) {
+                        padding-top: 35px;
                     }
                 }
-                h5 {
-                    font-weight: bold;
-                    margin-bottom: 14px;
-                    @include fs(18,24);
-                    letter-spacing: 2px;
-                    width: 100%;
+            }
+
+            &:nth-child(even) {
+                @include bp(pc) {
+                    margin-bottom: 170px;
                 }
+                .paraBox3 {
+                    right: 0;
+                    left: 11%;
+                }
+                .service-item-inner {
+                    float: right;
+                }
+            }
+
+            h4 {
+                font-weight: 700;
+                margin-bottom: 40px;
+                @include fs(26, 32);
+                letter-spacing: 2px;
+                width: 100%;
+                &.en-text {
+                    @include fs(28,32);
+                }
+            }
+
+            h5 {
+                font-weight: bold;
+                margin-bottom: 14px;
+                @include fs(18,24);
+                letter-spacing: 2px;
+                width: 100%;
+            }
+
+            p {
+                margin-bottom: 24px;
+                @include fs(14,26);
+                letter-spacing: 1px;
+                width: 100%;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            
+            &:last-child {
+                margin-bottom: 0;
+                @include bp(pc) {
+                    padding-bottom: 60px;
+                }
+
+                h4 {
+                    margin-bottom: 25px;
+                }
+
+                h5 {
+                    line-height: 28px;
+                    margin-bottom: 9px;
+                }
+
                 p {
-                    margin-bottom: 24px;
-                    @include fs(14,26);
+                    margin-bottom: 10px;
+                }
+            }
+
+            .text {
+                @include fs(16, 28);
+                margin-bottom: 5px !important;
+            }
+
+            .service-list {
+                @include bp(pc) {
+                    @include flexbox;
+                    @include justify-content(space-between);
+                }
+
+                li {
+                    @include bp(pc) {
+                        width: 31%;
+                    }
+                    @include bp(tab) {
+                        margin-bottom: 10px;
+                    }
+                    h5 {
+                        @include fs(16, 28);
+                        text-align: center;
+                        letter-spacing: 1.5px;
+                    }
+                }
+                
+                .service {
+                    background-color: #282828;
+                    color: #fff;
+                    text-align: center;
+                    @include fs(13,21);
                     letter-spacing: 1px;
-                    width: 100%;
-                    &:last-child {
-                        margin-bottom: 0;
+                    margin-bottom: 5px;
+
+                    & + p {
+                        @include fs(14, 23);
                     }
                 }
             }
         }
-    }
-    &::before{
-        content: "";
-        background-color: #ededf0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 15%;
-        bottom: 0;
-        z-index: -1;
     }
 }
 
@@ -330,6 +423,6 @@
           background-size: contain;
         }
     }
-  }
+}
 
 
