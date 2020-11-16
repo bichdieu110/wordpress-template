@@ -144,5 +144,48 @@ get_header();
           </div>
         </div>
     </section>
+    <section class="career-section">
+      <div class="paraBox3">
+        <img class="paraImage3" src="<?php echo URL_IMAGE?>/common/bg4.jpg" alt="">
+      </div>
+      <div class="container">
+        <h2 class="heading-section">Career<span>採用情報</span></h2>
+        <p>当社はマルチタレント性を重視しています。<br>プロジェクト体制や仕事のアサイン状況によっては、複数のJOBロールの兼務が発生します。<br>募集スキルは深さだけではなく幅広く持っている方大歓迎です。</p>
+        <a href="<?php echo esc_url( home_url() ); ?>/career" class="btn-rm">Read More</a>
+      </div>
+    </section>
+    <section class="news-section">
+      <div class="container">
+        <h2 class="heading-section">News<span>お知らせ</span></h2>
+        <ul class="news-list">
+          <li>
+            <span class="new-date">2020 04.30</span>
+            <span class="new-category">企業情報</span>
+            <span class="new-title"><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
+          </li>
+          <li>
+            <span class="new-date">2020 04.30</span>
+            <span class="new-category">企業情報</span>
+            <span class="new-title"><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
+          </li>
+          <li>
+            <span class="new-date">2020 04.30</span>
+            <span class="new-category">製品サービス情報</span>
+            <span class="new-title"><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
+          </li>
+          <li>
+            <span class="new-date">2020 04.30</span>
+            <span class="new-category">セミナー・イベント情報</span>
+            <span class="new-title"><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
+          </li>
+          <li>
+            <span class="new-date">2020 04.30</span>
+            <span class="new-category">ARサービス</span>
+            <span class="new-title"><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
+          </li>
+        </ul>
+        <a href="<?php echo esc_url( home_url() ); ?>/" class="btn-rm">Read More</a>
+      </div>
+    </section>
   </main>
 <?php get_footer(); ?>
