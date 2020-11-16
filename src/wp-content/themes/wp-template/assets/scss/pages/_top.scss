@@ -201,6 +201,10 @@
         color: #fff;
         padding: 115px 100px 167px 155px;
 
+        @include bp(tab) {
+            padding: 115px 40px 167px 40px;
+        }
+
         .heading-section {
             text-align: left;
         }
@@ -214,7 +218,6 @@
         padding: 0 15px;
     }
     p {
-        font-weight: 500;
         @include fs(18, 30);
         letter-spacing: 3px;
         @include bp(tab) {
@@ -378,14 +381,32 @@
                     @include flexbox;
                     @include justify-content(space-between);
                 }
+                counter-reset: stt;
 
                 li {
+                    position: relative;
+                    padding-top: 40px;
+
                     @include bp(pc) {
                         width: 31%;
                     }
                     @include bp(tab) {
                         margin-bottom: 10px;
                     }
+
+                    &::before {
+                        counter-increment: stt;
+                        content: '0' counter(stt);
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                        text-align: center;
+                        @include fs(98, 98);
+                        font-weight: bold;
+                        font-family: 'Roboto';
+                        color: rgba(68, 67, 90, 0.1);
+                    }
+
                     h5 {
                         @include fs(16, 28);
                         text-align: center;
