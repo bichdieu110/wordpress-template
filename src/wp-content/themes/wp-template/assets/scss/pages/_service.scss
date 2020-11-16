@@ -1,0 +1,304 @@
+.page-service{
+  .service-banner{
+    height: 580px;
+    background: $bg-dark;
+    @include bp(tab){
+      height: 450px;
+    }
+    .banner-content-wrapper{
+      @include flexbox();
+      @include align-items(center);
+      @include bp(tab){
+        @include flex-direction(column);
+        @include align-items(center);
+        @include justify-content(center);
+      }
+      height: 100%;
+      .banner-title{
+        color: $color-white;
+        @include fs(60,70);
+        font-weight: normal;
+        @include bp(tab){
+          @include fs(37, 40);
+        }
+      }
+      .banner-sub-title{
+        color: $color-white;
+        @include fs(20,20);
+        margin-left: 200px;
+        @include bp(tab){
+          margin: 30px 0 0 0;
+          @include fs(15,13);
+        }
+      }
+    }
+  }
+
+  .service-main-wrapper{
+    background: $bg-main-service;
+    padding: 90px 0 100px 0;
+    .service--bg-img-top{
+      background-repeat: no-repeat;
+      background-position-x: right;
+      background-position-y: -150px;
+      .service--bg-img-center{
+        background-repeat: no-repeat;
+        background-position-x: left;
+        background-position-y: 700px;
+        .service-main--content-wrapper{
+          background: $color-white;
+          padding: 80px 55px;
+          -moz-box-shadow: 0px 3px 8px $color-gray-light;
+          -webkit-box-shadow: 0px 3px 8px $color-gray-light;
+          box-shadow: 0px 3px 8px $color-gray-light;
+          @include bp(tab){
+            padding: 30px;
+          }
+          .service-main--application{
+            @include flexbox();
+            @include align-items(center);
+            @include bp(tab){
+              @include flex-direction(column);
+            }
+            .service-main--application-img-wrapper{
+              width: 50%;
+              @include bp(tab){
+                width: 100%;
+              }
+              .service-img-placeholder{
+                @include bp(tab){
+                  width: 100%;
+                }
+              }
+            }
+            .service-main--application--content{
+              width: 50%;
+              padding-right: 40px;
+              @include bp(tab){
+                width: 100%;
+                padding-right: 0;
+                margin-bottom: 30px;
+              }
+              .service-main--application--content--title{
+                @include fs(34,44);
+                margin-bottom: 30px;
+                @include bp(tab){
+                  @include fs(20,30);
+                  font-weight: bold;
+                }
+              }
+              .service-main--application--content--content{
+                @include fs(18,27);
+                @include bp(tab){
+                  @include fs(15,20);
+                }
+              }
+            }
+          }
+          .service-main--point{
+            @include flexbox();
+            margin: 197px -15px 0 -15px;
+            @include bp(tab){
+              @include flex-direction(column);
+              margin: 100px 0 0 0;
+            }
+            .service-main--point--item{
+              width: 33.333%;
+              background: $color-gray-light-plus;
+              padding: 0 27px 27px 27px;
+              margin: 0 15px;
+              @include bp(tab){
+                width: 100%;
+                margin: 0 0 50px 0;
+              }
+              .service-main--point--item--header{
+                @include flexbox();
+                @include flex-direction(column);
+                @include align-items(center);
+                .point-wrapper{
+                  background: $color-dark-gray;
+                  text-align: center;
+                  color: $color-white;
+                  padding: 20px;
+                  margin-top: -20px;
+                  .point{
+                    @include fs(14,20);
+                    span{
+                      @include fs(24,30);
+                    }
+                  }
+                }
+                .point-line{
+                  width: 1px;
+                  height: 15px;
+                  background: $color-dark-gray;
+                  margin-bottom: 10px;
+                }
+                .point-content{
+                  color: $color-black;
+                  .title{
+                    @include fs(23,25);
+                    font-weight: bold;
+                    margin: 25px 0;
+                  }
+                  .content{
+                    @include fs(14,15);
+                  }
+                }
+              }
+            }
+
+          }
+          .service-main--video{
+            margin-top: 50px;
+            @include flexbox();
+            @include align-items(center);
+            @include bp(tab){
+              @include flex-direction(column);
+            }
+            .service-main--video-img-wrapper{
+              width: 50%;
+              @include bp(tab){
+                width: 100%;
+              }
+              .service-img-placeholder{
+                @include bp(tab){
+                  width: 100%;
+                }
+              }
+            }
+            .service-main--video--content{
+              width: 50%;
+              padding-left: 40px;
+              @include bp(tab){
+                width: 100%;
+                padding: 0;
+                margin-top: 30px;
+              }
+              .service-main--video--content--title{
+                @include fs(34,44);
+                margin-bottom: 30px;
+                @include bp(tab){
+                  @include fs(20,30);
+                  font-weight: bold;
+                }
+              }
+              .service-main--video--content--content{
+                @include fs(18,27);
+                @include bp(tab){
+                  @include fs(15,20);
+                }
+              }
+            }
+          }
+          .service-list-color{
+            @include flexbox();
+            margin: 80px -15px 0 -15px;
+            @include bp(tab){
+              margin: 40px 0 0 0;
+              @include flex-direction(column);
+            }
+            .service-list-color--item{
+              width: 50%;
+              margin: 0 15px;
+              @include bp(tab){
+                width: 100%;
+                margin: 0 0 30px 0;
+              }
+              .service-list-color--item--title{
+                @include fs(16,20);
+                font-weight: bold;
+                margin: 15px 0;
+              }
+              .service-list-color--item--content{
+                @include fs(14,27);
+              }
+            }
+          }
+          .service-title{
+            font-weight: bold;
+            @include fs(34,40);
+            text-align: center;
+            margin: 100px 0 50px 0;
+            color: $color-black;
+          }
+          .service-list-title{
+            background: $color-gray-light-plus;
+            padding: 60px 80px 30px 80px;
+            @include bp(tab){
+              padding: 30px 40px 30px 40px;
+            }
+            .service-list-title--item{
+              @include fs(16,18);
+              @include flexbox();
+              @include align-items(center);
+              margin-bottom: 30px;
+              @include bp(tab){
+                @include fs(14,16);
+              }
+              span {
+                width: 14px;
+                height: 14px;
+                background: $color-orange;
+                margin-right: 20px;
+              }
+            }
+
+          }
+          .service-golgo-wrapper{
+            @include flexbox();
+            @include bp(tab){
+              @include flex-direction(column);
+            }
+            .service-golgo--img-wrapper{
+              width: 65%;
+              @include bp(tab){
+                width: 100%;
+              }
+              .golgo-img-placeholder{
+                width: 100%;
+                height: 100%;
+              }
+            }
+            .service-golgo--content-wrapper{
+              background: $color-dark-gray;
+              color: $color-white;
+              width: 35%;
+              padding: 0 50px;
+              @include flexbox();
+              @include flex-direction(column);
+              @include justify-content(center);
+              @include bp(tab){
+                width: 100%;
+                padding: 40px;
+              }
+              .title{
+                @include fs(22,26);
+                font-weight: normal;
+                text-align: center;
+              }
+              .content{
+                @include fs(14,25);
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  .read-more-wrapper{
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    margin-top: 70px;
+    a{
+      font-weight: bold;
+      color: black;
+      margin-right: 10px;
+    }
+  }
+
+}
+
