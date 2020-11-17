@@ -12,7 +12,7 @@ get_header();
           <h2>テクノロジーと感動を<br>「かたち」に</h2>
           <p>スピードと飛躍的技術がもたらすイノベーションを鍵に<br>お客様の次世代を開く一歩を支援する企業となる。</p>
           <ul class="news-block">
-            <li><b>News</b><span>2020.04.30</span><a href="#">テキストテキストテキストテキストテキストテキストテキストテキスト</a></li>
+            <li><b>News</b><span>2020.04.30</span><a href="javascript:void(0);">テキストテキストテキストテキストテキストテキストテキストテキスト</a></li>
           </ul>
         </div>
       </div>
@@ -23,9 +23,9 @@ get_header();
         <div class="slider featured-list">
           <div class="featured-list_item">
             <div class="slide-inner">
-              <a href="#"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-1.png)"></div></a>
+              <a href="javascript:void(0);"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-1.png)"></div></a>
               <div class="featured-content">
-                <div class="featured-title"><a href="#">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
+                <div class="featured-title"><a href="javascript:void(0);">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
                 <div class="featured-date">2020 04.30<span class="view">101</span>
                 </div>
               </div>
@@ -33,9 +33,9 @@ get_header();
           </div>
           <div class="featured-list_item">
             <div class="slide-inner">
-              <a href="#"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-2.png)"></div></a>
+              <a href="javascript:void(0);"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-2.png)"></div></a>
               <div class="featured-content">
-                <div class="featured-title"><a href="#">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
+                <div class="featured-title"><a href="javascript:void(0);">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
                 <div class="featured-date">2020 04.30<span class="view">101</span>
                 </div>
               </div>
@@ -43,9 +43,9 @@ get_header();
           </div>
           <div class="featured-list_item">
             <div class="slide-inner">
-              <a href="#"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-1.png)"></div></a>
+              <a href="javascript:void(0);"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-1.png)"></div></a>
               <div class="featured-content">
-                <div class="featured-title"><a href="#">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
+                <div class="featured-title"><a href="javascript:void(0);">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
                 <div class="featured-date">2020 04.30<span class="view">101</span>
                 </div>
               </div>
@@ -53,9 +53,9 @@ get_header();
           </div>
           <div class="featured-list_item">
             <div class="slide-inner">
-              <a href="#"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-2.png)"></div></a>
+              <a href="javascript:void(0);"><div class="img" style="background-image: url(<?php echo URL_IMAGE?>/top/feature/item-2.png)"></div></a>
               <div class="featured-content">
-                <div class="featured-title"><a href="#">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
+                <div class="featured-title"><a href="javascript:void(0);">タイトルがはいりますタイトルがはいります。タイトルがはいります。</a></div>
                 <div class="featured-date">2020 04.30<span class="view">101</span>
                 </div>
               </div>
@@ -115,7 +115,7 @@ get_header();
                 <h5>With Corona, After Corona<br>営業、接客はどうかわる？</h5>
                 <p>世界は突然変わりました。全てのビジネス活動が安全を担保して⾮対⾯、⾮接触型を志向しはじめ・・・・営業、接客の現場はどう対応して⾏けばよいでしょう？</p>
                 <h5 class="text">対話型3Dアバター(バーチャルヒューマン)を活⽤しませんか</h5>
-                <a href="#">バーチャルヒューマンのよる接客</a>
+                <a href="javascript:void(0);">バーチャルヒューマンのよる接客</a>
                 <ul class="service-list">
                   <li>
                     <h5>人目を惹く魅力と驚き</h5>
@@ -161,27 +161,27 @@ get_header();
           <li>
             <span class="new-date">2020 04.30</span>
             <span class="new-category">企業情報</span>
-            <span class="new-title"><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
+            <span class="new-title"><a href="javascript:void(0);">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
           </li>
           <li>
             <span class="new-date">2020 04.30</span>
             <span class="new-category">企業情報</span>
-            <span class="new-title"><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
+            <span class="new-title"><a href="javascript:void(0);">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
           </li>
           <li>
             <span class="new-date">2020 04.30</span>
             <span class="new-category">製品サービス情報</span>
-            <span class="new-title"><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
+            <span class="new-title"><a href="javascript:void(0);">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
           </li>
           <li>
             <span class="new-date">2020 04.30</span>
             <span class="new-category">セミナー・イベント情報</span>
-            <span class="new-title"><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
+            <span class="new-title"><a href="javascript:void(0);">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
           </li>
           <li>
             <span class="new-date">2020 04.30</span>
             <span class="new-category">ARサービス</span>
-            <span class="new-title"><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
+            <span class="new-title"><a href="javascript:void(0);">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></span>
           </li>
         </ul>
         <a href="<?php echo esc_url( home_url() ); ?>/" class="btn-rm">Read More</a>

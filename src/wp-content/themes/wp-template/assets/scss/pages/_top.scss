@@ -196,7 +196,7 @@
 .company-section {
     &_group-text {
         margin-top: -60px;
-        margin-left: 15.27778vw;
+        margin-left: 15vw;
         background-color: #252526;
         color: #fff;
         padding: 115px 100px 167px 155px;
@@ -473,7 +473,7 @@
             font-weight: 500;
             letter-spacing: 3px;
             @include bp(tab) {
-                @include fs(13,24);
+                @include fs(13, 24);
             }
         }
     }
