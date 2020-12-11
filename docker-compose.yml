@@ -50,7 +50,7 @@ services:
     links:
       - db
     ports:
-      - 8818:80
+      - 8828:80
     volumes:
       - /sessions
     depends_on:

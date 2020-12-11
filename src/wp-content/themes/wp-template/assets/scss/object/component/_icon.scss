@@ -1,0 +1,134 @@
+.c-icon_search {
+  content: url("../images/icon/ic-search.svg");
+}
+
+.c-icon_fb {
+  content: url("../images/icon/ic-facebook.svg");
+}
+
+.c-search_icon {
+  content: url("../images/icon/ic-btn-search.svg");
+  width: 30px;
+  height: 30px;
+}
+
+.c-icon_menu {
+  width: 50px;
+  height: 60px;
+  margin-bottom: 4px;
+  transition: all 0.2s ease-in-out;
+  background-color: $color_gray;
+
+  @include mq_tab_down(tab) {
+    width: 40px;
+    height: 30px;
+    margin-right: 20px;
+  }
+
+  &:hover {
+    background-color: $color_white;
+  }
+}
+
+.menu-item_washing {
+  .c-icon_menu {
+    -webkit-mask: url("../images/icon/ic-washing.svg")
+      no-repeat center / contain;
+    mask: url("../images/icon/ic-washing.svg") no-repeat
+      center / contain;
+
+    @include mq_tab_up(tab) {
+      width: 55px;
+    }
+  }
+}
+
+.menu-item_cooking {
+  .c-icon_menu {
+    position: relative;
+    top: -2px;
+    left: 4px;
+    -webkit-mask: url("../images/icon/ic-cooking.svg")
+      no-repeat center / contain;
+    mask: url("../images/icon/ic-cooking.svg") no-repeat
+      center / contain;
+
+    @include mq_tab_up(tab) {
+      width: 65px;
+    }
+  }
+}
+
+.menu-item_organize-storage {
+  .c-icon_menu {
+    -webkit-mask: url("../images/icon/ic-organize-storage.svg")
+      no-repeat center / contain;
+    mask: url("../images/icon/ic-organize-storage.svg")
+      no-repeat center / contain;
+
+    @include mq_tab_down(tab) {
+      height: 27px;
+    }
+  }
+}
+
+.menu-item_cleanup {
+  .c-icon_menu {
+    position: relative;
+    left: 6px;
+    -webkit-mask: url("../images/icon/ic-cleanup.svg")
+      no-repeat center / contain;
+    mask: url("../images/icon/ic-cleanup.svg") no-repeat
+      center / contain;
+
+    @include mq_tab_up(tab) {
+      top: -3px;
+    }
+
+    @include mq_tab_down(tab) {
+      height: 36px;
+    }
+  }
+}
+
+.menu-item_pet-care {
+  .c-icon_menu {
+    -webkit-mask: url("../images/icon/ic-pet-care.svg")
+      no-repeat center / contain;
+    mask: url("../images/icon/ic-pet-care.svg") no-repeat
+      center / contain;
+
+    @include mq_tab_down(tab) {
+      height: 26px;
+    }
+  }
+}
+
+.menu-item_child-care {
+  .c-icon_menu {
+    -webkit-mask: url("../images/icon/ic-child-care.svg")
+      no-repeat center / contain;
+    mask: url("../images/icon/ic-child-care.svg") no-repeat
+      center / contain;
+  }
+}
+
+.menu-item_other {
+  .c-icon_menu {
+    -webkit-mask: url("../images/icon/ic-other.svg") no-repeat
+      center / contain;
+    mask: url("../images/icon/ic-other.svg") no-repeat center /
+      contain;
+
+    @include mq_tab_down(tab) {
+      height: 35px;
+    }
+  }
+}
+
+.c-icon-catSlug-cooking {
+  -webkit-mask: url("../images/icon/ic-cooking.svg") no-repeat
+    center / contain;
+  mask: url("../images/icon/ic-cooking.svg") no-repeat center /
+    contain;
+}

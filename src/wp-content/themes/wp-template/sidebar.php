@@ -1,5 +1,5 @@
-<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
-	<div class="sidebar-main">
-	<?php dynamic_sidebar( 'sidebar' ); ?>
+<?php if ( is_active_sidebar( 'right_sidebar' ) ) : ?>
+	<div class="p-sidebar">
+	<?php dynamic_sidebar( 'right_sidebar' ); ?>
 	</div>
 <?php endif; ?>

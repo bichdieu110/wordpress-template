@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="45" viewBox="0 0 50 45">
+  <defs>
+    <style>
+      .cls-1, .cls-3, .cls-4, .cls-5 {
+        fill: none;
+        stroke: #a7a7a7;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3, .cls-5 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        stroke-width: 1.791px;
+      }
+
+      .cls-4, .cls-5 {
+        stroke-linecap: round;
+      }
+
+      .cls-4 {
+        stroke-linejoin: round;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_23" data-name="Rectangle 23" class="cls-1" width="50" height="45" transform="translate(0 0)"/>
+    </clipPath>
+  </defs>
+  <g id="ベクトルスマートオブジェクト" transform="translate(-294 -119)">
+    <g id="ベクトルスマートオブジェクト-2" data-name="ベクトルスマートオブジェクト" transform="translate(294 119)">
+      <g id="Group_60" data-name="Group 60">
+        <g id="Group_59" data-name="Group 59" class="cls-2">
+          <path id="Path_259" data-name="Path 259" class="cls-3" d="M38.036,28.86,48.43,9.4A5.712,5.712,0,0,0,49.1,6.7,5.834,5.834,0,0,0,43.271.895h-27.7c-1.833,0-2.859,1.279-3.653,3.069L2.105,22.374"/>
+          <path id="Path_260" data-name="Path 260" class="cls-4" d="M32.649,32.433a5.836,5.836,0,0,1,0,11.672H.9"/>
+          <path id="Path_261" data-name="Path 261" class="cls-5" d="M30.813,38.49H5.019a3.042,3.042,0,1,1,0-6.056H32.648a5.8,5.8,0,1,0,0-11.609H5.019a3.2,3.2,0,0,0-3.335,3.031,3.2,3.2,0,0,0,3.335,3.03H30.813"/>
+          <path id="Path_262" data-name="Path 262" class="cls-3" d="M46.333,13.434a5.7,5.7,0,0,1,.616.439,5.76,5.76,0,0,1,1.48,7.2l-10.3,19.3"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

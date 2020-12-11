@@ -1,35 +1,71 @@
-const gulp = require('gulp'),
-	env = require('node-env-file'),
-	plumber = require("gulp-plumber"),
-	sass = require('gulp-sass'),
-	cleancss = require('gulp-clean-css'),
-	autoprefixer = require('gulp-autoprefixer'),
-	notify = require('gulp-notify');
+const { src, dest, watch, series, parallel } = require("gulp");
+const env = require('node-env-file');
+const sass = require('gulp-sass');
+const plumber = require('gulp-plumber');
+const notify = require("gulp-notify");
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssdeclsort = require('css-declaration-sorter');
+const sassGlob = require('gulp-sass-glob'); // @importを纏めて指定
+const browserSync = require('browser-sync');
+
+sass.compiler = require('node-sass');
 
 env('.env');
 
 const paths = {
-	"url": "localhost:" + process.env.PORT_NUM,
-	"css": "./src/wp-content/themes/" + process.env.THEME_NAME + "/assets/css/",
-	"scss": "./src/wp-content/themes/" + process.env.THEME_NAME + "/assets/scss/**/*.scss"
+	"root": "localhost:" + process.env.PORT_NUM,
+  "cssDist": "./src/wp-content/themes/" + process.env.THEME_NAME + "/assets/css/",
+  'cssSrc': "./src/wp-content/themes/" + process.env.THEME_NAME + "/assets/scss/**/*.css",
+	"scssSrc": "./src/wp-content/themes/" + process.env.THEME_NAME + "/assets/scss/**/*.scss"
 }
 
-//Sass
-gulp.task('sass', function () {
-	return gulp.src(paths.scss)
-		.pipe(plumber())
-		.pipe(sass({ outputStyle: 'expanded' }))
-		.pipe(cleancss({ debug: true }, function (details) {
-			console.log(details.name + ': ' + details.stats.originalSize + ' > ' + + details.stats.minifiedSize);
-		}))
-		.pipe(autoprefixer({
-			browsers: ["last 2 versions", "ie >= 9", "Android >= 4", "ios_saf >= 8"],
-			cascade: false
-		}))
-		.pipe(gulp.dest(paths.css))
-		.pipe(notify("Sass Compile Success!"));
-});
+const compileSass = done => {
+  const postcssPlugins = [
+    autoprefixer({
+      // browserlistはpackage.jsonに記載
+      cascade: false,
+    }),
+    cssdeclsort({ order: 'smacss' /* alphabetical, smacss, concentric-css */ })
+  ]
 
-gulp.task('default', ['sass'], function () {
-	gulp.watch(paths.scss, ['sass']);
-});
+  src(paths.scssSrc)
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
+    .pipe(sassGlob())
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(postcss(postcssPlugins))
+    .pipe(dest(paths.cssDist))
+
+  done();
+}
+
+// ローカルサーバ起動
+const buildServer = done => {
+  browserSync.init({
+    port: process.env.PORT_NUM,
+    notify: true,
+    // 静的サイト
+    server: {
+      baseDir: paths.root
+    }
+  })
+  done()
+}
+
+// ブラウザ自動リロード
+const browserReload = done => {
+  browserSync.reload()
+  done()
+}
+
+// ファイル監視
+const watchFiles = () => {
+  // watch([paths.scssSrc, paths.cssSrc, paths.htmlWatch], series(compileSass, browserReload))
+  watch([paths.scssSrc, paths.cssSrc], series(compileSass))
+}
+
+exports.sass = compileSass;
+// exports.default = series(compileSass, buildServer, watchFiles);
+exports.default = series(compileSass, watchFiles);

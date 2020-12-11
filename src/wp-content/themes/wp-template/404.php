@@ -1,6 +1,6 @@
 <?php
 /*
-* Template Name: News page
+* Template Name: 404 page
 */
 get_header();
 

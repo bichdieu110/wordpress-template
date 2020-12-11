@@ -1,0 +1,38 @@
+.c-ads {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+
+  @include mq_up(pc) {
+    margin: 93px auto 73px;
+  }
+
+  @include mq_down(sp) {
+    flex-direction: column;
+    margin: setvw(70px) 0 setvw(30px);
+    padding: 0;
+  }
+
+  &_item {
+    cursor: pointer;
+
+    @include mq_up(pc) {
+      width: 50%;
+      padding: 0 20px;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &_img {
+      width: 100%;
+
+      @include mq_down(sp) {
+        width: 100%;
+        margin-bottom: setvw(20px);
+        object-fit: contain;
+      }
+    }
+  }
+}

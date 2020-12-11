@@ -10,27 +10,38 @@
 </head>
 <body <?php body_class(); ?>>
     <div id="app" class="page-wrapper">
-        <header class="header">
-            <div class="wrap-header container-full">
-                <div class="header-logo">
-                    <a href="<?php echo esc_url(home_url('/')); ?>">
-                       <img src="<?php echo URL_IMAGE?>/common/logo.png" alt="">
+        <header class="l-header">
+            <div class="p-header l-pageContent">
+              <div class="p-headerTop">
+                <p class="p-headerTop_solgan u-pc-only">生活のお役立ち情報WEBマガジン</p>
+                <a href="/"><img class="p-headerTop_logo" src="<?php echo URL_IMAGE?>/common/logo.svg" alt="logo"></a>
+                <div class="p-headerTop_action u-pc-only">
+                  <div class="p-search">
+                    <a href="javascript:void(0);" class="p-search_link" aria-label="Search">
+                      <i class="c-icon_search" id="ji-search_label">s</i>
                     </a>
-                </div><!-- .header-logo -->
-                <nav class="navMenu dropdown">
-                    <button class="c-open-menu dropdown-toggle" data-toggle="dropdown">Menu</button>
-                    <div class="dropdown-menu">
-                        <ul class='head-menu-items'>
-                            <?php
-                                wp_nav_menu(array(
-                                    'container' => '',
-                                    'items_wrap' => '%3$s',
-                                    'walker'        => new Fx_Walker_Nav_Menu()
-                                ));
-                            ?>
-                        </ul>
-                    </div>
-                </nav>
+                    <!-- <?php get_template_part('searchform'); ?> -->
+                  </div>
+                  <a href="#" class="p-social"><i class="c-icon_fb"></i></a>
+                </div>
+              </div>
+              <nav class="p-navMenu dropdown">
+                  <button class="c-open_menu dropdown-toggle" data-toggle="dropdown">Menu</button>
+                  <div class="dropdown-menu">
+                      <div class='u-sp-only'>
+                        <?php get_template_part('searchform'); ?>
+                      </div>
+                      <ul class='p-navMenu_items'>
+                          <?php
+                              wp_nav_menu(array(
+                                  'container' => '',
+                                  'items_wrap' => '%3$s',
+                                  'walker'        => new Fx_Walker_Nav_Menu()
+                              ));
+                          ?>
+                      </ul>
+                  </div>
+              </nav>
             </div>
         </header>
 

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="53" height="43" viewBox="0 0 53 43">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-4, .cls-5 {
+        fill: none;
+        stroke: #a7a7a7;
+      }
+
+      .cls-2, .cls-4 {
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        stroke-width: 2.022px;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4, .cls-5 {
+        stroke-width: 2.035px;
+      }
+
+      .cls-5 {
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_17" data-name="Rectangle 17" class="cls-1" width="53" height="43" transform="translate(0 0)"/>
+    </clipPath>
+  </defs>
+  <g id="ベクトルスマートオブジェクト" transform="translate(-773 -118)">
+    <g id="ベクトルスマートオブジェクト-2" data-name="ベクトルスマートオブジェクト" transform="translate(773 118)">
+      <line id="Line_53" data-name="Line 53" class="cls-2" x1="0.979" transform="translate(18.489 30.403)"/>
+      <g id="Group_48" data-name="Group 48">
+        <g id="Group_47" data-name="Group 47" class="cls-3">
+          <path id="Path_207" data-name="Path 207" class="cls-4" d="M34.41,30.4c2.568,0,2.637,5.342-.879,5.342a2.4,2.4,0,0,1-2.637-2.671H22.105a2.4,2.4,0,0,1-2.637,2.671c-3.516,0-3.447-5.342-.879-5.342"/>
+          <line id="Line_54" data-name="Line 54" class="cls-2" x2="0.979" transform="translate(33.532 30.403)"/>
+          <line id="Line_55" data-name="Line 55" class="cls-2" x1="0.979" transform="translate(18.489 30.403)"/>
+          <path id="Path_208" data-name="Path 208" class="cls-4" d="M34.41,30.4c2.568,0,2.637-5.342-.879-5.342a2.4,2.4,0,0,0-2.637,2.671H22.105a2.4,2.4,0,0,0-2.637-2.671c-3.516,0-3.447,5.342-.879,5.342"/>
+          <line id="Line_56" data-name="Line 56" class="cls-2" x2="0.979" transform="translate(33.532 30.403)"/>
+          <line id="Line_57" data-name="Line 57" class="cls-5" y1="21.435" x2="5.274" transform="translate(1.011 14.378)"/>
+          <line id="Line_58" data-name="Line 58" class="cls-5" x2="5.274" y2="21.435" transform="translate(46.716 14.378)"/>
+          <path id="Path_209" data-name="Path 209" class="cls-5" d="M51.989,35.813c0,3.4-11.411,6.163-25.489,6.163S1.011,39.216,1.011,35.813"/>
+          <path id="Path_210" data-name="Path 210" class="cls-5" d="M26.5,18.3A60.749,60.749,0,0,1,9.8,16.158"/>
+          <path id="Path_211" data-name="Path 211" class="cls-5" d="M43.2,16.158A60.719,60.719,0,0,1,26.5,18.3"/>
+          <path id="Path_212" data-name="Path 212" class="cls-5" d="M13.329,6.5a3.474,3.474,0,0,0-.892-.13,3.561,3.561,0,0,0,0,7.122"/>
+          <path id="Path_213" data-name="Path 213" class="cls-5" d="M21.226,5.03a4.052,4.052,0,0,1,.164-1.084,4.369,4.369,0,0,0-3.68-2.032,4.423,4.423,0,0,0-4.395,4.451c0,.045.011.086.013.13"/>
+          <path id="Path_214" data-name="Path 214" class="cls-5" d="M29.127,4.935a3.934,3.934,0,0,0-7.736-.988"/>
+          <path id="Path_215" data-name="Path 215" class="cls-5" d="M21.392,3.946a4.052,4.052,0,0,0-.164,1.084"/>
+          <path id="Path_216" data-name="Path 216" class="cls-5" d="M34.707,5.3a3.466,3.466,0,0,0-5.58-.363c0,.032.01.062.01.1"/>
+          <path id="Path_217" data-name="Path 217" class="cls-5" d="M29.137,5.03c0-.033-.009-.063-.01-.1"/>
+          <path id="Path_218" data-name="Path 218" class="cls-5" d="M42.071,8.171A3.979,3.979,0,0,0,38.366,2.8,3.953,3.953,0,0,0,34.707,5.3a3.545,3.545,0,0,1,.234,3.481"/>
+          <path id="Path_219" data-name="Path 219" class="cls-5" d="M34.94,8.778a3.543,3.543,0,0,0-.234-3.48"/>
+          <path id="Path_220" data-name="Path 220" class="cls-5" d="M42.321,13.488a2.671,2.671,0,0,0,0-5.342c-.086,0-.166.018-.25.025"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

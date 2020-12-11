@@ -1,0 +1,19 @@
+@import 'foundation/variable/variable';
+@import 'foundation/mixin/responsive';
+@import "foundation/mixin/mixins.scss";
+
+.p-paragraph {
+  padding: 34px 0 15px 0;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: 36px;
+  text-align: center;
+
+  @include mq_down(sp) {
+    padding: setvw(60px) 0 setvw(40px);
+    letter-spacing: -0.05em;
+
+    @include fs-vw(20,40);
+  }
+}

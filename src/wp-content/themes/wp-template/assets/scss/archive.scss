@@ -1,0 +1,11 @@
+@import 'foundation/variable/variable';
+@import 'foundation/mixin/responsive';
+@import "foundation/mixin/mixins.scss";
+
+.pageContent--archive {
+  background: $color_white;
+  padding: 29px 40px 0 40px; 
+  @include mq_down(sp){
+      padding: setvw(57px) setvw(40px) 0 setvw(40px);
+  }
+}

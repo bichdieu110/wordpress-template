@@ -9,7 +9,7 @@
 
 class Pickup_Widget extends WP_Widget {
 	public function __construct() {
-		$widget_options = array( 
+		$widget_options = array(
 			'classname' => 'pickup_widget',
 			'description' => 'This is an Pickup Widget',
 		);
@@ -33,7 +33,7 @@ class Pickup_Widget extends WP_Widget {
 		// print_r($pickup_posts);
 		if($pickup_posts):
 			$title = apply_filters( 'widget_title', $instance[ 'title' ] );
-			echo $args['before_widget'] . $args['before_title'] . $title . $args['after_title']; 
+			echo $args['before_widget'] . $args['before_title'] . $title . $args['after_title'];
 	?>
 
 			<ul class="wpp-list">
@@ -65,7 +65,7 @@ class Pickup_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
-		</p><?php 
+		</p><?php
 	}
 
 	public function update( $new_instance, $old_instance ) {

@@ -4,7 +4,9 @@ hosts.yml
 *.gzip
 *.sql.gz
 node_modules/
+package-lock.json
+yarn.lock
 # WordPress files
-public/wp-content/uploads/
-public/wp-content/plugins/
+src/wp-content/uploads/
+# src/wp-content/plugins/
 !.gitkeep

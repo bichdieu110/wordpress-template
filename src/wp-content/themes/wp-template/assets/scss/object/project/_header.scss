@@ -1,0 +1,57 @@
+.p-header {
+  @include mq_tab_down(tab) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.p-headerTop {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 37px 0 0;
+
+  @include mq_tab_down(tab) {
+    position: static;
+    width: 100%;
+    padding: 0;
+  }
+
+  &_logo {
+    position: absolute;
+    top: 29px;
+    left: 50%;
+    width: 236px;
+    transform: translateX(-50%);
+
+    @include mq_tab_down(tab) {
+      top: 50%;
+      width: 165px;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &_action {
+    display: flex;
+    align-items: center;
+
+    @include mq_tab_down(tab) {
+      display: none;
+    }
+
+    .p-search_link {
+      margin-right: 16px;
+    }
+  }
+
+  &_solgan {
+    font-size: 15px;
+    letter-spacing: 1.5px;
+
+    @include mq_tab_down(tab) {
+      display: none;
+    }
+  }
+}

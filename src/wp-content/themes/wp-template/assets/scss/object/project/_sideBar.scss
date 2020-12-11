@@ -1,0 +1,448 @@
+.p-sidebar {
+  @include mq_down(sp) {
+    margin-top: setvw(120px);
+  }
+  .rp4wp-related-post-content {
+    padding: 12px 20px;
+    background: $color_white;
+    @include mq_down(sp) {
+      width: 60%;
+      padding: setvw(10px) setvw(15px);
+      height: setvw(155px);
+    }
+  }
+
+  .rp4wp-related-post-image {
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 207px;
+
+    @include mq_down(sp) {
+      width: setvw(229px);
+      height: setvw(155px);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .rp4wp-related-posts ul > li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    @include mq_down(sp) {
+      flex-direction: row;
+      width: 100%;
+      margin-bottom: setvw(20px);
+    }
+  }
+
+  .rp4wp-related-posts {
+    margin-bottom: 70px;
+  }
+
+  .wpp-sidebar {
+    position: relative;
+    margin-bottom: 58px;
+    @include mq_down(sp) {
+      margin-bottom: setvw(90px);
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 26%;
+      height: 2px;
+      background: $color_green;
+      position: absolute;
+      left: 0;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 74%;
+      height: 2px;
+      background: $color_gray_plus;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .sidebar {
+    &_tags {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 5px;
+
+      &_tag {
+        margin: 0 10px 5px 0;
+        border-radius: 10px;
+
+        a {
+          display: block;
+          padding: 5px 10px;
+          color: $color_black;
+          letter-spacing: 0.1em;
+          @include fs(12, 10);
+        }
+
+        @include mq_down(sp) {
+          border-radius: setvw(12px);
+
+          a {
+            @include fs-vw(14, 25);
+
+            padding: 0 setvw(13px);
+          }
+        }
+      }
+    }
+
+    &_cat {
+      position: absolute;
+      bottom: 0;
+      padding: 4px;
+      background: $color_green;
+      color: $color_white;
+      @include fs(14, 22.4);
+      letter-spacing: 0.1em;
+      font-weight: bold;
+      text-align: center;
+      min-width: 86px;
+      @include mq_down(sp) {
+        @include fs-vw(15, 22);
+        min-width: setvw(75px);
+      }
+    }
+
+    &_date {
+      @include fs(11, 28);
+      letter-spacing: 0.05em;
+      color: $color_gray_plus;
+      @include mq_down(sp) {
+        @include fs-vw(15, 35);
+      }
+    }
+
+    &_title {
+      @include fs(15, 24);
+      letter-spacing: 0.05em;
+      font-weight: bold;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      margin-bottom: 7px;
+      @include mq_down(sp) {
+        @include fs-vw(18, 28);
+      }
+    }
+
+    &_heading {
+      font-weight: bold;
+      @include fs(20, 26);
+      letter-spacing: 0.075em;
+      padding: 37px 0 22px 0;
+      @include mq_down(sp) {
+        @include fs-vw(32, 47);
+      }
+    }
+  }
+  .wpp-sidebar {
+    h1 {
+      @include fs(20, 26);
+      font-weight: bold;
+      letter-spacing: 0.075em;
+      margin-bottom: 20px;
+      @include mq_down(sp) {
+        @include fs-vw(32, 47);
+      }
+    }
+    .cat-item {
+      margin-bottom: 16.6px;
+      @include fs(17);
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      @include mq_down(sp) {
+        @include fs-vw(21, 50);
+        width: 50%;
+        border: solid 1px $color_border;
+        margin: 0;
+        padding: setvw(20px);
+      }
+      a {
+        @include fs(17);
+        font-weight: bold;
+        letter-spacing: 0.025em;
+        @include mq_down(sp) {
+          @include fs-vw(21, 50);
+        }
+      }
+      &-9 {
+        &::before {
+          content: url("../images/icon/ic-cat_other.svg");
+          display: inline-block;
+          width: 50px;
+          @include mq_down(sp) {
+            width: setvw(70px);
+            transform: scale(0.8);
+          }
+        }
+      }
+      &-8 {
+        &::before {
+          content: url("../images/icon/ic-cat_child-care.svg");
+          display: inline-block;
+          width: 50px;
+          @include mq_down(sp) {
+            width: setvw(70px);
+            transform: scale(0.8);
+          }
+        }
+      }
+      &-7 {
+        &::before {
+          content: url("../images/icon/ic-cat_pet-care.svg");
+          display: inline-block;
+          width: 50px;
+          @include mq_down(sp) {
+            width: setvw(70px);
+            transform: scale(0.8);
+          }
+        }
+      }
+      &-3 {
+        &::before {
+          content: url("../images/icon/ic-cat_cleanup.svg");
+          display: inline-block;
+          width: 50px;
+          @include mq_down(sp) {
+            width: setvw(70px);
+            transform: scale(0.8);
+          }
+        }
+      }
+      &-4 {
+        &::before {
+          content: url("../images/icon/ic-cat_organize.svg");
+          display: inline-block;
+          width: 50px;
+          @include mq_down(sp) {
+            width: setvw(70px);
+            transform: scale(0.8);
+          }
+        }
+      }
+      &-5 {
+        &::before {
+          content: url("../images/icon/ic-cat_cooking.svg");
+          display: inline-block;
+          width: 50px;
+          @include mq_down(sp) {
+            width: setvw(70px);
+            transform: scale(0.8);
+          }
+        }
+      }
+      &-6 {
+        &::before {
+          content: url("../images/icon/ic-cat_washing.svg");
+          display: inline-block;
+          width: 50px;
+          @include mq_down(sp) {
+            width: setvw(70px);
+            transform: scale(0.8);
+          }
+        }
+      }
+      &-46 {
+        &::before {
+          content: url("../images/icon/ic-cat_organize.svg");
+          display: inline-block;
+          width: 50px;
+          @include mq_down(sp) {
+            width: setvw(70px);
+            transform: scale(0.8);
+          }
+        }
+      }
+      &-47 {
+        &::before {
+          content: url("../images/icon/ic-cat_pre.svg");
+          display: inline-block;
+          width: 50px;
+          @include mq_down(sp) {
+            width: setvw(70px);
+            transform: scale(0.8);
+          }
+        }
+      }
+      &-50 {
+        &::before {
+          content: url("../images/icon/ic-cat_cleanup.svg");
+          display: inline-block;
+          width: 50px;
+          @include mq_down(sp) {
+            width: setvw(70px);
+            transform: scale(0.8);
+          }
+        }
+      }
+    }
+  }
+
+  section:nth-child(2) {
+    ul {
+      @include mq_down(sp) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: setvw(90px);
+        li:nth-child(odd) {
+          border-left: none;
+          border-right: none;
+          border-bottom: none;
+        }
+        li:nth-child(even) {
+          border-right: none;
+          border-bottom: none;
+        }
+        li:last-child {
+          border-bottom: solid 1px $color_border;
+        }
+        li:nth-last-child(2) {
+          border-bottom: solid 1px $color_border;
+        }
+      }
+    }
+  }
+
+  .c-articles {
+    &-ranking {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      border: none;
+
+      .c-articles_item {
+        &:first-child .c-articles_item_title {
+          @include fs(14, 19);
+          -webkit-line-clamp: 3;
+          @include mq_down(sp) {
+            -webkit-line-clamp: 2;
+            @include fs-vw(18, 28);
+          }
+        }
+
+        &:nth-child(5) {
+          margin-top: 0;
+        }
+
+        &:nth-child(4) {
+          margin-top: 0;
+        }
+
+        &_ranking {
+          display: none;
+        }
+
+        @include mq_down(sp) {
+          border: none;
+          padding: 0;
+          margin-bottom: setvw(20px);
+        }
+
+        padding-bottom: 44px;
+        position: relative;
+        width: 100%;
+        background: $color_white;
+
+        display: flex;
+        margin-bottom: 20px;
+
+        &_content {
+          width: 49%;
+          height: 100%;
+          margin: 0;
+
+          @include mq_down(sp) {
+            width: 41%;
+          }
+
+          &_cat {
+            min-width: 86px;
+
+            @include fs(14, 23);
+
+            padding: 0 5px;
+
+            @include mq_down(sp){
+              min-width: setvw(75px);
+              @include fs-vw(15,22);
+            }
+          }
+
+          .wp-post-image {
+            height: 103px;
+            @include mq_down(sp) {
+              height: setvw(154px);
+            }
+          }
+        }
+
+        &_desc {
+          display: flex;
+          flex-flow: column;
+          width: 51%;
+          height: 104px;
+          padding: 14px 20px 0 20px;
+          @include mq_down(sp) {
+            width: 59%;
+            height: setvw(154px);
+            padding: setvw(15px) setvw(20px) setvw(20px) setvw(20px);
+          }
+        }
+
+        &_date {
+          order: 0;
+          @include mq_down(sp) {
+            @include fs-vw(15, 10);
+          }
+        }
+
+        &_title {
+          order: 0;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 3;
+          @include fs(14, 19);
+          @include mq_down(sp) {
+            -webkit-line-clamp: 2;
+            @include fs-vw(18, 28);
+          }
+        }
+
+        &_tags {
+          position: absolute;
+          left: 10px;
+          bottom: 10px;
+          @include mq_down(sp) {
+            position: revert;
+          }
+        }
+
+        .c-articles_item_content_ranking {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
-<section id="breadcrumb">
-  <div class="container">
+<section class="p-breadcrumbs">
+  <div class="l-pageContent">
     <?php if(function_exists('bcn_display')) : ?>
-      <div class="breadcrumbs" typeof="BreadcrumbList" vocab=”http://schema.org/”>
+      <div class="p-breadcrumbs_list" typeof="BreadcrumbList" vocab=”http://schema.org/”>
         <?php bcn_display(); ?>
       </div>
     <?php endif;?>

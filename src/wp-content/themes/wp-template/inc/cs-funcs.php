@@ -1,7 +1,5 @@
 <?php
 
-require_once dirname( __FILE__) . '/ajax.php';
-
 function custom_pagination()
 {
     echo '<div class="p-pagination">';
@@ -97,57 +95,6 @@ add_filter( 'get_the_archive_title', function ($title) {
     return $title;
 });
 
-add_action('pre_get_posts', 'query_post_type');
-function query_post_type($query) {
-   //Limit to main query, tag queries and frontend
-   if($query->is_main_query() && !is_admin() && $query->is_tag ) {
-        $query->set( 'post_type', 'column' );
-   }
-}
-
-function remove_blocks($content) {
-  if(get_post_type() != 'career') {
-    // Check if we're inside the main loop in a post or page
-    if ( ( is_single() || is_page() ) && in_the_loop() && is_main_query()) {
-      //parse the blocks so they can be run through the foreach loop
-      $blocks = parse_blocks( get_the_content() );
-      // print_r($blocks);
-      foreach ( $blocks as $block ) {
-          //look to see if your block is in the post content -> if yes continue past it if no then render block as normal
-          if ( 'lazyblock/block01' === $block['blockName'] ) {
-              continue;
-          } elseif ( 'core/shortcode' === $block['blockName'] ) {
-              echo do_shortcode( $block['innerHTML'] );
-          } else {
-            echo render_block( $block );
-          }
-      }
-    }
-  } else {
-    return $content;
-  }
-}
-
-add_filter( 'the_content', 'remove_blocks');
-
-function get_custom_single_template($single_template) {
-    global $post;
-
-    if ($post->post_type == 'case') {
-        $terms = get_the_terms($post->ID, 'case_type');
-        $terms_slug = $terms[0]->slug;
-
-        $single_template = realpath(dirname( __FILE__) .'/..') . '/single-case-' . $terms_slug . '.php';
-
-        if ( !file_exists( $single_template ) ) {
-          $single_template = realpath(dirname( __FILE__) .'/..') . '/single.php';
-        }
-     }
-    return $single_template;
-}
-
-add_filter( "single_template", "get_custom_single_template" ) ;
-
 if (!class_exists('Fx_Walker_Nav_Menu')) {
 	require_once('class-flex-walker-nav.php');
 }
@@ -164,7 +111,6 @@ function get_excerpt($limit){
   return $excerpt;
 }
 
-
 function custom_year_archive() {
   $years = array();
   $years_args = array(
@@ -176,7 +122,7 @@ function custom_year_archive() {
     'post_type' => 'news',
     'order' => 'DESC'
   );
- 
+
   // Get Years
   $years_content = wp_get_archives($years_args);
   if (!empty($years_content) ) {
@@ -184,11 +130,11 @@ function custom_year_archive() {
     $years_arr = array_filter($years_arr, function($item) {
       return trim($item) !== '';
     }); // Remove empty whitespace item from array
- 
+
     foreach($years_arr as $year_item) {
       $year_row = trim($year_item);
       preg_match('/href=["\']?([^"\'>]+)["\']>(.+)<\/a>/', $year_row, $year_vars);
- 
+
       if (!empty($year_vars)) {
         $years[] = array(
           'name' => $year_vars[2], // Ex: 2020
@@ -207,9 +153,51 @@ add_action( 'widgets_init', function(){
 
 // Disable Update Maps plugin
 function disable_plugin_updates( $value ) {
+
   if( isset( $value->response['advanced-custom-fields-pro/acf.php'] ) ) {
-      unset( $value->response['advanced-custom-fields-pro/acf.php'] );
+    unset( $value->response['advanced-custom-fields-pro/acf.php'] );
   }
+  if( isset( $value->response['wp-postviews/wp-postviews.php'] ) ) {
+    unset( $value->response['wp-postviews/wp-postviews.php'] );
+  }
+
   return $value;
 }
 add_filter( 'site_transient_update_plugins', 'disable_plugin_updates' );
+
+function wpa_category_nav_class( $classes, $item ){
+  if( 'category' == $item->object ){
+    $category = get_category( $item->object_id );
+    $classes[] = 'menu-item_' . $category->slug;
+  }
+  return $classes;
+}
+add_filter( 'nav_menu_css_class', 'wpa_category_nav_class', 10, 2 );
+
+//Disable Related post under posts
+add_filter( 'rp4wp_append_content', '__return_false' );
+
+
+function custom_sidebars_init() {
+
+  register_sidebar( array(
+    'id' => 'right_sidebar',
+    'name' => 'Right Sidebar',
+    'description' => 'サイドバーに表示されるコンテンツです。',
+    'before_widget' => '<section class="wpp-sidebar sidebar-widget sentry-widget">',
+    'after_widget' => '</section>',
+    'before_title' => '<h3 class="sidebar_heading">',
+    'after_title' => '</h3>',
+  ) );
+
+  register_sidebar( array(
+    'id' => 'postviews',
+    'name' => 'Post Views',
+    'description' => 'Display post views list',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '',
+    'after_title' => '',
+  ) );
+}
+add_action( 'widgets_init', 'custom_sidebars_init' );

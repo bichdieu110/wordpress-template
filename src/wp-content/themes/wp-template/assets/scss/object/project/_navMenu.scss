@@ -1,0 +1,143 @@
+.p-navMenu {
+  margin-top: 32px;
+  margin-bottom: 15px;
+
+  @include mq_tab_down(tab) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .c-open_menu {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 30px;
+    height: 20px;
+    transform: translateY(-50%);
+    border: 0;
+    background-color: transparent;
+    background-image: url('../images/common/icon_menu.svg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100%;
+    text-indent: -9999px;
+
+    @include mq_tab_up(tab) {
+      display: none;
+    }
+  }
+
+  @include mq_tab_up(tab) {
+    > .dropdown-menu {
+      display: block !important;
+    }
+  }
+
+  @include mq_tab_down(tab) {
+    > .dropdown-menu {
+      display: none;
+      position: absolute;
+      z-index: 9999;
+      top: setvw(110px);
+      right: 0;
+      left: 0;
+      height: 100vh;
+      overflow: auto;
+      background-color: $color_white;
+    }
+
+    .p-navMenu_items {
+      li {
+        width: 100%;
+        padding: 0;
+
+        a {
+          width: 100%;
+          margin-bottom: 7px;
+          padding: 5px 20px;
+          color: $color_black;
+          font-size: 16px;
+          font-weight: 600;
+
+          span {
+            color: $color_black;
+          }
+        }
+      }
+    }
+  }
+
+  &_items {
+    display: flex;
+
+    @include mq_tab_down(tab) {
+      flex-direction: column;
+    }
+  }
+
+  .menu-item {
+    width: 14.3%;
+    border-right: solid 1px $color_border;
+    border-left: solid 1px $color_border;
+
+    span {
+      font-weight: bold;
+
+      @include fs(18,28);
+    }
+
+    &:first-child {
+      border-left: solid 2px $color_border;
+
+      @include mq_tab_down(tab) {
+        border-left: none;
+      }
+    }
+
+    @include mq_tab_down(tab) {
+      border: none;
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+      padding: 12px 0 0;
+      background-color: transparent;
+      color: $color_black;
+
+      @include mq_tab_down(tab) {
+        flex-direction: row;
+        justify-content: unset;
+      }
+
+      &:hover {
+        @include mq_tab_up(tab) {
+          background: $color_green;
+          color: $color_white;
+
+          .c-icon_menu {
+            background-color: $color-white;
+          }
+        }
+      }
+    }
+
+    &.active {
+      a {
+        background: $color_green;
+        color: $color_white;
+
+        span {
+          color: $color_white;
+        }
+
+        .c-icon_menu {
+          background-color: $color-white;
+        }
+      }
+    }
+  }
+}

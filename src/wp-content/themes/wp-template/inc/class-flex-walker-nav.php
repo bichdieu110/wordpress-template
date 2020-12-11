@@ -1,7 +1,7 @@
 <?php
 /**
  * My walker nav menu extends wp walker nav menu
- * 
+ *
  * @package merise
  */
 
@@ -56,11 +56,11 @@ if (!class_exists('Fx_Walker_Nav_Menu')) {
 		/**
 		 * @link https://gist.github.com/duanecilliers/1817371 copy from this url
 		 */
-		public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) 
+		public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
 		{
 			if ((is_object($item) && $item->title == null) || (!is_object($item))) {
 				return ;
-			}
+      }
 
 			$indent = ($depth) ? str_repeat("\t", $depth) : '';
 
@@ -95,8 +95,9 @@ if (!class_exists('Fx_Walker_Nav_Menu')) {
 			// $attributes .= (is_object($args) && $args->has_children) ? ' class="dropdown-toggle" ' : '';
 
 			$item_output = (is_object($args)) ? $args->before : '';
-			$item_output .= '<a' . $attributes . '>';
-			$item_output .= (is_object($args) ? $args->link_before : '') . apply_filters('the_title', $item->title, $item->ID) . (is_object($args) ? $args->link_after : '');
+      $item_output .= '<a' . $attributes . '>';
+      $item_output .= '<i class="c-icon_menu"></i>';
+			$item_output .= '<span>'.(is_object($args) ? $args->link_before : '') . apply_filters('the_title', $item->title, $item->ID) . (is_object($args) ? $args->link_after : '').'</span>';
 			$item_output .= '</a>';
 			$item_output .= (is_object($args) && $args->has_children) ? ' <span class="dropdown-toggle" data-toggle="dropdown"></span>' : '';
 			$item_output .= (is_object($args) ? $args->after : '');
@@ -105,7 +106,7 @@ if (!class_exists('Fx_Walker_Nav_Menu')) {
 		}// start_el
 
 
-		public function start_lvl(&$output, $depth = 0, $args = array()) 
+		public function start_lvl(&$output, $depth = 0, $args = array())
 		{
 			$indent = str_repeat("\t", $depth);
 			$output .= "\n$indent<div class=\"sub-menu dropdown-menu\">\n";

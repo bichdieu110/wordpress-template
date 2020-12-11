@@ -1,0 +1,68 @@
+.p-footer {
+  padding: 20px 0;
+
+  &_content {
+    display: flex;
+    justify-content: space-between;
+
+    @include mq_down(sp) {
+      flex-direction: column;
+    }
+
+    &_item {
+      @include mq_up(pc) {
+        width: 25%;
+      }
+
+      @include mq_down(sp) {
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        margin-bottom: 15px;
+        color: $color_light_green;
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      h5 {
+        margin: 5px 0;
+        color: $color_white;
+      }
+
+      &_list {
+        margin-left: 20px;
+        color: $color_white;
+
+        li {
+          margin: 5px 0;
+          margin: 0 0 10px;
+          line-height: 20px;
+
+          a {
+            color: $color_white;
+          }
+        }
+      }
+
+      .last {
+        @include mq_up(pc) {
+          justify-content: space-between;
+        }
+
+        div {
+          width: 50%;
+
+          @include mq_down(sp) {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  address {
+    color: $color_white;
+    text-align: center;
+  }
+}

@@ -121,5 +121,3 @@ https://qiita.com/tkiryu/items/016aa9ef8a25b631e7e6
 If you use VS Code editor, Please check and install this extention.
 and Please set to `true` this parameter `prettier.stylelintIntegration`.
 [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
-# Admin account: admin/@Concrete123

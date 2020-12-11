@@ -1,0 +1,19 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  color: $color_primary;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+a {
+  transition: all 0.2s ease-in-out;
+  color: $color_black;
+  text-decoration: none;
+}

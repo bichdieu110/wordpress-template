@@ -1,0 +1,331 @@
+.c-articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 60px;
+
+  @include mq_down(sp) {
+    margin-top: setvw(60px);
+  }
+
+  &_item {
+    width: 100%;
+
+    @include mq_up(pc) {
+      width: 26.6%;
+
+      &:first-child {
+        width: 35.8%;
+
+        .c-articles_item_content {
+          .wp-post-image {
+            width: 100%;
+            height: 265px;
+            object-fit: cover;
+          }
+        }
+
+        .c-articles_item_title {
+          @include fs(22,32);
+        }
+      }
+
+      &:nth-child(4) {
+        order: 4;
+        margin-top: -24px;
+      }
+
+      &:nth-child(5) {
+        order: 5;
+        margin-top: -24px;
+      }
+    }
+
+    @include mq_down(sp) {
+      margin-bottom: setvw(30px);
+    }
+
+    &_listMore {
+      width: 35.8%;
+      text-align: center;
+
+      @include mq_up(pc) {
+        padding-top: 108px;
+      }
+
+      @include mq_down(sp) {
+        width: 100%;
+        padding-top: setvw(20px);
+      }
+    }
+
+    &_content {
+      position: relative;
+      margin-bottom: 8px;
+
+      @include mq_down(sp) {
+        margin-bottom: setvw(15px);
+      }
+
+      &_img {
+        object-fit: cover;
+        width: 100%;
+
+        @include mq_up(pc) {
+          height: 199px;
+        }
+
+        @include mq_down(sp) {
+          width: 100%;
+        }
+      }
+
+      .wp-post-image {
+        width: 100%;
+
+        @include mq_up(pc) {
+          height: 199px;
+          object-fit: cover;
+        }
+
+        @include mq_down(sp) {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &_ranking {
+        position: absolute;
+      }
+
+      &_cat {
+        position: absolute;
+        bottom: 0;
+        min-width: 85px;
+        padding: 3px 5px;
+        background: $color_green;
+        color: $color_white;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+
+    &_date {
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      line-height: 1;
+
+      @include mq_down(sp) {
+        @include fs-vw(15,15);
+      }
+    }
+
+    &_title {
+      display: -webkit-box;
+      margin: 4px 0 15px;
+      overflow: hidden;
+      font-weight: bold;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+
+      @include fs(18, 25);
+
+      @include mq_down(sp) {
+        @include fs-vw(22,32);
+
+        margin: setvw(4px) 0 setvw(12px);
+      }
+
+      a {
+        font-weight: bold;
+      }
+    }
+
+    &_tags {
+      display: flex;
+      flex-wrap: wrap;
+
+      &_tag {
+        margin: 0 5px 5px 0;
+        border-radius: 10px;
+
+        a {
+          display: block;
+          padding: 3px 10px 4px;
+          color: $color_black;
+          font-size: 12px;
+          letter-spacing: 0.1em;
+          line-height: 1;
+        }
+
+        @include mq_down(sp) {
+          border-radius: setvw(12px);
+
+          a {
+            @include fs-vw(15,25);
+
+            padding: 0 setvw(13px);
+          }
+        }
+      }
+    }
+  }
+
+  &-ranking {
+    border-bottom: solid 2px $color_yellow;
+
+    @include mq_up(pc) {
+      padding-bottom: 55px;
+    }
+
+    .c-articles_item {
+      &_ranking {
+        @include mq_up(pc) {
+          width: 35.8%;
+          padding-top: 80px;
+          text-align: center;
+
+          img {
+            margin-left: -23px;
+          }
+        }
+      }
+
+      @include mq_down(sp) {
+        display: flex;
+        margin-bottom: setvw(26px);
+        padding-bottom: setvw(20px);
+        border-bottom: solid 1px $color_border;
+      }
+
+      &_content {
+        @include mq_down(sp) {
+          width: 31%;
+          height: setvw(119px);
+          margin-right: 3.5%;
+          margin-bottom: 0;
+        }
+
+        &_cat {
+          @include mq_down(sp) {
+            min-width: setvw(75px);
+
+            @include fs-vw(15,27);
+
+            padding: 0 5px;
+          }
+        }
+      }
+
+      &_desc {
+        @include mq_down(sp) {
+          display: flex;
+          flex-flow: column;
+          width: 65.5%;
+        }
+      }
+
+      &_date {
+        @include mq_down(sp) {
+          order: 1;
+          margin-bottom: setvw(16px);
+        }
+      }
+
+      &_title {
+        @include mq_down(sp) {
+          order: 0;
+          margin: setvw(-5px) 0 5px;
+        }
+      }
+
+      &_tags {
+        @include mq_down(sp) {
+          order: 2;
+        }
+      }
+
+      .c-articles_item_content_ranking {
+        top: -37px;
+        left: -13px;
+
+        @include mq_down(sp) {
+          top: setvw(-18px);
+          left: setvw(-8px);
+          width: setvw(43px);
+          height: setvw(32px);
+        }
+      }
+
+      &:nth-child(1) {
+        .c-articles_item_content_ranking {
+          content: url("../images/icon/no_1.svg");
+
+          @include mq_up(pc) {
+            left: -24px;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        .c-articles_item_content_ranking {
+          content: url("../images/icon/no_2.svg");
+        }
+      }
+
+      &:nth-child(3) {
+        .c-articles_item_content_ranking {
+          content: url("../images/icon/no_3.svg");
+        }
+      }
+
+      &:nth-child(4) {
+        .c-articles_item_content_ranking {
+          content: url("../images/icon/no_4.svg");
+        }
+      }
+
+      &:nth-child(5) {
+        .c-articles_item_content_ranking {
+          content: url("../images/icon/no_5.svg");
+        }
+
+        @include mq_down(sp) {
+          border: none;
+        }
+      }
+    }
+  }
+
+  &-listMoreRight {
+    .c-articles_item {
+      @include mq_up(pc) {
+        &:nth-child(1) {
+          order: 3;
+        }
+
+        &:nth-child(2) {
+          order: 1;
+        }
+
+        &:nth-child(3) {
+          order: 2;
+        }
+
+        &:nth-child(4) {
+          order: 4;
+        }
+
+        &:nth-child(5) {
+          order: 5;
+        }
+
+        &_listMore {
+          order: 6;
+        }
+      }
+    }
+  }
+}

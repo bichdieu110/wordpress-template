@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49" height="59" viewBox="0 0 49 59">
+  <defs>
+    <style>
+      .cls-1, .cls-3, .cls-4, .cls-5 {
+        fill: none;
+        stroke: #fff;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3, .cls-4 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        stroke-width: 1.98px;
+      }
+
+      .cls-4, .cls-5 {
+        stroke-width: 1.821px;
+      }
+
+      .cls-5 {
+        stroke-linejoin: round;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_25" data-name="Rectangle 25" class="cls-1" width="49" height="59" transform="translate(0 0)"/>
+    </clipPath>
+  </defs>
+  <g id="ベクトルスマートオブジェクト" transform="translate(-139 -108)">
+    <g id="ベクトルスマートオブジェクト-2" data-name="ベクトルスマートオブジェクト" transform="translate(139 108)">
+      <g id="Group_64" data-name="Group 64">
+        <g id="Group_63" data-name="Group 63" class="cls-2">
+          <path id="Path_267" data-name="Path 267" class="cls-1" d="M41,56.768a.612.612,0,1,1-.611-.622.615.615,0,0,1,.611.622"/>
+          <path id="Path_268" data-name="Path 268" class="cls-3" d="M41,56.768a.612.612,0,1,1-.611-.622A.615.615,0,0,1,41,56.768Z"/>
+          <path id="Path_269" data-name="Path 269" class="cls-1" d="M40.981,50.308a.873.873,0,1,1-.872-.889.879.879,0,0,1,.872.889"/>
+          <path id="Path_270" data-name="Path 270" class="cls-3" d="M40.981,50.308a.873.873,0,1,1-.872-.889A.879.879,0,0,1,40.981,50.308Z"/>
+          <path id="Path_271" data-name="Path 271" class="cls-1" d="M48.019,51.335a.612.612,0,1,1-.611-.623.615.615,0,0,1,.611.623"/>
+          <path id="Path_272" data-name="Path 272" class="cls-3" d="M48.019,51.335a.612.612,0,1,1-.611-.623A.615.615,0,0,1,48.019,51.335Z"/>
+          <path id="Path_273" data-name="Path 273" class="cls-4" d="M12.792,47.266,11.4,53.838l10.587,2.019,1.626-9.526"/>
+          <path id="Path_274" data-name="Path 274" class="cls-4" d="M27.716,22.015A14.257,14.257,0,0,1,35.647,36.2L32.789,57.919l-5.5-1.051L28.5,48.909"/>
+          <path id="Path_275" data-name="Path 275" class="cls-4" d="M.878,52.754l5.158-22.2A13.846,13.846,0,0,1,18.449,20.234"/>
+          <line id="Line_73" data-name="Line 73" class="cls-5" x2="27.535" y2="5.25" transform="translate(7.84 26.379)"/>
+          <line id="Line_74" data-name="Line 74" class="cls-5" x2="29.706" y2="5.665" transform="translate(5.873 31)"/>
+          <line id="Line_75" data-name="Line 75" class="cls-5" x1="2.83" y2="15.376" transform="translate(26.114 0.984)"/>
+          <line id="Line_76" data-name="Line 76" class="cls-5" y1="15.375" x2="2.83" transform="translate(21.845 0.169)"/>
+          <path id="Path_276" data-name="Path 276" class="cls-4" d="M18.411,20.242l9.269,1.766L26.43,16.4,21.6,15.474Z"/>
+          <line id="Line_77" data-name="Line 77" class="cls-4" x1="2.272" y2="12.356" transform="translate(16.765 42.362)"/>
+          <line id="Line_78" data-name="Line 78" class="cls-4" x1="2.642" y2="11.564" transform="translate(6.064 42.325)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
