@@ -73,7 +73,7 @@ if (!class_exists('Fx_Walker_Nav_Menu')) {
 				$classes[] = 'dropdown-submenu';
 				//$li_attributes .= ' data-dropdown="dropdown"';
 			}
-			$classes[] = 'menu-item-' . $item->ID;
+			$classes[] = 'p-gnav_list_item menu-item-' . $item->ID;
 			//If we are on the current page, add the active class to that menu item.
 			$classes[] = ($item->current) ? 'active' : '';
 
@@ -96,8 +96,8 @@ if (!class_exists('Fx_Walker_Nav_Menu')) {
 
 			$item_output = (is_object($args)) ? $args->before : '';
       $item_output .= '<a' . $attributes . '>';
-      $item_output .= '<i class="c-icon_menu"></i>';
-			$item_output .= '<span>'.(is_object($args) ? $args->link_before : '') . apply_filters('the_title', $item->title, $item->ID) . (is_object($args) ? $args->link_after : '').'</span>';
+      //$item_output .= '<i class="c-icon_menu"></i>';
+			$item_output .= (is_object($args) ? $args->link_before : '') . apply_filters('the_title', $item->title, $item->ID) . (is_object($args) ? $args->link_after : '');
 			$item_output .= '</a>';
 			$item_output .= (is_object($args) && $args->has_children) ? ' <span class="dropdown-toggle" data-toggle="dropdown"></span>' : '';
 			$item_output .= (is_object($args) ? $args->after : '');

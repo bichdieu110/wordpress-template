@@ -14,7 +14,7 @@
 }
 
 .u-pc-only {
-  // padding-bottom: 20px;
+  padding-bottom: 20px;
   overflow: hidden;
 
   @include mq_down(sp) {
@@ -58,26 +58,14 @@
   }
 }
 
-.u-inLine {
-  display: flex;
-}
-
-.u-bg_cream {
-  background-color: $bg_cream;
-}
-
-.u-bg_green {
-  background-color: $bg_green;
-}
-
-.u-bg_orange {
-  background-color: $bg_orange;
-}
-
-.u-catId-04 {
-  background-color: $color_orange;
-}
-
-.u-catSlug-cooking {
-  background-color: $color_green;
+.u-select {
+  background-image: url('../images/icon_select.svg');
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 14px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
 }

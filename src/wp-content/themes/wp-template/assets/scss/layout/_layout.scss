@@ -1,13 +1,77 @@
+
 // --------------------------------
 // 共通
 // --------------------------------
 .l-header {
-  display: inline-block;
-  position: relative;
-  min-width: 100%;
-  // background-color: #ddf;
-  @include mq_tab_down(tab) {
-    padding: 32px 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+
+  &_container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+
+    @include mq_down(sp) {
+      flex-wrap: wrap;
+      border-bottom: 2px solid $color_orange;
+    }
+
+    &_logo {
+      max-width: 241px;
+      margin-left: 53px;
+      padding: 17px 0 0;
+
+      @include mq_down(sp) {
+        margin-left: 27px;
+        padding: 7px 0 15px 0;
+      }
+    }
+
+    &_burgerMenu {
+      position: absolute;
+      top: 33px;
+      right: 30px;
+      width: 21px;
+      height: 26px;
+      padding-top: 11px;
+      cursor: pointer;
+
+      @include mq_up(pc) {
+        display: none;
+      }
+
+      &_hamburger {
+        position: absolute;
+        width: 20px;
+        height: 3px;
+        background-color: #000;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -7px;
+          width: 20px;
+          height: 3px;
+          background-color: #000;
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: -7px;
+          width: 20px;
+          height: 3px;
+          background-color: #000;
+        }
+      }
+    }
   }
 }
 
@@ -15,24 +79,18 @@
   display: inline-block;
   position: relative;
   min-width: 100%;
-  background-color: $bg_dark_gray;
-
-  .l-pageContent {
-    max-width: 1100px;
-  }
+  background-color: #252526;
 }
 
 // --------------------------------
 // Topページ
 // --------------------------------
 .l-topBody {
-}
-
-.l-topMain {
+  background: #ededf0;
 }
 
 .l-topContent {
-  // min-width: $pc_min_width;
+  min-width: $pc_min_width;
   max-width: $pc_max_width;
   margin-right: auto;
   margin-left: auto;
@@ -50,17 +108,48 @@
   display: inline-block;
   position: relative;
   min-width: 100%;
-  background-color: $color_main;
+  background-color: #fff;
+}
+
+.l-topMain {
+  position: relative;
+  background: $color_bg_topMain;
+}
+
+.l-topCompany {
+  position: relative;
+  z-index: 3;
+}
+
+.l-topCareer {
+  position: relative;
+  padding: 100px 0 88px;
+  background-image: url(../images/top/bg_career.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.l-topColumn {
+  background: url(../images/bg_column.png) top -220px left no-repeat;
+}
+
+.l-mainContact {
+  position: relative;
+  padding: 90px 0;
+  background: url(../images/bg_mainContact.png) bottom right no-repeat;
 }
 
 // --------------------------------
 // Page
 // --------------------------------
-.l-pageBody {
+
+.l-pageVisual {
 }
 
 .l-pageMainSide {
   display: flex;
+  flex-direction: row-reverse;
   align-items: stretch;
 
   @include mq_down(sp) {
@@ -82,22 +171,32 @@
 }
 
 .l-pageMain {
-  flex-grow: 1;
+  background-color: #fbfbfc;
+}
+
+.l-pageNews {
+  padding-top: setvwpc(80px);
+  background: url('../images/bg_mainpage.png') top right no-repeat;
 }
 
 .l-pageSidebar {
   flex-shrink: 0;
   width: $pc_page_sidebar_width;
-  margin-left: $pc_page_sidebar_margin;
-  // background-color: #ffd;
+  margin-right: $pc_page_sidebar_margin;
+  background-color: #ffd;
+
   @include mq_down(sp) {
     width: 100%;
-    margin: 0;
+    margin-right: 0;
   }
 }
 
+.l-pageBody {
+
+}
+
 .l-pageContent {
-  // min-width: $pc_min_width;
+  min-width: $pc_min_width;
   max-width: $pc_max_width;
   margin-right: auto;
   margin-left: auto;
@@ -108,19 +207,5 @@
     min-width: auto;
     padding-right: $sp_page_content_side_padding;
     padding-left: $sp_page_content_side_padding;
-  }
-}
-
-#wpadminbar {
-  position: fixed;
-}
-
-.page-wrapper {
-  overflow-x: hidden;
-  transition: all 0.2s ease-in-out;
-  background-color: $color_main;
-
-  .c-menu-open & {
-    background-color: $color_white;
   }
 }

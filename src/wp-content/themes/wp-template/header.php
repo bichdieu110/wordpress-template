@@ -10,38 +10,41 @@
 </head>
 <body <?php body_class(); ?>>
     <div id="app" class="page-wrapper">
-        <header class="l-header">
-            <div class="p-header l-pageContent">
-              <div class="p-headerTop">
-                <p class="p-headerTop_solgan u-pc-only">生活のお役立ち情報WEBマガジン</p>
-                <a href="/"><img class="p-headerTop_logo" src="<?php echo URL_IMAGE?>/common/logo.svg" alt="logo"></a>
-                <div class="p-headerTop_action u-pc-only">
-                  <div class="p-search">
-                    <a href="javascript:void(0);" class="p-search_link" aria-label="Search">
-                      <i class="c-icon_search" id="ji-search_label">s</i>
-                    </a>
-                    <!-- <?php get_template_part('searchform'); ?> -->
-                  </div>
-                  <a href="#" class="p-social"><i class="c-icon_fb"></i></a>
-                </div>
-              </div>
-              <nav class="p-navMenu dropdown">
-                  <button class="c-open_menu dropdown-toggle" data-toggle="dropdown">Menu</button>
-                  <div class="dropdown-menu">
-                      <div class='u-sp-only'>
-                        <?php get_template_part('searchform'); ?>
-                      </div>
-                      <ul class='p-navMenu_items'>
-                          <?php
-                              wp_nav_menu(array(
-                                  'container' => '',
-                                  'items_wrap' => '%3$s',
-                                  'walker'        => new Fx_Walker_Nav_Menu()
-                              ));
-                          ?>
-                      </ul>
-                  </div>
-              </nav>
-            </div>
-        </header>
+      <header class="l-header jc_header">
+        <div class="l-header_container">
+          <div class="l-header_container_logo">
+            <a href="<?php echo esc_url(home_url('/')); ?>">
+              <img src="<?php echo URL_IMAGE?>/common/knw_logo.png" alt="Template logo">
+            </a>
+          </div>
+          <div class="l-header_container_burgerMenu jc_burgerMenu">
+            <div class="l-header_container_burgerMenu_hamburger"></div>
+          </div><!-- .burger-menu -->
+          <div class="l-header_container_menu">
+            <nav class="p-gnav jc_gnav_menu">
+              <ul class="p-gnav_list">
+                <?php
+                    wp_nav_menu(array(
+                        'container' => '',
+                        'items_wrap' => '%3$s',
+                        'menu_class' => 'menu clearfix',
+                        'walker'        => new Fx_Walker_Nav_Menu()
+                    ));
+                ?>
+                <!-- <li class="p-gnav_list_item">
+                    <a href="#">Company<span>私たちについて</span></a>
+                    <ul class="p-gnav_list_item_sub">
+                      <li class="p-gnav_list_item_sub_type"><a href="#">Company<span>私たちについて</span></a></li>
+                      <li class="p-gnav_list_item_sub_type"><a href="#">あいさつ</a></li>
+                      <li class="p-gnav_list_item_sub_type"><a href="#">企業理念</a></li>
+                      <li class="p-gnav_list_item_sub_type"><a href="#">会社概要</a></li>
+                      <li class="p-gnav_list_item_sub_type"><a href="#">保護ポリシー</a></li>
+                      <li class="p-gnav_list_item_sub_type"><a href="#">アクセス</a></li>
+                    </ul>
+                </li> -->
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
 

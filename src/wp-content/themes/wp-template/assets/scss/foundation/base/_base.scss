@@ -6,14 +6,52 @@ body {
   position: relative;
   width: 100%;
   color: $color_primary;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  font-family: "NotoSansJP-Regular", "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 1.4rem;
   line-height: 1.5;
   word-break: break-all;
+  font-feature-settings: 'palt' 1;
 }
 
 a {
-  transition: all 0.2s ease-in-out;
-  color: $color_black;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+  outline: none;
   text-decoration: none;
+}
+
+a {
+  color: $color_primary;
+}
+
+a:hover {
+  color: $color_orange;
+}
+
+@font-face {
+  font-family: 'NotoSansJP-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/assets/fonts/NotoSansJP-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NotoSansJP-Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/assets/fonts/NotoSansJP-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NotoSansJP-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/assets/fonts/NotoSansJP-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NotoSansJP-Light';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/assets/fonts/NotoSansJP-Light.otf') format('opentype');
 }

@@ -1,0 +1,106 @@
+.p-topFeatured {
+  padding-bottom: 150px;
+
+  @include mq_down(sp) {
+    padding-top: 30px;
+  }
+
+  &_title {
+    text-align: center;
+  }
+
+  &_list {
+    margin: 0 -25px;
+
+    @include mq_down(sp) {
+      margin: 0 -15px;
+    }
+
+    &_item {
+      position: relative;
+      padding: 25px;
+
+      &_img {
+        img {
+          -webkit-box-shadow: 4px 0 20px 0 rgba(50, 50, 50, 0.2);
+          -moz-box-shadow: 4px 0 20px 0 rgba(50, 50, 50, 0.2);
+          box-shadow: 4px 0 20px 0 rgba(50, 50, 50, 0.2);
+        }
+
+        &_desc {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 60%;
+          padding: 25px 30px;
+          background: #ededf0;
+
+          h3 {
+            margin-bottom: 10px;
+            color: black;
+            font-size: 14px;
+          }
+
+          &_para {
+            font-size: 12px;
+            line-height: 24px;
+
+            label {
+              color: $color-orange;
+            }
+
+            span {
+              position: relative;
+              margin-left: 15px;
+              padding-left: 17px;
+              color: $color_gray;
+
+              &::before {
+                content: " ";
+                position: absolute;
+                top: 5px;
+                left: 0;
+                width: 10px;
+                height: 10px;
+                background: url('../images/icon_view.svg') center center no-repeat;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .slick-arrow {
+      position: absolute;
+      top: inherit;
+      bottom: -40px;
+      width: 82px;
+      height: 7px;
+      outline: none;
+      background: transparent;
+      background-repeat: no-repeat;
+      text-indent: -9999px;
+
+      &.slick-prev {
+        left: 42.8%;
+        background-image: url('../images/ico-prev.svg');
+
+        @include mq_down(sp) {
+          left: 52%;
+          transform: translateX(calc(-50% - 82px));
+        }
+      }
+
+      &.slick-next {
+        right: 42.8%;
+        background-image: url('../images/ico-next.svg');
+
+        @include mq_down(sp) {
+          right: auto;
+          left: 52%;
+          transform: translateX(calc(-50% + 82px));
+        }
+      }
+    }
+  }
+}

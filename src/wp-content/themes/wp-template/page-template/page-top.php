@@ -3,229 +3,414 @@
 * Template Name: Top page
 */
 get_header();
+$featured_args      = array(
+  'post_type'       => array('case-type','service-type'),
+  'posts_per_page'  => 5,
+  'orderby'         => 'modified',
+  'order'           => 'DESC',
 
+);
+$featured_posts = new WP_Query($featured_args);
+$column_args = array(
+  'post_type' => 'case',
+  'posts_per_page' => 3
+);
+$column_posts = new WP_Query($column_args);
 ?>
   <div class="l-topBody">
     <div class="p-mainVisual">
+      <div class="p-mainVisual_content">
+        <div class="p-mainVisual_content_text">
+          <h1 class="c-title">テクノロジーと感動を<br>「かたち」に</h1>
+          <p class="c-desc">
+            スピードと飛躍的技術がもたらすイノベーションを鍵に<br>お客様の次世代を開く一歩を支援する企業となる。
+          </p>
+        </div>
+        <div class="p-mainVisual_content_cover">
+          <div class="p-mainVisual_content_cover_base1"></div>
+          <div class="p-mainVisual_content_cover_base2"></div>
+          <div class="p-mainVisual_content_cover_base3"></div>
+          <div class="p-mainVisual_content_cover_particles" id="ji_particles"><canvas class="particles-js-canvas-el" width="1349" height="680" style="width: 100%; height: 100%;"></canvas></div>
+          <div class="p-mainVisual_content_cover_obj1">
+            <div class="p-mainVisual_content_cover_obj1_s1"></div>
+          </div>
+          <div class="p-mainVisual_content_cover_obj2">
+            <div class="p-mainVisual_content_cover_obj2_s2"></div>
+          </div>
+          <div class="p-mainVisual_content_cover_obj3">
+            <div class="p-mainVisual_content_cover_obj3_s3"></div>
+          </div>
+          <div class="p-mainVisual_content_cover_obj4">
+            <div class="p-mainVisual_content_cover_obj4_s4"></div>
+          </div>
+        </div>
+        <div class="p-mainVisual_content_news">
         <?php
-          global $post;
-          $query = get_posts( array(
-              'post_type'  => 'post',
-              'posts_per_page'    => 6,
-              'orderby' => 'date',
-              'order' => 'DESC',
-          ) );
-          if ( $query ) {
-              foreach ( $query as $post ) :
-                  setup_postdata( $post );
-                  ?>
-                  <div class="p-mainVisual_slide">
-                    <a href="<?php the_permalink(); ?>">
-                      <img class="p-mainVisual_slide_img" src="<?php echo the_post_thumbnail_url()?>" alt=""/>
-                    </a>
-                    <div class="p-mainVisual_slide_content">
-                      <p class="p-mainVisual_slide_content_cat"><?php foreach((get_the_category()) as $category) { echo $category->name.'';} ?></p>
-                      <a href="<?php the_permalink(); ?>">
-                        <h3 class="p-mainVisual_slide_content_title"><?php the_title(); ?></h3>
-                      </a>
-                      <p class="p-mainVisual_slide_content_date"><?php echo get_the_date( 'Y.m.d' ); ?></p>
-                    </div>
-                  </div>
-              <?php
-              endforeach;
-              wp_reset_postdata();
-          }
-        ?>
-    </div>
-
-    <div class="l-pageContent">
-      <p class="p-paragraph">ここでは皆さんの生活に関わる様々なお役立ち情報を<br class="u-sp-only">提供いたします。<br class="u-pc-only">
-      掃除・整理収納・料理など、<br class="u-sp-only">生きていくために必要な要素をより簡単に<br>
-      楽しくできるようにという気持ちを込めて情報発信しております！<br>
-      記事を読んで、もし「タスカジさんに依頼してみたい」<br class="u-sp-only">「タスカジさんになってみたい」<br>
-      というような気持ちが芽生えたらぜひお問い合わせくださいませ！</p>
-    </div>
-
-    <main class="l-topMain">
-      <div class="l-topSection">
-        <div class="l-pageContent">
-          <!--list ranking -->
-          <section class="p-topSection">
-            <div class="c-pageHeading c-pageHeading-ranking">
-              <h2 class="c-pageHeading_title">人気記事ランキング</h2>
-            </div>
-            <?php get_template_part('postviews'); ?>
-          </section>
-
-          <!--list cleanup -->
-          <section class="p-topSection">
-            <div class="c-pageHeading c-pageHeading-clean">
-              <h2 class="c-pageHeading_title">掃除の記事</h2>
-            </div>
-            <ul class="c-articles c-articles-listMoreRight">
+          $news_top = array(
+            'post_type' => 'news',
+            'posts_per_page' => 1
+          );
+          $wp_query = new WP_Query($news_top);
+          if ($wp_query->have_posts()) :
+          ?>
+          <ul class="p-mainVisual_content_news_list">
             <?php
-              global $post;
-              $query = get_posts( array(
-                  'post_type'      => 'post',
-                  'category_name'  => 'cleanup',
-                  'posts_per_page' => 5,
-                  'orderby'        => 'date',
-                  'order'          => 'DESC',
-              ) );
-              if ( $query ) {
-                  foreach ( $query as $post ) :
-                      setup_postdata( $post );
-                      $posttags = get_the_tags();
-                      ?>
-                      <li class="c-articles_item">
-                        <div class="c-articles_item_content">
-                          <a href="<?php the_permalink(); ?>">
-                            <img class="wp-post-image" src="<?php echo the_post_thumbnail_url()?>" alt="">
-                          </a>
-                        </div>
-                        <span class="c-articles_item_date"><?php echo get_the_date( 'Y.m.d' ); ?></span>
-                        <h3 class="c-articles_item_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <ul class="c-articles_item_tags">
-                          <?php
-                            if ($posttags) {
-                              foreach($posttags as $tag) {
-                                echo  '<li class="c-articles_item_tags_tag u-bg_green"><a href="' . get_tag_link($tag->term_id) . '">'.$tag->name.'</a></li>';
-                              }
-                            }
-                          ?>
-                        </ul>
-                      </li>
-                  <?php
-                  endforeach;
-                  wp_reset_postdata();
-              }
+              while ($wp_query->have_posts()) : $wp_query->the_post();
             ?>
-              <li class='c-articles_item_listMore'>
-                <a href="/category/cleanup/" class='c-button_listMore c-button_listMore-green'>
-                  記事一覧へ
-                </a>
-              </li>
-            </ul>
-          </section>
-          <!--list organize-storage -->
-          <section class="p-topSection">
-            <div class="c-pageHeading c-pageHeading-organize">
-              <h2 class="c-pageHeading_title">整理収納の記事</h2>
-            </div>
-            <ul class="c-articles c-articles-listMoreLeft">
-              <?php
-                global $post;
-                $query = get_posts( array(
-                    'post_type'       => 'post',
-                    'category_name'   => 'organize-storage',
-                    'posts_per_page'  => 5,
-                    'orderby'         => 'date',
-                    'order'           => 'DESC',
-                ) );
-                if ( $query ) {
-                    foreach ( $query as $post ) :
-                        setup_postdata( $post );
-                        $posttags = get_the_tags();
-                        ?>
-                        <li class="c-articles_item">
-                          <div class="c-articles_item_content">
-                            <a href="<?php the_permalink(); ?>">
-                              <img class="wp-post-image" src="<?php echo the_post_thumbnail_url()?>" alt="">
-                            </a>
-                          </div>
-                          <span class="c-articles_item_date"><?php echo get_the_date( 'Y.m.d' ); ?></span>
-                          <h3 class="c-articles_item_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                          <ul class="c-articles_item_tags">
-                            <?php
-                              if ($posttags) {
-                                foreach($posttags as $tag) {
-                                  echo  '<li class="c-articles_item_tags_tag u-bg_orange"><a href="' . get_tag_link($tag->term_id) . '">'.$tag->name.'</a></li>';
-                                }
-                              }
-                            ?>
-                          </ul>
-                        </li>
-                    <?php
-                    endforeach;
-                    wp_reset_postdata();
-                }
-              ?>
-              <li class='c-articles_item_listMore'>
-                <a href="/category/organize-storage/" class='c-button_listMore c-button_listMore-orange'>
-                    記事一覧へ
-                </a>
-              </li>
-            </ul>
-          </section>
-          <!--list cooking -->
-          <section class="p-topSection">
-            <div class="c-pageHeading c-pageHeading-cooking">
-              <h2 class="c-pageHeading_title">整理収納の記事</h2>
-            </div>
-            <ul class="c-articles c-articles-listMoreRight">
-              <?php
-                  global $post;
-                  $query = get_posts( array(
-                      'post_type'       => 'post',
-                      'category_name'   => 'cooking',
-                      'posts_per_page'  => 5,
-                      'orderby'         => 'date',
-                      'order'           => 'DESC',
-                  ) );
-                  if ( $query ) {
-                      foreach ( $query as $post ) :
-                          setup_postdata( $post );
-                          $posttags = get_the_tags();
-                          ?>
-                          <li class="c-articles_item">
-                            <div class="c-articles_item_content">
-                              <a href="<?php the_permalink(); ?>">
-                                <img class="wp-post-image" src="<?php echo the_post_thumbnail_url()?>" alt="">
-                              </a>
-                            </div>
-                            <span class="c-articles_item_date"><?php echo get_the_date( 'Y.m.d' ); ?></span>
-                            <h3 class="c-articles_item_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <ul class="c-articles_item_tags">
-                              <?php
-                                if ($posttags) {
-                                  foreach($posttags as $tag) {
-                                    echo  '<li class="c-articles_item_tags_tag u-bg_green"><a href="' . get_tag_link($tag->term_id) . '">'.$tag->name.'</a></li>';
-                                  }
-                                }
-                              ?>
-                            </ul>
-                          </li>
-                      <?php
-                      endforeach;
-                      wp_reset_postdata();
-                  }
-                ?>
-              <li class='c-articles_item_listMore'>
-                <a href="/category/cooking/" class='c-button_listMore c-button_listMore-green'>
-                  記事一覧へ
-                </a>
-              </li>
-            </ul>
-          </section>
-
-          <section class="p-topSection">
-            <ul class='c-ads'>
-              <li class='c-ads_item'>
-                <a>
-                  <img class='c-ads_item_img' src="<?php echo URL_IMAGE?>/common/banner_1.png" alt="banner" />
-                </a>
-              </li>
-              <li class='c-ads_item'>
-                <a>
-                  <img class='c-ads_item_img' src="<?php echo URL_IMAGE?>/common/banner_2.png" alt="banner"  />
-                </a>
-              </li>
-            </ul>
-          </section>
-
+            <li class="p-mainVisual_content_news_list_item">
+              <b>News</b><span><?php echo get_the_date( 'Y.m.d' ); ?></span><a href="<?php the_permalink(); ?>"><?php the_title();?></a>
+            </li>
+          </ul>
+          <?php endwhile; ?>
+	        <?php wp_reset_postdata(); ?>
+          <?php endif; ?>
         </div>
       </div>
-
-    </main>
+    </div>
   </div>
+
+  <main class="l-topMain">
+    <!-- Featured -->
+    <div class="l-topFeatured l-topContent">
+      <section class="p-topFeatured">
+        <div class="p-topFeatured_title">
+          <h2 class="c-titleSection">
+            Featured
+            <span>特集</span>
+          </h2>
+        </div>
+        <?php if ($featured_posts->have_posts()) : ?>
+        <ul class="p-topFeatured_list jc_listFeatured">
+          <?php while ($featured_posts->have_posts()) : $featured_posts->the_post(); ?>
+          <li class="p-topFeatured_list_item">
+            <a href="<?php the_permalink() ?>">
+              <figure class="p-topFeatured_list_item_img">
+                <img src="<?php the_post_thumbnail_url(); ?>" alt="タイトルがはいりますタイトルがはいります。タイトルがはいります">
+                <figcaption class="p-topFeatured_list_item_img_desc">
+                  <!-- <h3>タイトルがはいりますタイトルがはいります。タイトルがはいります。</h3> -->
+                  <h3><?php the_title(); ?></h3>
+                  <p class="p-topFeatured_list_item_img_desc_para">
+                    <label><?php echo get_the_date(); ?></label><span>101</span>
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <?php endwhile; ?>
+          <?php wp_reset_postdata(); ?>
+          <li class="p-topFeatured_list_item">
+            <a href="#">
+              <figure class="p-topFeatured_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_featured_01.jpg" alt="タイトルがはいりますタイトルがはいります。タイトルがはいります">
+                <figcaption class="p-topFeatured_list_item_img_desc">
+                  <h3>タイトルがはいりますタイトルがはいります。タイトルがはいります。</h3>
+                  <p class="p-topFeatured_list_item_img_desc_para">
+                    <label>2020 04.30</label><span>101</span>
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class="p-topFeatured_list_item">
+            <a href="#">
+              <figure class="p-topFeatured_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_featured_02.jpg" alt="タイトルがはいりますタイトルがはいります。タイトルがはいります">
+                <figcaption class="p-topFeatured_list_item_img_desc">
+                  <h3>タイトルがはいりますタイトルがはいります。タイトルがはいります。</h3>
+                  <p class="p-topFeatured_list_item_img_desc_para">
+                    <label>2020 04.30</label><span>101</span>
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class="p-topFeatured_list_item">
+            <a href="#">
+              <figure class="p-topFeatured_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_featured_01.jpg" alt="タイトルがはいりますタイトルがはいります。タイトルがはいります">
+                <figcaption class="p-topFeatured_list_item_img_desc">
+                  <h3>タイトルがはいりますタイトルがはいります。タイトルがはいります。</h3>
+                  <p class="p-topFeatured_list_item_img_desc_para">
+                    <label>2020 04.30</label><span>101</span>
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+        </ul>
+      <?php endif; ?>
+      </section>
+    </div>
+    <!-- /Featured -->
+    <!-- Company -->
+    <div class="l-topSection">
+    <div class="l-topCompany ">
+      <section class="p-topCompany">
+        <div class="p-topCompany_title">
+          <h2 class="c-titleSection">Company<span>私たちについて</span></h2>
+        </div>
+        <div class="p-topCompany_desc">
+          <h3 class="p-topCompany_desc_name">私たちナレッジワークスは</h3>
+          <p class="p-topCompany_desc_paragraph">私たちナレッジワークスは「飛躍的技術がもたらすイノベーションを鍵に、<br>お客様の次世代を開く」という理念のもと、ARやAIといった先進テクノロジーの実装力をもって、<br>企業・ユーザーの皆様に価値あるサービス／記憶に残るサービスをご提供するため<br>日々活動しています。</p>
+          <a class="c-button" href="./company">Read More</a>
+        </div>
+      </section>
+    </div></div>
+    <!-- /Company -->
+    <!-- Service -->
+    <div class="l-topService l-topSection">
+      <section class="p-topService">
+        <div class="p-topService_title">
+          <h2 class="p-topService_title_name c-titleSection">Service<span>ソリューション / 製品</span></h2>
+          <p class="p-topService_title_surprise">想像を超える「驚き」と「感動」を</p>
+          <p class="p-topService_title_text">企業・ユーザーの皆様に価値のあるサービスをご提供いたします。</p>
+        </div>
+        <div class="p-topService_list">
+            <div class="p-topService_list_item l-topContent">
+              <div class="p-topService_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_service01.jpg" alt="">
+              </div>
+              <div class="p-topService_list_item_desc">
+                <h3 class="p-topService_list_item_desc_name"><a href="#">AR / MR</a></h3>
+                <h4>ARアプリ開発 - ARをあなたの業務へ -</h4>
+                <p>AR、VRを業務で利用するためのビジネス向けサービス。概念検証から業務改善までお気軽にご相談下さい。</p>
+                <h4>スマートグラス アプリ開発</h4>
+                <p>スマートCデバイスを利用した業務向けアプリ開発や研究開発支援、POCプロジェクトで実績を積んできました。豊富な経験、ノウハウに基づき効果的なソリューションをご提案します。</p>
+              </div>
+            </div>
+            <div class="p-topService_list_item l-topContent">
+              <div class="p-topService_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_service02.jpg" alt="">
+              </div>
+              <div class="p-topService_list_item_desc">
+                <h3 class="p-topService_list_item_desc_name"><a href="#">自然言語処理、検索拡張</a></h3>
+                <h4>Siba（サイト内検索サービス）</h4>
+                <p>大規模サイト向けにWebサーチ機能を提供するサービス「Siba」単語ベースの全文検索から、検索文の係り受けを理解する高精度な意図検索、AIを使用した類似検索、音声検索など多様なニーズに対応します。</p>
+              </div>
+            </div>
+            <div class="p-topService_list_item l-topContent">
+              <div class="p-topService_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_service03.jpg" alt="">
+              </div>
+              <div class="p-topService_list_item_desc">
+                <h3 class="p-topService_list_item_desc_name"><a href="#">対話型<br>3Dアバタープロジェクト</a></h3>
+                <h4>With Corona, After Corona<br>バーチャルヒューマンのよる接客</h4>
+                <p>世界は突然変わりました。全てのビジネス活動が安全を担保して⾮対⾯、⾮接触型を志向しはじめ・・・・営業、接客の現場はどう対応して</p>
+                <h4>対話型3Dアバター(バーチャルヒューマン)を活⽤しませんか</h4>
+                <p>バーチャルヒューマンのよる接客</p>
+                <ul class="p-topService_list3d">
+                  <li class="p-topService_list3d_item3d">
+                    <h3 class="p-topService_list3d_item3d_head">人目を惹く魅力と驚き<span>リアルアバター技術</span></h3>
+                    <ul class="p-topService_list3d_item3d_para">
+                      <li>VRoidのようなアニメ風アバターとは 異なり、よりヒト風な「バーチャルヒュー マン]で人目を惹く魅力的な風貌をもつ</li>
+                      <li>無理のない-不気味をさける一範囲で より人間風な動作、リアクションを表現</li>
+                    </ul>
+                  </li>
+                  <li class="p-topService_list3d_item3d">
+                    <h3 class="p-topService_list3d_item3d_head">対話知性<span>対話エンジン</span></h3>
+                    <ul class="p-topService_list3d_item3d_para">
+                      <li>知らないことを教えてくれる(説明員) </li>
+                      <li>特定範囲(ドメイン)の質問に対応でき る。応答が自然であること。ただし、自律発話はない</li>
+                      <li>基礎的な会話ができる(必要な場合の み、不要なケースでは実装しない</li>
+                      <li>相手(人)の話、感情を理解している風 な態度を示す</li>
+                    </ul>
+                  </li>
+                  <li class="p-topService_list3d_item3d">
+                    <h3 class="p-topService_list3d_item3d_head">対話エンジン<span>技術調和による固有な存在感</span></h3>
+                    <ul class="p-topService_list3d_item3d_para">
+                      <li>LipSync、表情、ポージングとのマッチ ングで、リアルアバターを生きているヒト風に。合成音声、表情、動きがアバター に個性と役割を与える</li>
+                      <li>パーソナル動画を使用してお客様に合った個別</li>
+                      <li>リッチなコンテンツを提示できる</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        <div class="p-topService_background">
+          <img src="/assets/images/img_bg_topservice.png" alt="">
+        </div>
+      </section>
+    </div>
+    <!-- /Service -->
+    <!-- Career -->
+    <div class="l-topCareer l-topSection">
+      <div class="l-topContent">
+        <section class="p-topCareer">
+          <div class="p-topCareer_title">
+            <h2 class="c-titleSection">Career<span>私たちについて</span></h2>
+          </div>
+          <p class="p-topCareer_paragraph">
+            当社はマルチタレント性を重視しています。<br>プロジェクト体制や仕事のアサイン状況によっては、複数のJOBロールの兼務が発生します。<br>募集スキルは深さだけではなく幅広く持っている方大歓迎です。
+          </p>
+          <a class="c-button" href="./company">Read More</a>
+        </section>
+      </div>
+    </div>
+    <!-- /Career -->
+
+    <!-- top News -->
+    <div class="l-topNews l-topSection">
+      <div class="l-topContent">
+        <section class="p-topNews">
+          <div class="p-topNews_title">
+            <h2 class="c-titleSection">News<span>お知らせ</span></h2>
+          </div>
+          <div class="p-topNews_content">
+            <ul class="p-topNews_content_list">
+              <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>企業情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+              <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>企業情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+              <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>製品サービス情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+              <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>セミナー・イベント情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+              <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>ARサービス</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+            </ul>
+            <a class="p-topNews_content_readMore c-button" href="./company">Read More</a>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- /top News -->
+
+    <!-- Column -->
+    <div class="l-topColumn">
+      <section class="p-topColumn">
+        <div class="p-topColumn_title">
+          <h2 class="c-titleSection">Column<span>コラム</span></h2>
+        </div>
+        <ul class="p-topColumn_list">
+          <li class="p-topColumn_list_item">
+            <a href="#">
+              <figure class="p-topColumn_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_column_01.jpg" alt="">
+                <figcaption>カテゴリー</figcaption>
+              </figure>
+              <div class="p-topColumn_list_item_desc">
+                <label>2020 04.30</label>
+                <h3>タイトルがはいります</h3>
+                <p>本文入ります本文入ります。本文入ります本文入ります。</p>
+                <div class="p-topColumn_list_item_desc_divide">
+                  <strong>NEW</strong><span>101</span>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="p-topColumn_list_item">
+            <a href="#">
+              <figure class="p-topColumn_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_column_02.jpg" alt="">
+                <figcaption>カテゴリー</figcaption>
+              </figure>
+              <div class="p-topColumn_list_item_desc">
+                <label>2020 04.30</label>
+                <h3>タイトルがはいります</h3>
+                <p>本文入ります本文入ります。本文入ります本文入ります。</p>
+                <div class="p-topColumn_list_item_desc_divide">
+                  <strong>NEW</strong><span>101</span>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="p-topColumn_list_item">
+            <a href="#">
+              <figure class="p-topColumn_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_column_01.jpg" alt="">
+                <figcaption>カテゴリー</figcaption>
+              </figure>
+              <div class="p-topColumn_list_item_desc">
+                <label>2020 04.30</label>
+                <h3>タイトルがはいります</h3>
+                <p>本文入ります本文入ります。本文入ります本文入ります。</p>
+                <div class="p-topColumn_list_item_desc_divide">
+                  <strong>NEW</strong><span>101</span>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <a class="p-topColumn_readMore c-button" href="./company">Read More</a>
+      </section>
+    </div>
+    <!-- /Column -->
+
+    <!-- Contact -->
+    <div class="l-mainContact ">
+      <div class="l-pageContent">
+        <section class="p-mainContact">
+          <div class="p-mainContact_title">
+            <h2 class="c-titleSection">Contact Us<span>お問い合わせ</span></h2>
+            <p class="p-mainContact_title_para">製品/モデルのお問い合わせはお問い合わせフォームよりご確認ください。<br>製品/サービス以外のお問い合わせは<span>こちら</span>をご利用ください。</p>
+          </div>
+          <div class="p-mainContact_form">
+            <form action="">
+              <!-- faq -->
+              <div class="p-mainContact_form_faq">
+                <div class="p-mainContact_form_faq_head">
+                  <h3 class="p-mainContact_form_faq_head_name"><span>FAQ</span></h3>
+                </div>
+                <div class="p-mainContact_form_faq_block c-formBlock">
+                  <div class="c-formBlock_question">
+                    <select class="c-formBlock_question_control u-select">
+                      <option>何ができますか？（得意ですか？）</option>
+                    </select>
+                  </div>
+                  <div class="c-formBlock_question">
+                    <select class="c-formBlock_question_control u-select">
+                      <option>何ができますか？（得意ですか？）</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!-- / faq -->
+              <!-- inquiry -->
+              <div class="p-mainContact_form_inquiry">
+                <div class="p-mainContact_form_inquiry_head">
+                  <h3 class="p-mainContact_form_inquiry_head_name"><span>お問い合わせフォーム</span></h3>
+                </div>
+                <div class="c-formBlock">
+                  <div class="c-formBlock_group">
+                    <label for="">会社名<span class="c-formBlock_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">部署名<span class="c-formBlock_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">役職<span class="c-formBlock_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">姓<span class="c-formBlock_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">名<span class="c-formBlock_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">電話<span class="c-container_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">メールアドレス<span class="c-formBlock_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">KnowledgeWorksをどこでお知りになりましたか<span class="c-formBlock_group_notice">必須</span></label>
+                    <select class="c-formBlock_group_control u-select">
+                      <option>―なし―</option>
+                    </select>
+                  </div>
+                  <div class="p-mainContact_form_inquiry_btnSend">
+                    <button type="submit" class="c-btn">送信する</button>
+                  </div>
+                </div>
+              </div>
+              <!-- / inquiry -->
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
 <?php get_footer(); ?>

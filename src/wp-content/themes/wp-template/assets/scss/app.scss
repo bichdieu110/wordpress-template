@@ -12,7 +12,6 @@
 
 @import "foundation/variable/_variable";
 @import "foundation/mixin/_responsive.scss";
-@import "foundation/mixin/_mixins.scss";
 @import "foundation/base/_reset";
 @import "foundation/base/_base";
 
@@ -36,37 +35,31 @@
 @import "object/component/_button";
 @import "object/component/_pageHeading";
 @import "object/component/_paragraph";
-@import "object/component/_icon";
-@import "object/component/articles";
-@import "object/component/_ads";
-@import "object/component/_case";
+@import "object/component/_titleSection";
+@import "object/component/_formBlock";
 
 // -----------------------------------------------------------------
 // Project
 // -----------------------------------------------------------------
 
 @import "object/project/_header";
-@import "object/project/_navMenu";
 @import "object/project/_footer";
 @import "object/project/_gnav";
-@import "object/project/_section";
-@import "object/project/_topSection";
 @import "object/project/_mainVisual";
 @import "object/project/_mainSection";
-@import "object/project/_searchForm";
-@import "object/project/_post";
-@import "object/project/_sidebar";
+@import "object/project/_mainContact";
+@import "object/project/_mainSocial";
+@import "object/project/_topFeatured";
+@import "object/project/_topCompany";
+@import "object/project/_topService";
+@import "object/project/_topCareer";
+@import "object/project/_topNews";
+@import "object/project/_topColumn";
+@import "object/project/_pageVisual";
+@import "object/project/_pageNews";
 
 // -----------------------------------------------------------------
 // Utility
 // -----------------------------------------------------------------
 
 @import "object/utility/_utility";
-
-// -----------------------------------------------------------------
-// Page
-// -----------------------------------------------------------------
-
-@import './slick-theme.scss';
-@import './top.scss';
-@import './archive.scss';
