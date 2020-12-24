@@ -4,33 +4,48 @@
 */
 get_header();
 $featured_args      = array(
-  'post_type'       => array('case','service'),
+  'post_type'       => array('case-type','service-type'),
   'posts_per_page'  => 5,
-  'meta_query'      => array(
-        array(
-            'key'   => 'featured',
-            'value' => '"featured"',
-            'compare' => 'LIKE'
-        ) ),
   'orderby'         => 'modified',
   'order'           => 'DESC',
 
 );
 $featured_posts = new WP_Query($featured_args);
-
 $column_args = array(
   'post_type' => 'case',
   'posts_per_page' => 3
 );
 $column_posts = new WP_Query($column_args);
 ?>
-  <main id="main-content" class="page-content page-content--top">
-    <section class="mv-section">
-      <div class="mv-section-inner">
-        <div class="container">
-          <h2 class="wow fadeInUp animated" data-wow-delay="2.5s">テクノロジーと感動を<br>「かたち」に</h2>
-          <p class="wow fadeInUp animated" data-wow-delay="2.7s">スピードと飛躍的技術がもたらすイノベーションを鍵に<br>お客様の次世代を開く一歩を支援する企業となる。</p>
-          <?php
+  <div class="l-topBody">
+    <div class="p-mainVisual">
+      <div class="p-mainVisual_content">
+        <div class="p-mainVisual_content_text">
+          <h1 class="c-title">テクノロジーと感動を<br>「かたち」に</h1>
+          <p class="c-desc">
+            スピードと飛躍的技術がもたらすイノベーションを鍵に<br>お客様の次世代を開く一歩を支援する企業となる。
+          </p>
+        </div>
+        <div class="p-mainVisual_content_cover">
+          <div class="p-base1"></div>
+          <div class="p-base2"></div>
+          <div class="p-base3"></div>
+          <div class="p-particles" id="ji_particles"><canvas class="particles-js-canvas-el" width="1349" height="680" style="width: 100%; height: 100%;"></canvas></div>
+          <div class="p-obj1">
+            <div class="p-obj1_s1"></div>
+          </div>
+          <div class="p-obj2">
+            <div class="p-obj2_s2"></div>
+          </div>
+          <div class="p-obj3">
+            <div class="p-obj3_s3"></div>
+          </div>
+          <div class="p-obj4">
+            <div class="p-obj4_s4"></div>
+          </div>
+        </div>
+        <div class="p-mainVisual_content_news">
+        <?php
           $news_top = array(
             'post_type' => 'news',
             'posts_per_page' => 1
@@ -38,244 +53,337 @@ $column_posts = new WP_Query($column_args);
           $wp_query = new WP_Query($news_top);
           if ($wp_query->have_posts()) :
           ?>
-          <ul class="news-block wow fadeInUp animated">
-          <?php
-            while ($wp_query->have_posts()) : $wp_query->the_post();
-					?>
-            <li><b>News</b><span><?php the_date(); ?></span><a href="<?php the_permalink(); ?>"><?php the_title();?></a></li>
+          <ul class="p-list">
+            <?php
+              while ($wp_query->have_posts()) : $wp_query->the_post();
+            ?>
+            <li class="p-list_item">
+              <b>News</b><span><?php echo get_the_date( 'Y.m.d' ); ?></span><a href="<?php the_permalink(); ?>"><?php the_title();?></a>
+            </li>
           </ul>
           <?php endwhile; ?>
 	        <?php wp_reset_postdata(); ?>
           <?php endif; ?>
-          <!-- <a href="#featured" class="scroll-btn">Scroll down</a> -->
-        </div>
-        <div class="mv-image">
-          <div class="mv-image_base1"></div>
-          <div class="mv-image_base2"></div>
-          <div class="mv-image_particles" id="particles-js"></div>
-          <div class="mv-image_obj mv-image_obj1">
-            <div class="mv-image_obj1s"></div>
-          </div>
-          <div class="mv-image_obj mv-image_obj2">
-            <div class="mv-image_obj2s"></div>
-          </div>
-          <div class="mv-image_obj mv-image_obj3">
-            <div class="mv-image_obj3s"></div>
-          </div>
-          <div class="mv-image_obj mv-image_obj4">
-            <div class="mv-image_obj4s"></div>
-          </div>
         </div>
       </div>
-    </section>
-    <?php if ($featured_posts->have_posts()) : ?>
-    <section class="featured-section" id="featured">
-      <div class="container">
-        <h2 class="heading-section">Featured<span>特集</span></h2>
-        <div class="slider featured-list">
-          <?php
-            $i = 0.1;
-            while ($featured_posts->have_posts()) : $featured_posts->the_post();
-					?>
-          <div class="wow fadeInUp animated" data-wow-delay="<?= $i ?>s">
-            <div class="slide-inner">
-              <a href="<?php the_permalink() ?>"><div class="img" style="background-image: url(<?php the_post_thumbnail_url(); ?>)"></div></a>
-              <div class="featured-content">
-                <div class="featured-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></div>
-                <div class="featured-date"><?php echo get_the_date(); ?>
-                </div>
-              </div>
-            </div>
-          </div>
-          <?php $i = $i + 0.2; endwhile; ?>
-          <?php wp_reset_postdata(); ?>
+    </div>
+  </div>
+
+  <main class="l-topMain">
+    <!-- Featured -->
+    <div class="l-topFeatured l-topContent">
+      <section class="p-topFeatured">
+        <div class="p-topFeatured_title">
+          <h2 class="c-titleSection">
+            Featured
+            <span>特集</span>
+          </h2>
         </div>
-      </div>
-    </section>
-    <?php endif; ?>
-    <section class="company-section wow fadeInUp animated" data-wow-delay="0.1s">
-      <div class="company-section-inner">
-        <h2 class="heading-section">Company<span>私たちについて</span></h2>
-        <h1>私たちナレッジワークスは</h1>
-        <h3>私たちナレッジワークスは「飛躍的技術がもたらすイノベーションを鍵に、<br>お客様の次世代を開く」という理念のもと、ARやAIといった先進テクノロジーの実装力をもって、<br>企業・ユーザーの皆様に価値あるサービス／記憶に残るサービスをご提供するため<br>日々活動しています。</h3>
-        <a href="<?php echo esc_url( home_url() ); ?>/company" class="btn-rm">Read More</a>
-      </div>
-    </section>
-    <section class="service-section">
-        <div class="paraBox1">
-          <img class="paraImage1" src="<?php echo URL_IMAGE?>/common/bg1.png" alt="">
-        </div>
-        <div class="heading-content wow fadeInUp animated">
-          <h2 class="heading-section">Service<span>ソリューション / 製品</span></h2>
-          <h3>想像を超える「驚き」と「感動」を</h3>
-          <p>企業・ユーザーの皆様に価値のあるサービスをご提供いたします。</p>
-        </div>
-        <div class="services-block">
-          <div class="service-block">
-            <div class="paraBox3">
-              <img class="paraImage3" src="<?php echo URL_IMAGE?>/bg1.jpg" alt="">
-            </div>
-            <div class="container">
-              <div class="service-block-inner wow fadeInUp animated" data-wow-delay="0.1s">
-                <h3 class="custom-text">お客様の未来を拓くお手伝い</h3>
-                <h2 class="heading-section">AR/MR<span>ソリューション開発</span></h2>
-                <h1>― ARをあなたのビジネスヘ ―</h1>
-                <h3>私たちがARに取り組み始めてから早10年。ARはプロモーションやゲームの特殊効果から始まり、今ようやくビジネス向けの活用が始まりました。<br>ナレッジワークスは豊富な実績と多彩なノウハウでお客様の成功をサポートします。</h3>
-                <h3>ビジネス現場での活用に向けた概念検証から、具体的なアプリ開発までワンストップでご提供します。お気軽にご相談ください。</h3>
-                <a href="https://www.knowledge-works.co.jp/service/develop/ar_mr/" class="btn-rm">Read More</a>
-                <h3>この領域のサービス</h3>
-                <h3><a href="https://www.knowledge-works.co.jp/service/product_service/aug/" class="linkto">aug!<span>（ARプラットフォーム）</span></a>
-                <a href="https://www.knowledge-works.co.jp/service/product_service/daub/" class="linkto">daub<span>（3DぬりえAR）</span></a></h3>
+        <?php if ($featured_posts->have_posts()) : ?>
+        <ul class="p-topFeatured_list jc_listFeatured">
+          <?php while ($featured_posts->have_posts()) : $featured_posts->the_post(); ?>
+          <li class="p-item">
+            <a href="<?php the_permalink() ?>">
+              <div class="p-item_img" style="background-image: url('<?php the_post_thumbnail_url();?>')"></div>
+              <div class="p-item_desc">
+                <!-- <h3>タイトルがはいりますタイトルがはいります。タイトルがはいります。</h3> -->
+                <h3><?php the_title(); ?></h3>
+                <p class="p-item_desc_para">
+                  <label><?php echo get_the_date( 'Y.m.d' ); ?></label><span>101</span>
+                </p>
               </div>
-            </div>
-          </div>
-          <div class="service-block">
-            <div class="paraBox3">
-              <img class="paraImage3" src="<?php echo URL_IMAGE?>/iStock-508131094_01re.png" alt="">
-            </div>
-            <div class="container">
-              <div class="service-block-inner wow fadeInUp animated" data-wow-delay="0.1s">
-                <h2 class="heading-section">スマートグラス<span>ソリューション開発</span></h2>
-                <h1>― 圧倒的な情報体験で時代を変える ―</h1>
-                <h3>スマートグラスによる圧倒的な情報体験は、働き方・生活様式・感性へ衝撃的な変化をもたらします。私たちはこれまで、スマートデバイスを利用したPOCプロジェクトや業務アプリの中で、常に難易度の高い課題解決に挑戦してきました。今、時代の神器でお客様の課題解決を。</h3>
-              </div>
-            </div>
-          </div>
-          <div class="service-block">
-            <div class="paraBox3">
-              <img class="paraImage3" src="<?php echo URL_IMAGE?>/iStock-1069554654_01.png" alt="">
-            </div>
-            <div class="container">
-              <div class="service-block-inner wow fadeInUp animated" data-wow-delay="0.1s">
-                <h2 class="heading-section">拡張検索、<span>AI ソリューション開発</span></h2>
-                <h1>― 自然言語処理をあなたの業務へ ―</h1>
-                <h3>情報活用がウェアラブルになるに従い、検索ニーズも変化しています。検索のインターフェースが従来の検索ボックスから音声検索に代わることで、言葉の係り受けを認識する意図検索の効用が注目されています。</h3>
-                <h3>私たちは、検索エンジンをAIや外部サービス・アルゴリズムで補完して、お客様独自の精度を実現する自然言語処理システムをクラウドDevOpsの形でご提供しています。</h3>
-                <a href="https://www.knowledge-works.co.jp/service/cloud_deveops/augmented_research/" class="btn-rm">Read More</a>
-                <h3>この領域のサービス</p>
-                <h3><a href="https://www.knowledge-works.co.jp/service/product_service/siba/" class="linkto">Siba<span>（サイト内検索サービス）</span></a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="service-block">
-            <div class="paraBox3">
-              <img class="paraImage3" src="<?php echo URL_IMAGE?>/bg3.jpg" alt="">
-            </div>
-            <div class="container">
-              <div class="service-block-inner wow fadeInUp animated" data-wow-delay="0.1s">
-                <h3 class="custom-text">10年先の未来へ向けて</h3>
-                <h2>バーチャルヒューマン</h2>
-                <h1>― <span>1<sup>st</sup></span> 対話型3Dアバタープロジェクト ―</h1>
-                <h3>人目を惹く魅力と驚き、対話知性を備え、幾つもの技術調和により独特の存在感を放つ固有の存在。それがバーチャルヒューマン。私たちが10年先の未来へ向けて取り組む領域のひとつです。</p>
-                <h3>1stステージは、対話型の3Dアバターのビジネス利用が目的です。中核となる３つの領域で技術的研鑽とノウハウを蓄積し、未来を考えます。</h3>
-                <ul>
-                  <li>・リアルアバタ技術</li>
-                  <li>・対話エンジン</li>
-                  <li>・AR＆空間認識技術</li>
-                </ul>
-                <h3>お問い合わせは <a href="/contact" class="link">こちら</a> からお願いします。</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="paraBox2">
-          <img class="paraImage2" src="<?php echo URL_IMAGE?>/common/bg2.png" alt="">
-        </div>
-    </section>
-    <section class="career-section">
-      <!-- <div class="paraBox3">
-        <img class="paraImage3" src="<?php echo URL_IMAGE?>/bg4.jpg" alt="">
-      </div> -->
-      <div class="container wow fadeInUp animated" data-wow-delay="0.1">
-        <h2 class="heading-section">Career<span>採用情報</span></h2>
-        <h3>日々進化するテクノロジーに興味のアンテナを張り、いち早くビジネスに活用するスキルを追求しています。</h3>
-        <h3>行動面では「Knowledge & Facilitate」、先端技術の実装力を手段に、バランスのとれた知見をもって<br>プロジェクトの目的達成をリードできる方、チャレンジしたい方を募集しています。</h3>
-        <a href="/career" class="btn-rm">Read More</a>
-      </div>
-    </section>
-    <section class="news-section wow fadeInUp animated" data-wow-delay="0.1s">
-      <div class="container">
-        <h2 class="heading-section">News<span>お知らせ</span></h2>
-        <?php 
-          $news_args = array(
-            'post_type' => 'news',
-            'posts_per_page' => 5
-          );
-          $news_posts = new WP_Query($news_args);
-        ?>
-        <?php if ($news_posts->have_posts()) : ?>
-        <ul class="news-list">
-          <?php
-            while ($news_posts->have_posts()) : $news_posts->the_post();
-            $news_cat = wp_get_object_terms($post->ID, 'news_category');
-            $news_class = count($news_cat) > 1 ? 'full' : '';
-					?>
-          <li>
-            <span class="news-date"><?php echo get_the_date(); ?></span>
-            <div class="cats-list">
-                <?php foreach ($news_cat as $cat) { ?>
-                <span class="news-cat"><?php echo $cat->name ?></span>
-                <?php } ?>
-            </div>
-            <span class="news-title <?php echo $news_class?>"><a href="<?php the_permalink() ?>"><?php the_title();?></a></span>
+            </a>
           </li>
           <?php endwhile; ?>
-	        <?php wp_reset_postdata(); ?>
+          <?php wp_reset_postdata(); ?>
         </ul>
-        <?php endif;?>
-        <a href="<?php echo esc_url( home_url() ); ?>/news" class="btn-rm">Read More</a>
-      </div>
-    </section>
-    <?php if ($column_posts->have_posts()) : ?>
-    <section class="column-section">
-      <div class="paraBox1">
-        <img class="paraImage1" src="<?php echo URL_IMAGE?>/common/contact-bg1.png" alt="">
-      </div>
-      <h2 class="heading-section">Case/Column<span>事例とコラム</span></h2>
-      <div class="slider column-slider">
-        <?php
-          $i = 0;
-          while ($column_posts->have_posts() && $i < 1) : $column_posts->the_post();
-        ?>
-        <div>
-          <div class="slide-inner wow fadeInUp animated" data-wow-delay="<?= $i ?>s">
-          <?php get_template_part( 'template-parts/post/content-column');?>
+      <?php endif; ?>
+      </section>
+    </div>
+    <!-- /Featured -->
+    <!-- Company -->
+    <div class="l-topSection">
+    <div class="l-topCompany ">
+      <section class="p-topCompany">
+        <div class="p-topCompany_title">
+          <h2 class="c-titleSection">Company<span>私たちについて</span></h2>
+        </div>
+        <div class="p-topCompany_desc">
+          <h3 class="p-topCompany_desc_name">私たちナレッジワークスは</h3>
+          <p class="p-topCompany_desc_paragraph">私たちナレッジワークスは「飛躍的技術がもたらすイノベーションを鍵に、<br>お客様の次世代を開く」という理念のもと、ARやAIといった先進テクノロジーの実装力をもって、<br>企業・ユーザーの皆様に価値あるサービス／記憶に残るサービスをご提供するため<br>日々活動しています。</p>
+          <a class="c-button" href="./company">Read More</a>
+        </div>
+      </section>
+    </div></div>
+    <!-- /Company -->
+    <!-- Service -->
+    <div class="l-topService l-topSection">
+      <section class="p-topService">
+        <div class="p-topService_title">
+          <h2 class="p-topService_title_name c-titleSection">Service<span>ソリューション / 製品</span></h2>
+          <p class="p-topService_title_surprise">想像を超える「驚き」と「感動」を</p>
+          <p class="p-topService_title_text">企業・ユーザーの皆様に価値のあるサービスをご提供いたします。</p>
+        </div>
+        <div class="p-topService_list">
+            <div class="p-topService_list_item l-topContent">
+              <div class="p-topService_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_service01.jpg" alt="">
+              </div>
+              <div class="p-topService_list_item_desc">
+                <h3 class="p-topService_list_item_desc_name"><a href="#">AR / MR</a></h3>
+                <h4>ARアプリ開発 - ARをあなたの業務へ -</h4>
+                <p>AR、VRを業務で利用するためのビジネス向けサービス。概念検証から業務改善までお気軽にご相談下さい。</p>
+                <h4>スマートグラス アプリ開発</h4>
+                <p>スマートCデバイスを利用した業務向けアプリ開発や研究開発支援、POCプロジェクトで実績を積んできました。豊富な経験、ノウハウに基づき効果的なソリューションをご提案します。</p>
+              </div>
+            </div>
+            <div class="p-topService_list_item l-topContent">
+              <div class="p-topService_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_service02.jpg" alt="">
+              </div>
+              <div class="p-topService_list_item_desc">
+                <h3 class="p-topService_list_item_desc_name"><a href="#">自然言語処理、検索拡張</a></h3>
+                <h4>Siba（サイト内検索サービス）</h4>
+                <p>大規模サイト向けにWebサーチ機能を提供するサービス「Siba」単語ベースの全文検索から、検索文の係り受けを理解する高精度な意図検索、AIを使用した類似検索、音声検索など多様なニーズに対応します。</p>
+              </div>
+            </div>
+            <div class="p-topService_list_item l-topContent">
+              <div class="p-topService_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_service03.jpg" alt="">
+              </div>
+              <div class="p-topService_list_item_desc">
+                <h3 class="p-topService_list_item_desc_name"><a href="#">対話型<br>3Dアバタープロジェクト</a></h3>
+                <h4>With Corona, After Corona<br>バーチャルヒューマンのよる接客</h4>
+                <p>世界は突然変わりました。全てのビジネス活動が安全を担保して⾮対⾯、⾮接触型を志向しはじめ・・・・営業、接客の現場はどう対応して</p>
+                <h4>対話型3Dアバター(バーチャルヒューマン)を活⽤しませんか</h4>
+                <p>バーチャルヒューマンのよる接客</p>
+                <ul class="p-topService_list3d">
+                  <li class="p-topService_list3d_item3d">
+                    <h3 class="p-topService_list3d_item3d_head">人目を惹く魅力と驚き<span>リアルアバター技術</span></h3>
+                    <ul class="p-topService_list3d_item3d_para">
+                      <li>VRoidのようなアニメ風アバターとは 異なり、よりヒト風な「バーチャルヒュー マン]で人目を惹く魅力的な風貌をもつ</li>
+                      <li>無理のない-不気味をさける一範囲で より人間風な動作、リアクションを表現</li>
+                    </ul>
+                  </li>
+                  <li class="p-topService_list3d_item3d">
+                    <h3 class="p-topService_list3d_item3d_head">対話知性<span>対話エンジン</span></h3>
+                    <ul class="p-topService_list3d_item3d_para">
+                      <li>知らないことを教えてくれる(説明員) </li>
+                      <li>特定範囲(ドメイン)の質問に対応でき る。応答が自然であること。ただし、自律発話はない</li>
+                      <li>基礎的な会話ができる(必要な場合の み、不要なケースでは実装しない</li>
+                      <li>相手(人)の話、感情を理解している風 な態度を示す</li>
+                    </ul>
+                  </li>
+                  <li class="p-topService_list3d_item3d">
+                    <h3 class="p-topService_list3d_item3d_head">対話エンジン<span>技術調和による固有な存在感</span></h3>
+                    <ul class="p-topService_list3d_item3d_para">
+                      <li>LipSync、表情、ポージングとのマッチ ングで、リアルアバターを生きているヒト風に。合成音声、表情、動きがアバター に個性と役割を与える</li>
+                      <li>パーソナル動画を使用してお客様に合った個別</li>
+                      <li>リッチなコンテンツを提示できる</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        <div class="p-topService_background">
+          <img src="/assets/images/img_bg_topservice.png" alt="">
+        </div>
+      </section>
+    </div>
+    <!-- /Service -->
+    <!-- Career -->
+    <div class="l-topCareer l-topSection">
+      <div class="l-topContent">
+        <section class="p-topCareer">
+          <div class="p-topCareer_title">
+            <h2 class="c-titleSection">Career<span>私たちについて</span></h2>
           </div>
-        </div>
-        <?php $i = $i + 0.2; endwhile; ?>
-        <?php wp_reset_postdata(); ?>
+          <p class="p-topCareer_paragraph">
+            当社はマルチタレント性を重視しています。<br>プロジェクト体制や仕事のアサイン状況によっては、複数のJOBロールの兼務が発生します。<br>募集スキルは深さだけではなく幅広く持っている方大歓迎です。
+          </p>
+          <a class="c-button" href="./company">Read More</a>
+        </section>
       </div>
-      
-      <!-- <ul class="columns-list">
-        <?php
-          #$i = 0;
-          #while ($column_posts->have_posts() && $i < 1) : $column_posts->the_post();
-				?>
-        <li class="wow fadeInUp animated" data-wow-delay="<? # =$i ?>s">
-          <?php #get_template_part( 'template-parts/post/content-column');?>
-        </li>
-        <?php #$i = $i + 0.2; endwhile; ?>
-        <?php #wp_reset_postdata(); ?>
-      </ul> -->
-      <a href="<?php echo esc_url( home_url() ); ?>/case-column" class="btn-rm">Read More</a>
-    </section>
-    <?php endif;?>
-    <section class="contact-section wow fadeInUp animated" data-wow-delay="0.1s">
-      <div class="container">
-        <div class="heading-content">
-          <h2 class="heading-section">Contact Us<span>お問い合わせ</span></h2>
-        </div>
-        <div class="contact-block">
-          <?php echo do_shortcode('[contact-form-7 id="32" title="お問い合わせフォーム"]')?>
-        </div>
+    </div>
+    <!-- /Career -->
+
+    <!-- top News -->
+    <div class="l-topNews l-topSection">
+      <div class="l-topContent">
+        <section class="p-topNews">
+          <div class="p-topNews_title">
+            <h2 class="c-titleSection">News<span>お知らせ</span></h2>
+          </div>
+          <div class="p-topNews_content">
+            <?php 
+            $news_args = array(
+              'post_type' => 'news',
+              'posts_per_page' => 5
+            );
+            $news_posts = new WP_Query($news_args);
+            ?>
+            <?php if ($news_posts->have_posts()) : ?>
+            <ul class="p-topNews_content_list">
+              <?php
+                while ($news_posts->have_posts()) : $news_posts->the_post();
+              ?>
+              <li class="p-topNews_content_list_item"><b><?php echo get_the_date(); ?></b><span>企業情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+              <!-- <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>企業情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+              <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>製品サービス情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+              <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>セミナー・イベント情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+              <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>ARサービス</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li> -->
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+            </ul>
+            <?php endif;?>
+            <a class="p-topNews_content_readMore c-button" href="./company">Read More</a>
+          </div>
+        </section>
       </div>
-      <div class="paraBox2">
-        <img class="paraImage2" src="<?php echo URL_IMAGE?>/common/contact-bg.png" alt="">
+    </div>
+    <!-- /top News -->
+
+    <!-- Column -->
+    <div class="l-topColumn">
+      <section class="p-topColumn">
+        <div class="p-topColumn_title">
+          <h2 class="c-titleSection">Column<span>コラム</span></h2>
+        </div>
+        <ul class="p-topColumn_list">
+          <li class="p-topColumn_list_item">
+            <a href="#">
+              <figure class="p-topColumn_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_column_01.jpg" alt="">
+                <figcaption>カテゴリー</figcaption>
+              </figure>
+              <div class="p-topColumn_list_item_desc">
+                <label>2020 04.30</label>
+                <h3>タイトルがはいります</h3>
+                <p>本文入ります本文入ります。本文入ります本文入ります。</p>
+                <div class="p-topColumn_list_item_desc_divide">
+                  <strong>NEW</strong><span>101</span>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="p-topColumn_list_item">
+            <a href="#">
+              <figure class="p-topColumn_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_column_02.jpg" alt="">
+                <figcaption>カテゴリー</figcaption>
+              </figure>
+              <div class="p-topColumn_list_item_desc">
+                <label>2020 04.30</label>
+                <h3>タイトルがはいります</h3>
+                <p>本文入ります本文入ります。本文入ります本文入ります。</p>
+                <div class="p-topColumn_list_item_desc_divide">
+                  <strong>NEW</strong><span>101</span>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="p-topColumn_list_item">
+            <a href="#">
+              <figure class="p-topColumn_list_item_img">
+                <img src="<?php echo URL_IMAGE?>/top/img_column_01.jpg" alt="">
+                <figcaption>カテゴリー</figcaption>
+              </figure>
+              <div class="p-topColumn_list_item_desc">
+                <label>2020 04.30</label>
+                <h3>タイトルがはいります</h3>
+                <p>本文入ります本文入ります。本文入ります本文入ります。</p>
+                <div class="p-topColumn_list_item_desc_divide">
+                  <strong>NEW</strong><span>101</span>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <a class="p-topColumn_readMore c-button" href="./company">Read More</a>
+      </section>
+    </div>
+    <!-- /Column -->
+
+    <!-- Contact -->
+    <div class="l-mainContact ">
+      <div class="l-pageContent">
+        <section class="p-mainContact">
+          <div class="p-mainContact_title">
+            <h2 class="c-titleSection">Contact Us<span>お問い合わせ</span></h2>
+            <p class="p-mainContact_title_para">製品/モデルのお問い合わせはお問い合わせフォームよりご確認ください。<br>製品/サービス以外のお問い合わせは<span>こちら</span>をご利用ください。</p>
+          </div>
+          <div class="p-mainContact_form">
+            <form action="">
+              <!-- faq -->
+              <div class="p-mainContact_form_faq">
+                <div class="p-mainContact_form_faq_head">
+                  <h3 class="p-mainContact_form_faq_head_name"><span>FAQ</span></h3>
+                </div>
+                <div class="p-mainContact_form_faq_block c-formBlock">
+                  <div class="c-formBlock_question">
+                    <select class="c-formBlock_question_control u-select">
+                      <option>何ができますか？（得意ですか？）</option>
+                    </select>
+                  </div>
+                  <div class="c-formBlock_question">
+                    <select class="c-formBlock_question_control u-select">
+                      <option>何ができますか？（得意ですか？）</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!-- / faq -->
+              <!-- inquiry -->
+              <div class="p-mainContact_form_inquiry">
+                <div class="p-mainContact_form_inquiry_head">
+                  <h3 class="p-mainContact_form_inquiry_head_name"><span>お問い合わせフォーム</span></h3>
+                </div>
+                <div class="c-formBlock">
+                  <div class="c-formBlock_group">
+                    <label for="">会社名<span class="c-formBlock_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">部署名<span class="c-formBlock_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">役職<span class="c-formBlock_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">姓<span class="c-formBlock_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">名<span class="c-formBlock_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">電話<span class="c-container_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">メールアドレス<span class="c-formBlock_group_notice">必須</span></label>
+                    <input type="text" class="c-formBlock_group_control" id="">
+                  </div>
+                  <div class="c-formBlock_group">
+                    <label for="">KnowledgeWorksをどこでお知りになりましたか<span class="c-formBlock_group_notice">必須</span></label>
+                    <select class="c-formBlock_group_control u-select">
+                      <option>―なし―</option>
+                    </select>
+                  </div>
+                  <div class="p-mainContact_form_inquiry_btnSend">
+                    <button type="submit" class="c-btn">送信する</button>
+                  </div>
+                </div>
+              </div>
+              <!-- / inquiry -->
+            </form>
+          </div>
+        </section>
       </div>
-      <ul class="social-links">
-        <li><a href="https://www.facebook.com/knowledgeworks.jpn/" class="fb-icon" target="_blank">Facebook</a></li>
-        <li><a href="https://twitter.com/knowledge_works" class="twitter-icon" target="_blank">Twitter</a></li>
-      </ul>
-    </section>
+    </div>
   </main>
 <?php get_footer(); ?>
