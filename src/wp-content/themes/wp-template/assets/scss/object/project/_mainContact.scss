@@ -34,7 +34,7 @@
       margin: setvw(35px) setvw(15px) 0 setvw(15px);
     }
 
-    &_faq {
+    .p-faq {
       &_head {
         &_name {
           position: relative;
@@ -66,7 +66,7 @@
       }
     }
 
-    &_inquiry {
+    .p-inquiry {
       padding-top: 65px;
 
       &_head {
@@ -84,8 +84,13 @@
 
       &_btnSend {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         margin-top: 40px;
+
+        .ajax-loader {
+          width: 100%;
+        }
       }
     }
   }

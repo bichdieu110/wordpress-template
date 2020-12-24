@@ -71,7 +71,7 @@ $column_posts = new WP_Query($column_args);
 
   <main class="l-topMain">
     <!-- Featured -->
-    <div class="l-topFeatured l-topContent">
+    <div class="l-topContent">
       <section class="p-topFeatured">
         <div class="p-topFeatured_title">
           <h2 class="c-titleSection">
@@ -103,7 +103,6 @@ $column_posts = new WP_Query($column_args);
     <!-- /Featured -->
     <!-- Company -->
     <div class="l-topSection">
-    <div class="l-topCompany ">
       <section class="p-topCompany">
         <div class="p-topCompany_title">
           <h2 class="c-titleSection">Company<span>私たちについて</span></h2>
@@ -114,69 +113,69 @@ $column_posts = new WP_Query($column_args);
           <a class="c-button" href="./company">Read More</a>
         </div>
       </section>
-    </div></div>
+    </div>
     <!-- /Company -->
     <!-- Service -->
-    <div class="l-topService l-topSection">
-      <section class="p-topService">
-        <div class="p-topService_title">
-          <h2 class="p-topService_title_name c-titleSection">Service<span>ソリューション / 製品</span></h2>
-          <p class="p-topService_title_surprise">想像を超える「驚き」と「感動」を</p>
-          <p class="p-topService_title_text">企業・ユーザーの皆様に価値のあるサービスをご提供いたします。</p>
+    <div class="l-topSection">
+      <section class="p-topSer">
+        <div class="p-topSer_title">
+          <h2 class="p-topSer_title_name c-titleSection">Service<span>ソリューション / 製品</span></h2>
+          <p class="p-topSer_title_surprise">想像を超える「驚き」と「感動」を</p>
+          <p class="p-topSer_title_text">企業・ユーザーの皆様に価値のあるサービスをご提供いたします。</p>
         </div>
-        <div class="p-topService_list">
-            <div class="p-topService_list_item l-topContent">
-              <div class="p-topService_list_item_img">
+        <div class="p-topSer_list">
+            <div class="p-topSer_list_item l-topContent">
+              <div class="p-topSer_list_item_img">
                 <img src="<?php echo URL_IMAGE?>/top/img_service01.jpg" alt="">
               </div>
-              <div class="p-topService_list_item_desc">
-                <h3 class="p-topService_list_item_desc_name"><a href="#">AR / MR</a></h3>
+              <div class="p-topSer_list_item_desc">
+                <h3 class="p-topSer_list_item_desc_name"><a href="#">AR / MR</a></h3>
                 <h4>ARアプリ開発 - ARをあなたの業務へ -</h4>
                 <p>AR、VRを業務で利用するためのビジネス向けサービス。概念検証から業務改善までお気軽にご相談下さい。</p>
                 <h4>スマートグラス アプリ開発</h4>
                 <p>スマートCデバイスを利用した業務向けアプリ開発や研究開発支援、POCプロジェクトで実績を積んできました。豊富な経験、ノウハウに基づき効果的なソリューションをご提案します。</p>
               </div>
             </div>
-            <div class="p-topService_list_item l-topContent">
-              <div class="p-topService_list_item_img">
+            <div class="p-topSer_list_item l-topContent">
+              <div class="p-topSer_list_item_img">
                 <img src="<?php echo URL_IMAGE?>/top/img_service02.jpg" alt="">
               </div>
-              <div class="p-topService_list_item_desc">
-                <h3 class="p-topService_list_item_desc_name"><a href="#">自然言語処理、検索拡張</a></h3>
+              <div class="p-topSer_list_item_desc">
+                <h3 class="p-topSer_list_item_desc_name"><a href="#">自然言語処理、検索拡張</a></h3>
                 <h4>Siba（サイト内検索サービス）</h4>
                 <p>大規模サイト向けにWebサーチ機能を提供するサービス「Siba」単語ベースの全文検索から、検索文の係り受けを理解する高精度な意図検索、AIを使用した類似検索、音声検索など多様なニーズに対応します。</p>
               </div>
             </div>
-            <div class="p-topService_list_item l-topContent">
-              <div class="p-topService_list_item_img">
+            <div class="p-topSer_list_item l-topContent">
+              <div class="p-topSer_list_item_img">
                 <img src="<?php echo URL_IMAGE?>/top/img_service03.jpg" alt="">
               </div>
-              <div class="p-topService_list_item_desc">
-                <h3 class="p-topService_list_item_desc_name"><a href="#">対話型<br>3Dアバタープロジェクト</a></h3>
+              <div class="p-topSer_list_item_desc">
+                <h3 class="p-topSer_list_item_desc_name"><a href="#">対話型<br>3Dアバタープロジェクト</a></h3>
                 <h4>With Corona, After Corona<br>バーチャルヒューマンのよる接客</h4>
                 <p>世界は突然変わりました。全てのビジネス活動が安全を担保して⾮対⾯、⾮接触型を志向しはじめ・・・・営業、接客の現場はどう対応して</p>
                 <h4>対話型3Dアバター(バーチャルヒューマン)を活⽤しませんか</h4>
                 <p>バーチャルヒューマンのよる接客</p>
-                <ul class="p-topService_list3d">
-                  <li class="p-topService_list3d_item3d">
-                    <h3 class="p-topService_list3d_item3d_head">人目を惹く魅力と驚き<span>リアルアバター技術</span></h3>
-                    <ul class="p-topService_list3d_item3d_para">
+                <ul class="p-topSer_list3d">
+                  <li class="p-topSer_list3d_item3d">
+                    <h3 class="p-topSer_list3d_item3d_head">人目を惹く魅力と驚き<span>リアルアバター技術</span></h3>
+                    <ul class="p-topSer_list3d_item3d_para">
                       <li>VRoidのようなアニメ風アバターとは 異なり、よりヒト風な「バーチャルヒュー マン]で人目を惹く魅力的な風貌をもつ</li>
                       <li>無理のない-不気味をさける一範囲で より人間風な動作、リアクションを表現</li>
                     </ul>
                   </li>
-                  <li class="p-topService_list3d_item3d">
-                    <h3 class="p-topService_list3d_item3d_head">対話知性<span>対話エンジン</span></h3>
-                    <ul class="p-topService_list3d_item3d_para">
+                  <li class="p-topSer_list3d_item3d">
+                    <h3 class="p-topSer_list3d_item3d_head">対話知性<span>対話エンジン</span></h3>
+                    <ul class="p-topSer_list3d_item3d_para">
                       <li>知らないことを教えてくれる(説明員) </li>
                       <li>特定範囲(ドメイン)の質問に対応でき る。応答が自然であること。ただし、自律発話はない</li>
                       <li>基礎的な会話ができる(必要な場合の み、不要なケースでは実装しない</li>
                       <li>相手(人)の話、感情を理解している風 な態度を示す</li>
                     </ul>
                   </li>
-                  <li class="p-topService_list3d_item3d">
-                    <h3 class="p-topService_list3d_item3d_head">対話エンジン<span>技術調和による固有な存在感</span></h3>
-                    <ul class="p-topService_list3d_item3d_para">
+                  <li class="p-topSer_list3d_item3d">
+                    <h3 class="p-topSer_list3d_item3d_head">対話エンジン<span>技術調和による固有な存在感</span></h3>
+                    <ul class="p-topSer_list3d_item3d_para">
                       <li>LipSync、表情、ポージングとのマッチ ングで、リアルアバターを生きているヒト風に。合成音声、表情、動きがアバター に個性と役割を与える</li>
                       <li>パーソナル動画を使用してお客様に合った個別</li>
                       <li>リッチなコンテンツを提示できる</li>
@@ -186,7 +185,7 @@ $column_posts = new WP_Query($column_args);
               </div>
             </div>
         </div>
-        <div class="p-topService_background">
+        <div class="p-topSer_background">
           <img src="/assets/images/img_bg_topservice.png" alt="">
         </div>
       </section>
@@ -228,7 +227,11 @@ $column_posts = new WP_Query($column_args);
               <?php
                 while ($news_posts->have_posts()) : $news_posts->the_post();
               ?>
-              <li class="p-topNews_content_list_item"><b><?php echo get_the_date(); ?></b><span>企業情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+              <li class="p-topNews_content_list_item">
+                <b><?php echo get_the_date( 'Y.m.d' ); ?></b>
+                <span>企業情報</span>
+                <a href="<?php the_permalink() ?>"><?php the_title();?></a>
+              </li>
               <!-- <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>企業情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
               <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>製品サービス情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
               <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>セミナー・イベント情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
@@ -314,73 +317,8 @@ $column_posts = new WP_Query($column_args);
             <p class="p-mainContact_title_para">製品/モデルのお問い合わせはお問い合わせフォームよりご確認ください。<br>製品/サービス以外のお問い合わせは<span>こちら</span>をご利用ください。</p>
           </div>
           <div class="p-mainContact_form">
-            <form action="">
-              <!-- faq -->
-              <div class="p-mainContact_form_faq">
-                <div class="p-mainContact_form_faq_head">
-                  <h3 class="p-mainContact_form_faq_head_name"><span>FAQ</span></h3>
-                </div>
-                <div class="p-mainContact_form_faq_block c-formBlock">
-                  <div class="c-formBlock_question">
-                    <select class="c-formBlock_question_control u-select">
-                      <option>何ができますか？（得意ですか？）</option>
-                    </select>
-                  </div>
-                  <div class="c-formBlock_question">
-                    <select class="c-formBlock_question_control u-select">
-                      <option>何ができますか？（得意ですか？）</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <!-- / faq -->
-              <!-- inquiry -->
-              <div class="p-mainContact_form_inquiry">
-                <div class="p-mainContact_form_inquiry_head">
-                  <h3 class="p-mainContact_form_inquiry_head_name"><span>お問い合わせフォーム</span></h3>
-                </div>
-                <div class="c-formBlock">
-                  <div class="c-formBlock_group">
-                    <label for="">会社名<span class="c-formBlock_group_notice">必須</span></label>
-                    <input type="text" class="c-formBlock_group_control" id="">
-                  </div>
-                  <div class="c-formBlock_group">
-                    <label for="">部署名<span class="c-formBlock_group_notice">必須</span></label>
-                    <input type="text" class="c-formBlock_group_control" id="">
-                  </div>
-                  <div class="c-formBlock_group">
-                    <label for="">役職<span class="c-formBlock_group_notice">必須</span></label>
-                    <input type="text" class="c-formBlock_group_control" id="">
-                  </div>
-                  <div class="c-formBlock_group">
-                    <label for="">姓<span class="c-formBlock_group_notice">必須</span></label>
-                    <input type="text" class="c-formBlock_group_control" id="">
-                  </div>
-                  <div class="c-formBlock_group">
-                    <label for="">名<span class="c-formBlock_group_notice">必須</span></label>
-                    <input type="text" class="c-formBlock_group_control" id="">
-                  </div>
-                  <div class="c-formBlock_group">
-                    <label for="">電話<span class="c-container_group_notice">必須</span></label>
-                    <input type="text" class="c-formBlock_group_control" id="">
-                  </div>
-                  <div class="c-formBlock_group">
-                    <label for="">メールアドレス<span class="c-formBlock_group_notice">必須</span></label>
-                    <input type="text" class="c-formBlock_group_control" id="">
-                  </div>
-                  <div class="c-formBlock_group">
-                    <label for="">KnowledgeWorksをどこでお知りになりましたか<span class="c-formBlock_group_notice">必須</span></label>
-                    <select class="c-formBlock_group_control u-select">
-                      <option>―なし―</option>
-                    </select>
-                  </div>
-                  <div class="p-mainContact_form_inquiry_btnSend">
-                    <button type="submit" class="c-btn">送信する</button>
-                  </div>
-                </div>
-              </div>
-              <!-- / inquiry -->
-            </form>
+          <?php echo do_shortcode('[contact-form-7 id="75" title="お問い合わせフォーム"]')?>
+            
           </div>
         </section>
       </div>

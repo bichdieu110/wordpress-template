@@ -5,13 +5,22 @@
     position: relative;
     padding: 15px 0;
 
-    &_control {
+    select {
       width: 100%;
       margin-top: 7px;
       padding: 20px 20px 20px 50px;
       border: none;
       outline: none;
-      background: #f3f3f6;
+      background-color: #f3f3f6;
+      background-image: url('../images/icon_select.svg');
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+      background-size: 14px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
     }
 
     &::before {
@@ -32,7 +41,7 @@
     }
   }
 
-  &_group {
+  &_gr {
     padding: 15px 0;
 
     &_notice {
@@ -42,13 +51,31 @@
       color: $color_orange;
     }
 
-    &_control {
+    input {
       width: 100%;
       margin-top: 7px;
       padding: 20px;
       border: none;
       outline: none;
       background: #f3f3f6;
+    }
+
+    select {
+      width: 100%;
+      margin-top: 7px;
+      padding: 20px;
+      border: none;
+      outline: none;
+      background: #f3f3f6;
+      background-image: url('../images/icon_select.svg');
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+      background-size: 14px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
     }
   }
 

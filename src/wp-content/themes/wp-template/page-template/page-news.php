@@ -5,46 +5,111 @@
 get_header();
 
 ?>
-  <main id="main-content" class="page-content page-content--news">
-    <?php get_template_part( 'template-parts/blocks/banner-news');?>
-    <?php get_template_part( 'template-parts/breadcrumb/breadcrumb' ); ?>
-    <section class="site-content">
-      <?php
 
-        $news_category_order = array(
-          'orderby'           => 'id',
-          'order'             => 'DESC',
-        );
-        $news_term = get_terms('news_category', $news_category_order);
-      ?>
-      <div class="container">
-        <div class="news-order">
-          <form action="<?php echo home_url(); ?>" class="filter-news" id="filterNews">
-            <div class="custom-select">
-              <select name="archive_dropdown" id="archive_dropdown">
-                <option value="">年別</option>
-                <?php $years = custom_year_archive(); 
-                foreach($years as $year) {
-                  echo "<option value='" . $year['name'] . "'>". $year['name'] . "</option>";
-                }
-                ?>
-              </select>
-            </div>
-            <div class="custom-select">
-              <select name="term_dropdown" id="term_dropdown">
-                <option value="">カテゴリー</option>
-                <?php foreach ( $news_term as $term ) {?>
-                  <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
-                <?php } ?>
-              </select>
+<div class="l-topBody">
+    <div class="p-pageVisual">
+      <div class="p-pageVisual_content">
+        <div class="p-pageVisual_content_text">
+          <h2 class="p-pageVisual_content_text_title">News</h2>
+          <p>
+            お知らせ
+          </p>
+        </div>
+        <div class="p-mainVisual_content_cover">
+          <div class="p-mainVisual_content_cover_base1"></div>
+          <div class="p-mainVisual_content_cover_base2"></div>
+          <div class="p-mainVisual_content_cover_base3"></div>
+          <div class="p-mainVisual_content_cover_particles" id="ji_particles"><canvas class="particles-js-canvas-el" width="1349" height="680" style="width: 100%; height: 100%;"></canvas></div>
+          <div class="p-mainVisual_content_cover_obj1">
+            <div class="p-mainVisual_content_cover_obj1_s1"></div>
+          </div>
+          <div class="p-mainVisual_content_cover_obj2">
+            <div class="p-mainVisual_content_cover_obj2_s2"></div>
+          </div>
+          <div class="p-mainVisual_content_cover_obj3">
+            <div class="p-mainVisual_content_cover_obj3_s3"></div>
+          </div>
+          <div class="p-mainVisual_content_cover_obj4">
+            <div class="p-mainVisual_content_cover_obj4_s4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="l-pageBody">
+
+<main class="l-pageMain">
+
+  <!-- Page News -->
+  <div class="l-pageNews l-topSection">
+    <div class="l-topContent">
+      <section class="p-pageNews">
+        <div class="p-pageNews_content">
+          <form action="">
+            <div class="p-pageNews_content_sort c-formBlock">
+              <div class="p-pageNews_content_sort_gr c-formBlock_sorts">
+                <select class="c-formBlock_sorts_control jc_customSelect" placeholder="年別">
+                  <option>2020</option>
+                  <option>2019</option>
+                  <option>2018</option>
+                  <option>2017</option>
+                </select>
+              </div>
+              <div class="p-pageNews_content_sort_gr c-formBlock_sorts">
+                <select class="c-formBlock_sorts_control jc_customSelect" placeholder="カテゴリー">
+                  <option>活動ニュース</option>
+                  <option>大きなイベント</option>
+                </select>
+              </div>
             </div>
           </form>
+          <ul class="p-pageNews_content_list">
+            <li class="p-pageNews_content_list_item"><b>2020 04.30</b><span>企業情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+            <li class="p-pageNews_content_list_item"><b>2020 04.30</b><span>企業情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+            <li class="p-pageNews_content_list_item"><b>2020 04.30</b><span>製品サービス情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+            <li class="p-pageNews_content_list_item"><b>2020 04.30</b><span>セミナー・イベント情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+            <li class="p-pageNews_content_list_item"><b>2020 04.30</b><span>ARサービス</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+            <li class="p-pageNews_content_list_item"><b>2020 04.30</b><span>企業情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+            <li class="p-pageNews_content_list_item"><b>2020 04.30</b><span>企業情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+            <li class="p-pageNews_content_list_item"><b>2020 04.30</b><span>製品サービス情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+            <li class="p-pageNews_content_list_item"><b>2020 04.30</b><span>セミナー・イベント情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+            <li class="p-pageNews_content_list_item"><b>2020 04.30</b><span>ARサービス</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
+          </ul>
+          <a class="p-pageNews_content_readMore c-button" href="./company">Read More</a>
         </div>
-        <div class="search-result"></div>
+      </section>
+    </div>
+  </div>
+  <!-- /page News -->
+</main>
+
+<!-- Social -->
+<div class="l-pageContent">
+  <seciton class="p-mainSocial">
+    <ul class="p-mainSocial_list">
+      <li class="p-mainSocial_list_sns"><a href="#"><img src="<?php echo URL_IMAGE?>/icon_fb.png" alt="facebook"></a></li>
+      <li class="p-mainSocial_list_sns"><a href="#"><img src="<?php echo URL_IMAGE?>/icon_tw.png" alt="twitter"></a></li>
+      <li class="p-mainSocial_list_sns"><a href="#"><img src="<?php echo URL_IMAGE?>/icon_line.png" alt="line"></a></li>
+    </ul>
+  </seciton>
+</div>
+<!-- /Social -->
+
+<!-- Contact -->
+<div class="l-mainContact">
+  <div class="l-pageContent">
+    <section class="p-mainContact">
+      <div class="p-mainContact_title">
+        <h2 class="c-titleSection">Contact Us<span>お問い合わせ</span></h2>
+        <p class="p-mainContact_title_para">サービスや事業に関すること、ご依頼までどんなことでもご相談ください</p>
+        <div class="p-mainContact_title_linkContact">
+          <a href="#" class="c-linkContact"><span>お問い合わせフォーム</span></a>
+        </div>
       </div>
     </section>
-    <?php get_template_part( 'template-parts/blocks/block-contactus');?>
-  </main>
+  </div>
+</div>
+</div>
 <?php get_footer(); ?>
 
 <script type="text/javascript">
