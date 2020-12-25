@@ -19,7 +19,7 @@ get_header();
           <div class="p-mainVisual_content_cover_base1"></div>
           <div class="p-mainVisual_content_cover_base2"></div>
           <div class="p-mainVisual_content_cover_base3"></div>
-          <div class="p-mainVisual_content_cover_particles" id="ji_particles"><canvas class="particles-js-canvas-el" width="1349" height="680" style="width: 100%; height: 100%;"></canvas></div>
+          <div class="p-mainVisual_content_cover_particles" id="ji_particles"></div>
           <div class="p-mainVisual_content_cover_obj1">
             <div class="p-mainVisual_content_cover_obj1_s1"></div>
           </div>
@@ -118,7 +118,7 @@ get_header();
             init: function(){
                 this.define();
                 $(function(){
-                    $this.loadData();
+                    // $this.loadData();
                     $this.search();
                     $this.pagination();
                     // $this.resetSearch();

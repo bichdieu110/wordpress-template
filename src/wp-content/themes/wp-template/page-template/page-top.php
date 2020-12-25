@@ -30,7 +30,7 @@ $column_posts = new WP_Query($column_args);
           <div class="p-base1"></div>
           <div class="p-base2"></div>
           <div class="p-base3"></div>
-          <div class="p-particles" id="ji_particles"><canvas class="particles-js-canvas-el" width="1349" height="680" style="width: 100%; height: 100%;"></canvas></div>
+          <div class="p-particles" id="ji_particles"></div>
           <div class="p-obj1">
             <div class="p-obj1_s1"></div>
           </div>
@@ -226,16 +226,15 @@ $column_posts = new WP_Query($column_args);
             <ul class="p-topNews_content_list">
               <?php
                 while ($news_posts->have_posts()) : $news_posts->the_post();
+                $news_cat = get_the_category($post->ID, 'news_category');
               ?>
               <li class="p-topNews_content_list_item">
                 <b><?php echo get_the_date( 'Y.m.d' ); ?></b>
-                <span>企業情報</span>
+                <?php foreach ($news_cat as $cat) { ?>
+                  <span><?php echo $cat->name ?></span>
+                <?php } ?>
                 <a href="<?php the_permalink() ?>"><?php the_title();?></a>
               </li>
-              <!-- <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>企業情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
-              <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>製品サービス情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
-              <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>セミナー・イベント情報</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li>
-              <li class="p-topNews_content_list_item"><b>2020 04.30</b><span>ARサービス</span><a href="#">コンテンツの統合ディレクションをご提供しています。コンテンツの統合ディレクションをご提供しています。</a></li> -->
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
             </ul>
